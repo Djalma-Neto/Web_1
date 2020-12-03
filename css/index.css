@@ -1,0 +1,168 @@
+
+body{
+    background-color: darkgrey;
+}
+
+/* padding All */
+.p-a-s{
+    padding: 6px;
+}
+.p-a-m{
+    padding: 12px;
+}
+.p-a-l{
+    padding: 20px;
+}
+
+/* padding Top */
+.p-t-s{
+    padding-top: 6px;
+}
+.p-t-m{
+    padding-top: 12px;
+}
+.p-t-l{
+    padding-top: 20px;
+}
+
+/* padding Bottom */
+.p-b-s{
+    padding-bottom: 6px;
+}
+.p-b-m{
+    padding-bottom: 12px;
+}
+.p-b-l{
+    padding-bottom: 20px;
+}
+
+/* padding Left */
+.p-l-s{
+    padding-left: 6px;
+}
+.p-l-m{
+    padding-left: 12px;
+}
+.p-l-l{
+    padding-left: 20px;
+}
+
+/* padding Right */
+.p-r-s{
+    padding-right: 6px;
+}
+.p-r-m{
+    padding-right: 12px;
+}
+.p-r-l{
+    padding-right: 20px;
+}
+
+/* padding X */
+.p-x-s{
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.p-x-m{
+    padding-right: 12px;
+    padding-left: 12px;
+}
+.p-x-l{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* padding Y */
+.p-y-s{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.p-y-m{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.p-y-l{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* margin All */
+.m-a-s{
+    margin: 6px;
+}
+.m-a-m{
+    margin: 12px;
+}
+.m-a-l{
+    margin: 20px;
+}
+
+/* margin Top */
+.m-t-s{
+    margin-top: 6px;
+}
+.m-t-m{
+    margin-top: 12px;
+}
+.m-t-l{
+    margin-top: 20px;
+}
+
+/* margin Bottom */
+.m-b-s{
+    margin-bottom: 6px;
+}
+.m-b-m{
+    margin-bottom: 12px;
+}
+.m-b-l{
+    margin-bottom: 20px;
+}
+
+/* margin Left */
+.m-l-s{
+    margin-left: 6px;
+}
+.m-l-m{
+    margin-left: 12px;
+}
+.m-l-l{
+    margin-left: 20px;
+}
+
+/* margin Right */
+.m-r-s{
+    margin-right: 6px;
+}
+.m-r-m{
+    margin-right: 12px;
+}
+.m-r-l{
+    margin-right: 20px;
+}
+
+/* Text identation */
+
+/* Component identation */
+.card{
+    box-shadow: 1px 1px 6px rgb(1, 0, 77);
+    box-sizing: border-box;
+    border: solid 1px black;
+}
+.c-l{
+    text-align: left;
+}
+.c-r{
+    text-align: right;
+}
+.c-c{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+.full-width{
+    width: 100%;
+}
+.full-height{
+    height: 100%;
+}
