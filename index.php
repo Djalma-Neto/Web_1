@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="m-a-s full-height full-width p-y-l">
-            <form style="max-width: 300px;" class="card c-c m-a-l" action="" type="POST">
+            <form style="max-width: 300px;" class="card c-c m-a-l" action="controllers/loginValidate.php" method="POST">
                 <div class="m-a-m c-c p-a-s">
                     <div class="p-a-s">
                         <label for="nome">Usuário</label>
