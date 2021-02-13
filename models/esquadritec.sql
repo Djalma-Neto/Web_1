@@ -104,18 +104,7 @@ CREATE TABLE IF NOT EXISTS MATERIAL_PRODUTO(
     FOREIGN KEY (UNIDADE_MEDIDA) REFERENCES UNIDADE_MEDIDA(ID)
 );
 
-insert into LINHA(LINHA) values('alemã');
-insert into MODELO(MODELO) values('comum');
-insert into MATERIAIS(nome, valor) values('aluminio', 10);
-insert into UNIDADE_MEDIDA(nome) values('Cm');
-insert into CLIENTE(NOME, CPF, CNPJ, EMAIL) values('João', '000000000', '918726534', 'teste@teste');
-
-insert into ORCAMENTO(DESCONTO, STATUS, VALOR_T_B, VALOR_F, DATA, CLIENTE) values(10, 'pendente', 0, 0, '2021-01-11', 1);
-
-insert into PRODUTO(NOME, VALOR, ORCAMENTO, MODELO, LINHA) values('janela', 0, 1, 1, 1);
-
-insert into MATERIAL_PRODUTO(VALOR, QUANTIDADE, UNIDADE_MEDIDA, PRODUTO, MATERIAIS) values(100, 10, 1, 1, 1);
-insert into MATERIAL_PRODUTO(VALOR, QUANTIDADE, UNIDADE_MEDIDA, PRODUTO, MATERIAIS) values(100, 1, 1, 1, 1);
+INSERT INTO usuario(nome, email, senha) values('ADMIN',  'ADMIN@ADMIN.com', 'admin')
 
 DELIMITER //
 CREATE TRIGGER VALOR AFTER INSERT ON MATERIAL_PRODUTO

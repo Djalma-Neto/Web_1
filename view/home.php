@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +14,11 @@
 </head>
 
 <body>
-    
+    <?php
+        foreach ($_SESSION['usuarios'] as $usuario){
+            echo("<div>".$usuario."</div>");
+        }
+    ?>
 </body>
 
 </html>
