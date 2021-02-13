@@ -14,11 +14,7 @@
 </head>
 
 <body>
-    <?php
-        foreach ($_SESSION['usuarios'] as $usuario){
-            echo("<div>".$usuario."</div>");
-        }
-    ?>
+    teste
 </body>
 
 </html>
