@@ -12,17 +12,17 @@
 
 <body>
     <img class="logo" src="https://cdn.discordapp.com/attachments/695016266578001985/801605949822992434/esquadritec.png" alt="logo esquadritec">
-    <div class="c-c card p-a-m" style="max-width: 320px; min-width: 250px;">
+    <div class="c-c card p-a-m b" style="max-width: 500px; height: 250px">
         <form action="home.php" method="POST" class="">
             <div class="stage">
-                <input type="text" name="usuario" required  placeholder="Login">
+                <input class="b" type="text" name="usuario" required  placeholder="Login">
             </div>
 
             <div class="stage">
-                <input type="password" name="senha" required placeholder="Senha">
+                <input class="b" type="password" name="senha" required placeholder="Senha">
             </div>
 
-            <input id="but" type="submit" value="Entrar" name="signup"></input>
+            <input  class="b" id="but" type="submit" value="Entrar" name="signup"></input>
         </form>
     </div>
 </body>

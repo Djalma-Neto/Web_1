@@ -1,11 +1,19 @@
 html{
     margin: 0%;
-    background-image: url('../public/index_back.svg');
-    opacity: 1;
+    background-image:linear-gradient(
+      rgba(0,97,116,0.4),rgba(0,97,116,0.4)
+    ), 
+    url('../public/index_back.svg');
+    background-size: cover;
 }
 
 .logo{
+  display: block;
   min-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 4%;
 }
 
 .header {
@@ -34,6 +42,10 @@ html{
 
 .full-width{
   width: 100%;
+}
+
+.b {
+  border-radius: 0.5em;
 }
 
 .p-a-s{
@@ -178,9 +190,9 @@ html{
 
 /* Component identation */
 .card{
-  box-shadow: 1px 1px 6px rgb(1, 0, 77);
+  background-color: rgb(255,255,255,0.25);
   box-sizing: border-box;
-  border: solid 1px black;
+  border: solid 1px rgb(122,122,122,0.8);
 }
 .c-l{
   text-align: left;
