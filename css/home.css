@@ -44,11 +44,11 @@ body{
     margin-bottom: 3em;
 }
 span{
-    top: 38rem;
     right: 0.2em;
     text-align: center;
     float: right;
     font-size: 4rem;
+    bottom: 43.5px;
     font-weight: bolder;
     color: #fff;
     position: fixed;
@@ -68,7 +68,6 @@ span{
     float:left;
     background-color:transparent;
     padding-left:5px;
-    font-style:italic;
     font-size:18px;
     border:none;
     height:32px;
