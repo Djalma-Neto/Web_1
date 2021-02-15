@@ -36,9 +36,21 @@ session_start();
     </div>
     <div>
         <div class="cards">
-            <div class="card Orcamentos"></div>
-            <div class="card Clientes"></div>
-            <div class="card Materiais"></div>
+            <div class="card Orcamentos">
+                <h4 class="cardTitle">ORÇAMENTOS CADASTRADOS</h4>
+                <h1 class="counter countermateriais">9 <img class="imgDesc" src="../css/img/description.svg" alt=""> </h1>
+                <button class="verTodos">VER TODOS</button>
+            </div>
+            <div class="card Clientes">
+                <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
+                <h1 class="counter countermateriais">53 <img class="imgDesc" src="../css/img/description.svg" alt=""> </h1>
+                <button class="verTodos">VER TODOS</button>
+            </div>
+            <div class="card Materiais">
+                <h4 class="cardTitle">MATERIAIS CADASTRADOS</h4>
+                <h1 class="counter countermateriais">12 <img class="imgDesc" src="../css/img/description.svg" alt=""> </h1>
+                <button class="verTodos">VER TODOS</button>
+            </div>
         </div>
     </div>
     <div class="Fab">
