@@ -1,4 +1,9 @@
 <?php
-    echo "teste";
-    header("Location: ../view/home.php");
+try {
+    include_once('./connect.php');
+    login();
+} catch (PDOException $e){
+    header("Location: ../view");
+    die();
+}
 ?>

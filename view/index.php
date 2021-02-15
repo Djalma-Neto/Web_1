@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -24,6 +28,13 @@
 
             <input  class="b" id="but" type="submit" value="Entrar" name="signup"></input>
         </form>
+        <div class="p-t-m error">
+            <?php
+            if($_SESSION['error_login']){
+                echo $_SESSION['error_login'];
+                $_SESSION['error_login'] = '';
+            } ?>
+        </div>
     </div>
 </body>
 

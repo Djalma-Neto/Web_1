@@ -24,7 +24,14 @@ session_start();
                 <input type="text" id="txtBusca" placeholder="Buscar..." />
                 <img src="../css/img/search.svg" id="btnBusca" alt="Buscar" />
             </div>
-            <img class="user" src="../css/img/account.svg" alt="">
+            <div class="user">
+                <div class="c-c">
+                    <img src="../css/img/account.svg" alt="">
+                    <?php
+                        echo "<div>".$_SESSION['user'][0]->NOME."</div>"
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
     <div>
@@ -38,7 +45,17 @@ session_start();
         <span>+</span>
     </div>
     <div class="graph">
-
+    <div class="users">USUÁRIOS</div>
+        <?php
+        foreach($_SESSION["usuarios"] as $user){
+            echo 
+            "<table class='users'>
+                <td>$user->ID</td>
+                <td>$user->NOME</td>
+                <td>$user->EMAIL</td>
+            </table>";
+        }
+        ?>
     </div>
 </body>
 

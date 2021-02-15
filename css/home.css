@@ -98,14 +98,36 @@ h3{
     width: 23%;
 }
 .user{
+    padding: 10px;
     margin: 0.4em 1em 0 0;
     float: right;
-    width: 4%;
+    width: 50px;
 }
 #btnBusca{
     border:none;
     float:right;
     width: 10%;
     font-weight:bold;
+}
+
+.c-c{
+    text-align: center;
+    margin: auto;
+    width: 100%;
   }
+
+.users{
+    padding-top: 25px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+.users td{
+    padding-left: 20px;
+}
+
+.logOn{
+    position: relative;
+}
   
