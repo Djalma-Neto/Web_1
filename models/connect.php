@@ -12,6 +12,7 @@ function connect() {
         header("Location: ../view");
     }
 }
+
 function getAllUser() {
     $dataBase = connect();
     try {
@@ -23,6 +24,7 @@ function getAllUser() {
         $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
     }
 }
+
 function login() {
     $user = $_POST["usuario"];
     $password = $_POST["senha"];
@@ -38,11 +40,11 @@ function login() {
                 getAllUser();
                 header("Location: ../view/home.php");
             } else {
-                $_SESSION["error_login"] = "Falha de autenticação";
+                $_SESSION["error_login"] = "Senha invalida";
                 header("Location: ../view");
             }
         } else {
-            $_SESSION["error_login"] = "Falha de autenticação";
+            $_SESSION["error_login"] = "E-mail não cadastrado";
             header("Location: ../view");
         }
     } catch (PDOException $e) {
