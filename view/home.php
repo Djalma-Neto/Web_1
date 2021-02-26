@@ -14,9 +14,53 @@ session_start();
 </head>
 
 <body>
+    <div id="menu_content" class="menu_content">
+        <div class="icon_menu">
+            <h3 class="full-width">
+                ESQUADRITEC
+            </h3>
+        </div>
+        <div class="colunm-2">
+            <div class="menu_options">
+                <button class="menu_Button" onclick="funcionario_add()">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
+                </button>
+
+                <button class="menu_Button" onclick="">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">CLIENTE</div>
+                </button>
+
+                <button class="menu_Button" onclick="">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">ORÇAMENTO</div>
+                </button>
+
+                <button class="menu_Button" onclick="">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">MATERIAL</div>
+                </button>
+
+                <button class="menu_Button" onclick="">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">LINHA</div>
+                </button>
+
+                <button class="menu_Button" onclick="">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">MODELO</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="navbar">
         <div class="navBody">
-            <img class="menu" src="../css/img/menu.svg" alt="">
+            <button id="menu_navbar" class="menu" onclick="openMenu()">
+                <img style="width:50px;" src="../css/img/menu.svg" alt="">
+            </button>
+
             <h3>
                 ESQUADRITEC
             </h3>
@@ -28,7 +72,7 @@ session_start();
                 <div class="c-c">
                     <img src="../css/img/account.svg" alt="">
                     <?php
-                        echo "<div>".$_SESSION['user'][0]->NOME."</div>"
+                        echo "<div>".$_SESSION['user']->NOME."</div>";
                     ?>
                 </div>
             </div>
@@ -53,22 +97,46 @@ session_start();
             </div>
         </div>
     </div>
+
     <div class="Fab">
         <span>+</span>
     </div>
+
     <div class="graph">
     <div class="users">USUÁRIOS</div>
         <?php
-        foreach($_SESSION["usuarios"] as $user){
-            echo 
-            "<table class='users'>
-                <td>$user->ID</td>
-                <td>$user->NOME</td>
-                <td>$user->EMAIL</td>
-            </table>";
-        }
+            foreach($_SESSION["usuarios"] as $user){
+                echo 
+                "<table class='users'>
+                    <td>$user->ID</td>
+                    <td>$user->NOME</td>
+                    <td>$user->EMAIL</td>
+                </table>";
+            }
         ?>
     </div>
+    <script>
+        window.addEventListener('click', function(e){   
+            if (document.getElementById('menu_content').contains(e.target)){
+                // Clicked in box
+            } else{
+                if (document.getElementById('menu_navbar').contains(e.target)){
+                    // Clicked in box
+                } else {
+                    var elemento = document.getElementById("menu_content");
+                    elemento.style.display = "none";
+                }
+            }
+        });
+        function openMenu() {
+            var elemento = document.getElementById("menu_content");
+            elemento.style.display = "block";
+        }
+
+        function funcionario_add(){
+            window.location.href = "http://localhost/Web_1/view/new_user.php"
+        }
+    </script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <?php
 try {
     include_once('./connect.php');
-    login();
+    new_user();
 } catch (PDOException $e){
     header("Location: ../view/login.php");
     die();
