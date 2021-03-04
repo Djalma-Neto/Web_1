@@ -1,6 +1,10 @@
 <?php
 session_start();
+if(!$_SESSION['user']){
+    header("Location: ../../view/login.php");
+}
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,11 +14,11 @@ session_start();
     <title>ESQUADRITEC</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/new_user.css">
+    <link rel="stylesheet" href="../../css/new_user.css">
 </head>
 
 <body>
-    <form action="../models/new_user.php" method="POST">
+    <form action="../../models/usuario/new_user.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="nome" placeholder="Nome" required>
             <input class="input_1" type="text" name="email" placeholder="E-mail" required>
@@ -28,9 +32,9 @@ session_start();
 
             <div class="p-t-m error">
                 <?php
-                    if($_SESSION['error_newUser']){
-                        echo $_SESSION['error_newUser'];
-                        $_SESSION['error_newUser'] = '';
+                    if($_SESSION['error']){
+                        echo $_SESSION['error'];
+                        $_SESSION['error'] = '';
                     }
                 ?>
             </div>

@@ -1,31 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Poppins&display=swap');
 @keyframes menssagem {
   from {opacity: 60%;}
   to {opacity: 0%;}
 }
 
-html{
-    height: 100%;
-    margin: 0%;
-    background-image:linear-gradient(
-      rgba(0,97,116,0.4),rgba(0,97,116,0.4)
-    ), 
-    url('../public/index_back.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+body{
+    background-color: #ebebeb;
+}
+.option{
+  background-color: transparent;
+}
+.cards{
+    display: inline-grid;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    column-gap: 6%;
+    margin: 4rem auto;
+}
+.nome{
+  margin: 0;
+  width: 100px;
+  padding: 3px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
 }
 
-
-/* The element to apply the animation to */
-
-.logo{
-  display: block;
-  min-width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  margin-top: 4%;
+.acao{
+  width: 100px;
+  padding: 3px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
 }
 
+.valor{
+  width: 30px;
+  padding: 3px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.card{
+    padding: 10px;
+    min-height: 100px;
+    min-width: 200px;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.list{
+  margin-left: 20px;
+}
+
+.list-component{
+  padding-left: 20px;
+  display: inline-block;
+}
 .card_menssage{
   position: fixed;
   width: 100%;
@@ -64,28 +100,66 @@ html{
   background-color: #f12222;
 }
 
-.header {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  text-transform: uppercase;
+.c-c{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+  }
+
+.users{
+    padding-top: 25px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
 }
 
-.stage{
-  margin: 4% auto 0 auto;
-  margin: 20px;
-}
-  
-.content {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.users td{
+    padding-left: 20px;
 }
 
-.float{
-  position: fixed;
+.logOn{
+    position: relative;
+}
+.verTodos{
+    float: right;
+    margin-right: 15px;
+    margin-top: -7%;
+    height: 2.2em;
+    width: 10em;
+    padding: 0.5em auto;
+    border-radius:13px;
+    border: solid 1px black;
+    color: #006174;
+    font-size: 12px;
+    font-family: 'Poppins';
+    font-weight: bolder;
+}
+.cardTitle{
+    margin-top:1em;
+    font-family: 'Be Vietnam';
+    margin-left: 1em;
+    font-size: 14px;
+    color: #fff;
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+.counter{
+  color:#fff;
+  margin-top:-25px;
+  font-weight: lighter;
+  margin-left: 25px;
+  text-align: left;
+  font-size: 100px;
+  margin-right: 0;
+  font-family: 'Be Vietnam';
+}
+.imgDesc{
+    width: 0.5em;
+    margin-left: -23px;
+}
+
+.full-width{
+    width: 100%;
 }
 
 .b {
@@ -239,11 +313,6 @@ html{
 /* Text identation */
 
 /* Component identation */
-.card{
-  background-color: rgb(255,255,255,0.25);
-  box-sizing: border-box;
-  border: solid 1px rgb(122,122,122,0.8);
-}
 .c-l{
   text-align: left;
 }
@@ -254,9 +323,9 @@ html{
   text-align: center;
   margin: auto;
 }
-.full-width{
-  width: 100%;
-}
 .full-height{
   height: 100%;
+}
+.error{
+  color: red;
 }

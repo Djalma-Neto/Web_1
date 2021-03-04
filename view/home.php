@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!$_SESSION['user']){
+    header("Location: ../view/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,27 +30,27 @@ session_start();
                     <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
                 </button>
 
-                <button class="menu_Button" onclick="">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                <button class="menu_Button" onclick="cliente_add()">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar cliente">
                     <div style="padding-botton: 5px;">CLIENTE</div>
                 </button>
 
-                <button class="menu_Button" onclick="">
+                <button class="menu_Button" onclick="orcamento_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">ORÇAMENTO</div>
                 </button>
 
-                <button class="menu_Button" onclick="">
+                <button class="menu_Button" onclick="material_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MATERIAL</div>
                 </button>
 
-                <button class="menu_Button" onclick="">
+                <button class="menu_Button" onclick="linha_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">LINHA</div>
                 </button>
 
-                <button class="menu_Button" onclick="">
+                <button class="menu_Button" onclick="modelo_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>
                 </button>
@@ -78,28 +81,38 @@ session_start();
             </div>
         </div>
     </div>
-    <div>
+    <div  class='c-c'>
         <div class="cards">
-            <div class="card Orcamentos">
+            <div class="card">
                 <h4 class="cardTitle">ORÇAMENTOS CADASTRADOS</h4>
-                <h1 class="counter countermateriais">9 <img class="imgDesc" src="../css/img/description.svg" alt=""> </h1>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="ORÇAMENTOS cadastrados"> </h1>
                 <button class="verTodos">VER TODOS</button>
             </div>
-            <div class="card Clientes">
+            <div class="card">
                 <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
-                <h1 class="counter countermateriais">53 <img class="imgDesc" src="../css/img/description.svg" alt=""> </h1>
-                <button class="verTodos">VER TODOS</button>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="CLIENTES cadastrados"> </h1>
+                <button class="verTodos" onclick="">VER TODOS</button>
             </div>
-            <div class="card Materiais">
+            <div class="card">
                 <h4 class="cardTitle">MATERIAIS CADASTRADOS</h4>
-                <h1 class="counter countermateriais">12 <img class="imgDesc" src="../css/img/description.svg" alt=""> </h1>
-                <button class="verTodos">VER TODOS</button>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="materiais cadastrados"> </h1>
+                <button class="verTodos" onclick="GetAllMaterial()">VER TODOS</button>
+            </div>
+            <div class="card">
+                <h4 class="cardTitle">MODELOS CADASTRADOS</h4>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['modelos']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
+                <button class="verTodos" onclick="GetAllModelos()">VER TODOS</button>
+            </div>
+            <div class="card">
+                <h4 class="cardTitle">LINHAS CADASTRADAS</h4>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['linhas']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
+                <button class="verTodos" onclick="GetAllLinha()">VER TODOS</button>
             </div>
         </div>
     </div>
 
     <div class="Fab">
-        <span>+</span>
+        <span class="btn_dropdown">+</span>
     </div>
 
     <div class="graph">
@@ -112,6 +125,24 @@ session_start();
                     <td>$user->NOME</td>
                     <td>$user->EMAIL</td>
                 </table>";
+            }
+        ?>
+    </div>
+    <div class="full-width card_menssage">
+        <?php
+            if($_SESSION['sucess']){
+                echo "
+                <div class='full-width'>
+                    <div class='sucess c-c'>".$_SESSION['sucess']."</div>
+                </div>";
+                $_SESSION['sucess'] = '';
+            }
+            if($_SESSION['error']){
+                echo "
+                <div class='full-width'>
+                    <div class='error c-c'>".$_SESSION['error']."</div>
+                </div>";
+                $_SESSION['error'] = '';
             }
         ?>
     </div>
@@ -134,7 +165,38 @@ session_start();
         }
 
         function funcionario_add(){
-            window.location.href = "http://localhost/Web_1/view/new_user.php"
+            window.location.href = "http://localhost/Web_1/view/usuario/new_user.php"
+        }
+        function orcamento_add(){
+            window.location.href = "http://localhost/Web_1/view/orcamento/new_orcamento.php"
+        }
+
+        function cliente_add(){
+            window.location.href = "http://localhost/Web_1/view/cliente/new_cliente.php"
+        }
+
+        function material_add(){
+            window.location.href = "http://localhost/Web_1/view/materiais/new_material.php"
+        }
+
+        function linha_add(){
+            window.location.href = "http://localhost/Web_1/view/linha/new_linha.php"
+        }
+
+        function modelo_add(){
+            window.location.href = "http://localhost/Web_1/view/modelo/new_modelo.php"
+        }
+
+        function GetAllMaterial(){
+            window.location.href = "http://localhost/Web_1/models/material/getAllMaterial.php"
+        }
+
+        function GetAllModelos(){
+            window.location.href = "http://localhost/Web_1/models/modelo/getAllModelo.php"
+        }
+
+        function GetAllLinha(){
+            window.location.href = "http://localhost/Web_1/models/linha/getAllLinha.php"
         }
     </script>
 </body>

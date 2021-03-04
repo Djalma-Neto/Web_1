@@ -17,7 +17,7 @@
 <body>
     <img class="logo" src="https://cdn.discordapp.com/attachments/695016266578001985/801605949822992434/esquadritec.png" alt="logo esquadritec">
     <div class="c-c card p-a-m b" style="max-width: 500px; height: 200px">
-        <form action="../models/login.php" method="POST" class="">
+        <form action="../models/login.php" method="POST">
             <div class="stage">
                 <input class="b s-s" type="text" name="usuario" required  placeholder="Login">
             </div>
@@ -28,13 +28,24 @@
 
             <input  class="b" id="but" type="submit" value="Entrar" name="signup"></input>
         </form>
-        <div class="p-t-m error">
-            <?php
-            if($_SESSION['error_login']){
-                echo $_SESSION['error_login'];
-                $_SESSION['error_login'] = '';
-            } ?>
-        </div>
+    </div>
+    <div class="full-width card_menssage">
+        <?php
+            if($_SESSION['sucess']){
+                echo "
+                <div class=''>
+                    <div class='sucess c-c'>".$_SESSION['sucess']."</div>
+                </div>";
+                $_SESSION['sucess'] = '';
+            }
+            if($_SESSION["error"]){
+                echo "
+                <div class='full-width'>
+                    <div class='error c-c'>".$_SESSION['error']."</div>
+                </div>";
+                $_SESSION['error'] = '';
+            }
+        ?>
     </div>
 </body>
 
