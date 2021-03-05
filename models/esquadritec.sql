@@ -1,3 +1,4 @@
+DROP SCHEMA esquadritec;
 CREATE SCHEMA IF NOT EXISTS esquadritec;
 
 USE esquadritec;
@@ -45,6 +46,7 @@ CREATE TABLE IF NOT EXISTS USUARIO(
     NOME varchar(30) NOT NULL,
     SENHA varchar(30) NOT NULL,
     EMAIL varchar(30) NOT NULL,
+    DATA varchar(30) NOT NULL,
     ADMIN boolean NOT NULL 
 );
 
@@ -104,7 +106,7 @@ CREATE TABLE IF NOT EXISTS MATERIAL_PRODUTO(
     FOREIGN KEY (UNIDADE_MEDIDA) REFERENCES UNIDADE_MEDIDA(ID) ON DELETE CASCADE
 );
 
-INSERT INTO usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0wMiAwOTo1OWFkbWlu', '2021-03-02 09:59', 1);
+INSERT INTO usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0wNSAxMTowN2FkbWlu', '2021-03-05 11:07', 1);
 
 DELIMITER //
 CREATE TRIGGER VALOR AFTER INSERT ON MATERIAL_PRODUTO

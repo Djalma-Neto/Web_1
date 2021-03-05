@@ -6,9 +6,11 @@
     $_SESSION['materiais'] = '';
     $_SESSION["modelos"] = '';
     $_SESSION['linhas'] = '';
+    $_SESSION["clientes"] = '';
     getAllMaterial();
     getAllModelo();
     getAllLinha();
+    getAllCliente();
 
     header("Location: ./login.php");
 ?>

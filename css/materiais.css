@@ -53,6 +53,73 @@ body{
     border: solid 1px black;
     border-radius: 10px;
 }
+.cpf{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.cnpj{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.email{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.cidade{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.rua{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.bairro{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.observacao{
+  min-height: 20px;
+  max-height: 50px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.division{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  background-color: #a8a6a6;
+}
+
+.btn_confirm{
+  background-color: #04b41c;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+.btn_confirm:hover{
+  background-color: #04b41c;
+  opacity: 1;
+}
+
+.input_1{
+  width: 100%;
+}
 
 .list{
   margin-left: 20px;
@@ -67,6 +134,12 @@ body{
   width: 100%;
   bottom: 20px;
   text-align: center;
+}
+.formulario{
+  display: block;
+  padding: 20px;
+  min-width: 250px;
+  max-width: 300px;
 }
 .sucess {
   opacity: 0;

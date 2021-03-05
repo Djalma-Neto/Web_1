@@ -30,11 +30,11 @@ class NewUser{
     private $admin = 0;
 
     function __construct($user){
+        date_default_timezone_set('America/Bahia');
         $this->nome = $user['nome'];
         $this->email = $user['email'];
         $this->admin = $user['admin']?$user['admin']:0;
-        date_default_timezone_set('America/Bahia');
-        $this->date = date("Y-m-d H:i");
+        $this->date = date("Y-m-dH:i");
         $this->password = base64_encode($this->date.''.$user['password']);
     }
 

@@ -15,18 +15,6 @@ function connect() {
     }
 }
 
-function getAllCliente($nome) {
-    $dataBase = connect();
-    try {
-        $clientes = $dataBase->prepare("SELECT * FROM cliente c WHERE c.nome like '%$nome%'");
-        $clientes->execute();
-        $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
-        $_SESSION["clientes"] = $usuarios;
-    } catch (PDOException $e) {
-        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
-    }
-}
-
 function getAllUser() {
     $dataBase = connect();
     try {
@@ -45,11 +33,11 @@ function login() {
 
     $dataBase = connect();
     try {
-        $usuarios = $dataBase->prepare("SELECT * FROM usuario u WHERE u.email = ".$dataBase->quote($user));
+        $usuarios = $dataBase->prepare("SELECT * FROM usuario u WHERE u.email = '$user'");
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
-            if (validatePassword($usuarios[0]->data, $password, $usuarios[0]->SENHA)){
+            if (validatePassword($usuarios[0]->DATA, $password, $usuarios[0]->SENHA)){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();
                 header("Location: ../view/home.php");
@@ -93,6 +81,8 @@ function new_user() {
     $user->register($dataBase);
 }
 
+// CLIENTE
+
 function new_cliente() {
     $dataBase = connect();
     $cliente = array(
@@ -109,6 +99,59 @@ function new_cliente() {
     );
     $cliente = new NewCliente($cliente);
     $cliente->register($dataBase);
+    getAllCliente();
+}
+
+function getAllCliente(){
+    $dataBase = connect();
+    try {
+        $clientes = $dataBase->prepare("SELECT c.ID, c.NOME, c.CPF, c.CNPJ, c.EMAIL, c.ENDERECO, e.OBSERVACAO,
+        e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO FROM cliente c, endereco e WHERE c.endereco = e.id");
+        $clientes->execute();
+        $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
+        $_SESSION["clientes"] = $clientes;
+    } catch (PDOException $e) {
+        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
+    }
+}
+
+function update_cliente(){
+    $nome = $_POST["nome"];
+    $cpf = $_POST["cpf"];
+    $cnpj = $_POST["cnpj"]? $_POST["cnpj"]: '';
+    $email = $_POST["email"];
+    $cidade = $_POST["cidade"];
+    $rua = $_POST["rua"];
+    $bairro = $_POST["bairro"];
+    $numero = $_POST["numero"];
+    $observacao = $_POST["observacao"];
+    $id = $_POST['id'];
+    $endereco = $_POST['endereco'];
+
+    $dataBase = connect();
+    $query = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', cnpj = '$cnpj', email = '$email' WHERE id='$id'";
+    $update = $dataBase->prepare($query);
+    $update->execute();
+
+    $query = "UPDATE endereco SET cidade = '$cidade', rua = '$rua', bairro = '$bairro', numero = '$numero',
+    observacao = '$observacao' WHERE id='$endereco'";
+    $update = $dataBase->prepare($query);
+    $update->execute();
+
+    getAllCliente();
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: http://localhost/Web_1/view/home.php");
+}
+
+function del_cliente(){
+    $id = $_POST["id"];
+    $dataBase = connect();
+    $query = "DELETE FROM cliente where id = '$id'";
+    $delete = $dataBase->prepare($query);
+    $delete->execute();
+    getAllCliente();
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: http://localhost/Web_1/view/home.php");
 }
 
 // MATERIAL

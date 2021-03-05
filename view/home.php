@@ -90,8 +90,8 @@ if(!$_SESSION['user']){
             </div>
             <div class="card">
                 <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
-                <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="CLIENTES cadastrados"> </h1>
-                <button class="verTodos" onclick="">VER TODOS</button>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['clientes']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="CLIENTES cadastrados"> </h1>
+                <button class="verTodos" onclick="GetAllCliente()">VER TODOS</button>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MATERIAIS CADASTRADOS</h4>
@@ -185,6 +185,10 @@ if(!$_SESSION['user']){
 
         function modelo_add(){
             window.location.href = "http://localhost/Web_1/view/modelo/new_modelo.php"
+        }
+
+        function GetAllCliente(){
+            window.location.href = "http://localhost/Web_1/models/cliente/getAllCliente.php"
         }
 
         function GetAllMaterial(){
