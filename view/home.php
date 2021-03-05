@@ -27,32 +27,32 @@ if(!$_SESSION['user']){
             <div class="menu_options">
                 <button class="menu_Button" onclick="funcionario_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
+                    <div style="padding-bottom: 5px;">FUNCIONÁRIO</div>
                 </button>
 
                 <button class="menu_Button" onclick="cliente_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar cliente">
-                    <div style="padding-botton: 5px;">CLIENTE</div>
+                    <div style="padding-bottom: 5px;">CLIENTE</div>
                 </button>
 
                 <button class="menu_Button" onclick="orcamento_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">ORÇAMENTO</div>
+                    <div style="padding-bottom: 5px;">ORÇAMENTO</div>
                 </button>
 
                 <button class="menu_Button" onclick="material_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">MATERIAL</div>
+                    <div style="padding-bottom: 5px;">MATERIAL</div>
                 </button>
 
                 <button class="menu_Button" onclick="linha_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">LINHA</div>
+                    <div style="padding-bottom: 5px;">LINHA</div>
                 </button>
 
                 <button class="menu_Button" onclick="modelo_add()">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">MODELO</div>
+                    <div style="padding-bottom: 5px;">MODELO</div>
                 </button>
             </div>
         </div>
