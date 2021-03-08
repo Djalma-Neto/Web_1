@@ -49,7 +49,6 @@ if(!$_SESSION['user']){
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">LINHA</div>
                 </a>
-
                 <a href="http://localhost/Web_1/view/modelo/new_modelo.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>

@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Poppins&display=swap');
+html,body{
+
+    width:100%;
+    margin:0;
+    padding:0;
+
+
+}
+body{
+    font-family: 'Be Vietnam';
+}
+#navTabela{
+    width:80%;
+   margin: 5em auto;
+   border:2;
+
+}
+table {
+    width:100%;
+    border: 2px solid #006174;
+    border-radius:8px;
+    row-gap: 5px;
+    gap: 8em;
+}
+ td{
+     border:0;
+     text-align:center;
+     column-rule-style: hidden;
+     padding:4 0;
+     border-radius: 8px;
+     row-gap: 5px;
+
+ }
+ tr{
+     table-layout: unset;
+     border-bottom-style: solid 2px;
+     border: 0;
+     row-gap: 5px;
+
+ }
+ th{
+     border:0;
+    box-shadow: none;
+    column-rule-style: none;
+    border-bottom: #006174 1px solid;
+    background-color: #ebebeb;
+    color: #006174;
+ }
+tr:nth-child(odd){
+    background-color: #006174;
+    color:white;
+}
+tr:nth-child(even){
+    border: #006174 1px solid;
+    background-color: #fff;
+    color:#006174;
+
+}
+button{
+    height: 3em;
+    width: 5em;
+    border: black 1px solid;
+    outline: none;
+    border-radius: 4px;
+    color:#006174;
+}
+.editButton{
+    margin-right: 30;
+}
+.excludeButton{
+    margin-left: 30;
+}
+tr:nth-child(even) button{
+    background-color: #006174;
+    color:#fff;
+
+}
+h1 {
+    TEXT-ALIGN: center;
+    color: #006174;
+    font-family: 'Aldrich';
+    text-shadow: 3px -3px 0px white;
+}
