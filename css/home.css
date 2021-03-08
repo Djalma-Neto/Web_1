@@ -261,6 +261,7 @@ h3{
   position: absolute;
 }
 .txtBuscar{
+  border: none;
   margin-top: 5px;
   width: 160px;
   height: 20px;
