@@ -11,24 +11,30 @@
     border:0;
 }
 body{
-    background-color: #ebebeb;
+  background-color: #ebebeb;
 }
 .navbar{
-    height: 4rem;
-    width: 95%;
-    align-items: flex-start;
-    margin: 1rem auto;
-    background-color: #006174;
-    border-radius: 11px;
+  height: 4rem;
+  max-width: 100%;
+  min-width: 500px;
+  align-items: flex-start;
+  margin: 1rem auto;
+  background-color: #006174;
+  border-radius: 11px;
+}
+.navBody{
+  width: 100%;
+  display: inline-block;
 }
 .cards{
     display: inline-block;
     justify-content: space-around;
     align-content: center;
     width: 100%;
+    min-width: 470px;
     height: 100%;
     column-gap: 10px;
-    margin: 20px;
+    margin: 0px;
 }
 
 .card{
@@ -48,12 +54,12 @@ body{
 }
 .graph{
     background-color: #fff;
-    height: 405px;
-    width: 1144px;
+    height: 300px;
+    width: 98%;
+    min-width: 470px;
+    z-index: 10;
     border: solid #006174 2px ;
-    border-radius: 52px;
-    margin: 1px auto;
-    margin-bottom: 3em;
+    border-radius: 30px;
 }
 .card_menssage{
   position: fixed;
@@ -104,7 +110,13 @@ body{
   height: 69px;
   width: 69px;
   border-radius: 50%;
+  z-index: 10;
   background-color: #006174;
+}
+
+.fab{
+  position: absolute;
+  z-index: 10;
 }
 
 .dropdown_content {
@@ -125,7 +137,7 @@ body{
 }
 
 .menu_content {
-    left: 17px;
+    left: 0px;
     text-align: center;
     display: none;
     position: absolute;
@@ -140,6 +152,7 @@ body{
 }
 
 .menu_Button{
+  text-decoration: none;
   cursor: pointer;
   display: inline-block;
   text-align: center;
@@ -209,13 +222,6 @@ body{
 .bg-none{
     background-color: transparent;
 }
-
-#divBusca{
-    background-color:#fff;
-    border:solid 1px;
-    border-radius:15px;
-    width:300px;
-  }
   
 #txtBusca{
   float:left;
@@ -225,11 +231,6 @@ body{
   border:none;
   height:32px;
   width:260px;
-}
-
-.navBody{
-  width: 100%;
-  display: inline;
 }
 .menu{
   cursor: pointer;
@@ -252,17 +253,40 @@ h3{
   float: left;
   width: 5%;
 }
-#divBusca{
+.imgBusca{
+  z-index: 2;
+  text-align: right;
+  margin-top: 5px;
+  position: absolute;
+}
+.txtBuscar{
+  margin-top: 5px;
+  width: 160px;
+  height: 20px;
+  text-align: left;
+  background-color: transparent;
+}
+.divBusca{
+  display: inline;
   margin-top: 1em;
-  height: 2em;
+  height: 30px;
+  padding-left: 10px;
   float: left;
-  width: 23%;
+  background-color:#fff;
+  border:solid 1px;
+  border-radius:15px;
+  min-width: 185px;
+  max-width: 185px;
 }
 .user{
-  padding: 10px;
+  padding: 0px;
   margin: 0.4em 1em 0 0;
   float: right;
   width: 50px;
+}
+.img_user{
+  padding: 0px;
+  width: 30px;
 }
 #btnBusca{
   border:none;
@@ -287,6 +311,7 @@ h3{
 }
 
 .verTodos{
+  text-decoration: none;
   cursor: pointer;
   float: right;
   margin-right: 15px;

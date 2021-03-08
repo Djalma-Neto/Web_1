@@ -106,7 +106,7 @@ function getAllCliente(){
     $dataBase = connect();
     try {
         $clientes = $dataBase->prepare("SELECT c.ID, c.NOME, c.CPF, c.CNPJ, c.EMAIL, c.ENDERECO, e.OBSERVACAO,
-        e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO FROM cliente c, endereco e WHERE c.endereco = e.id");
+        e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO FROM cliente c, endereco e WHERE e.id = c.endereco");
         $clientes->execute();
         $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["clientes"] = $clientes;
@@ -129,12 +129,12 @@ function update_cliente(){
     $endereco = $_POST['endereco'];
 
     $dataBase = connect();
-    $query = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', cnpj = '$cnpj', email = '$email' WHERE id='$id'";
+    $query = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', cnpj = '$cnpj', email = '$email' WHERE id = '$id'";
     $update = $dataBase->prepare($query);
     $update->execute();
 
     $query = "UPDATE endereco SET cidade = '$cidade', rua = '$rua', bairro = '$bairro', numero = '$numero',
-    observacao = '$observacao' WHERE id='$endereco'";
+    observacao = '$observacao' WHERE id = '$endereco'";
     $update = $dataBase->prepare($query);
     $update->execute();
 

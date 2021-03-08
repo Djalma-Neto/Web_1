@@ -25,35 +25,35 @@ if(!$_SESSION['user']){
         </div>
         <div class="colunm-2">
             <div class="menu_options">
-                <button class="menu_Button" onclick="funcionario_add()">
+                <a href="http://localhost/Web_1/view/usuario/new_user.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
-                </button>
+                </a>
 
-                <button class="menu_Button" onclick="cliente_add()">
+                <a href="http://localhost/Web_1/view/cliente/new_cliente.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar cliente">
                     <div style="padding-botton: 5px;">CLIENTE</div>
-                </button>
+                </a>
 
-                <button class="menu_Button" onclick="orcamento_add()">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                <a href="http://localhost/Web_1/view/usuario/new_user.php" class="menu_Button">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar orçamentos">
                     <div style="padding-botton: 5px;">ORÇAMENTO</div>
-                </button>
+                </a>
 
-                <button class="menu_Button" onclick="material_add()">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                <a href="http://localhost/Web_1/view/materiais/new_material.php" class="menu_Button">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar material">
                     <div style="padding-botton: 5px;">MATERIAL</div>
-                </button>
+                </a>
 
-                <button class="menu_Button" onclick="linha_add()">
+                <a href="http://localhost/Web_1/view/linha/new_linha.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">LINHA</div>
-                </button>
+                </a>
 
-                <button class="menu_Button" onclick="modelo_add()">
+                <a href="http://localhost/Web_1/view/modelo/new_modelo.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>
-                </button>
+                </a>
             </div>
         </div>
     </div>
@@ -67,15 +67,15 @@ if(!$_SESSION['user']){
             <h3>
                 ESQUADRITEC
             </h3>
-            <div id="divBusca">
-                <input type="text" id="txtBusca" placeholder="Buscar..." />
-                <img src="../css/img/search.svg" id="btnBusca" alt="Buscar" />
+            <div class="divBusca">
+                <input type="text" class="txtBuscar" placeholder="Buscar..." />
+                <img src="../css/img/search.svg" class="imgBusca" alt="Buscar" />
             </div>
             <div class="user">
                 <div class="c-c">
-                    <img src="../css/img/account.svg" alt="">
+                    <img src="../css/img/account.svg" class="img_user" alt="Usuário logado">
                     <?php
-                        echo "<div>".$_SESSION['user']->NOME."</div>";
+                        echo "<div>".strtoupper($_SESSION['user']->NOME[0])."</div>";
                     ?>
                 </div>
             </div>
@@ -86,37 +86,41 @@ if(!$_SESSION['user']){
             <div class="card">
                 <h4 class="cardTitle">ORÇAMENTOS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="ORÇAMENTOS cadastrados"> </h1>
-                <button class="verTodos">VER TODOS</button>
+                <a href="" class="verTodos">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['clientes']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="CLIENTES cadastrados"> </h1>
-                <button class="verTodos" onclick="GetAllCliente()">VER TODOS</button>
+                <a href="http://localhost/Web_1/models/cliente/getAllCliente.php"
+                class="verTodos" onclick="GetAllCliente()">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MATERIAIS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="materiais cadastrados"> </h1>
-                <button class="verTodos" onclick="GetAllMaterial()">VER TODOS</button>
+                <a href="http://localhost/Web_1/models/material/getAllMaterial.php"
+                class="verTodos" onclick="GetAllMaterial()">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MODELOS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['modelos']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
-                <button class="verTodos" onclick="GetAllModelos()">VER TODOS</button>
+                <a href="http://localhost/Web_1/models/modelo/getAllModelo.php"
+                class="verTodos" onclick="GetAllModelos()">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">LINHAS CADASTRADAS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['linhas']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
-                <button class="verTodos" onclick="GetAllLinha()">VER TODOS</button>
+                <a href="http://localhost/Web_1/models/linha/getAllLinha.php"
+                class="verTodos" onclick="GetAllLinha()">VER TODOS</a>
             </div>
         </div>
     </div>
 
-    <div class="Fab">
+    <div class="fab">
         <span class="btn_dropdown">+</span>
     </div>
 
     <div class="graph">
-    <div class="users">USUÁRIOS</div>
+        <div class="users">USUÁRIOS</div>
         <?php
             foreach($_SESSION["usuarios"] as $user){
                 echo 
@@ -150,7 +154,7 @@ if(!$_SESSION['user']){
         window.addEventListener('click', function(e){   
             if (document.getElementById('menu_content').contains(e.target)){
                 // Clicked in box
-            } else{
+            }else{
                 if (document.getElementById('menu_navbar').contains(e.target)){
                     // Clicked in box
                 } else {
@@ -162,45 +166,6 @@ if(!$_SESSION['user']){
         function openMenu() {
             var elemento = document.getElementById("menu_content");
             elemento.style.display = "block";
-        }
-
-        function funcionario_add(){
-            window.location.href = "http://localhost/Web_1/view/usuario/new_user.php"
-        }
-        function orcamento_add(){
-            window.location.href = "http://localhost/Web_1/view/orcamento/new_orcamento.php"
-        }
-
-        function cliente_add(){
-            window.location.href = "http://localhost/Web_1/view/cliente/new_cliente.php"
-        }
-
-        function material_add(){
-            window.location.href = "http://localhost/Web_1/view/materiais/new_material.php"
-        }
-
-        function linha_add(){
-            window.location.href = "http://localhost/Web_1/view/linha/new_linha.php"
-        }
-
-        function modelo_add(){
-            window.location.href = "http://localhost/Web_1/view/modelo/new_modelo.php"
-        }
-
-        function GetAllCliente(){
-            window.location.href = "http://localhost/Web_1/models/cliente/getAllCliente.php"
-        }
-
-        function GetAllMaterial(){
-            window.location.href = "http://localhost/Web_1/models/material/getAllMaterial.php"
-        }
-
-        function GetAllModelos(){
-            window.location.href = "http://localhost/Web_1/models/modelo/getAllModelo.php"
-        }
-
-        function GetAllLinha(){
-            window.location.href = "http://localhost/Web_1/models/linha/getAllLinha.php"
         }
     </script>
 </body>
