@@ -35,7 +35,7 @@ function login() {
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
-            if (validatePassword($usuarios[0]->DATA, $password, $usuarios[0]->SENHA)){
+            if (validatePassword($password, $usuarios[0]->SENHA)){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();
                 header("Location: ../view/home.php");
@@ -52,10 +52,8 @@ function login() {
     }
 }
 
-function validatePassword($date, $password, $password_hash) {
-    $value = $date.''.$password;
-    $value_2 = base64_decode($password_hash);
-    if ($value == $value_2){
+function validatePassword($password, $password_hash) {
+    if ($password == base64_decode($password_hash)){
         return true;
     }else{
         return false;

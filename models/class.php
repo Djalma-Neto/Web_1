@@ -1,28 +1,4 @@
 <?php
-class User{
-    public $nome = '';
-    private $email = '';
-    private $admin = 0;
-
-    function __construct($nome, $email, $admin){
-        $this->nome = $nome;
-        $this->email = $email;
-        $this->admin = $admin;
-    }
-
-    public function getName() {
-        echo $nome;
-    }
-
-    public function getEmail() {
-        echo $email;
-    }
-
-    public function getPrivilege() {
-        echo $admin;
-    }
-}
-
 class NewUser{
     private $nome = '';
     private $email = '';
@@ -35,7 +11,7 @@ class NewUser{
         $this->email = $user['email'];
         $this->admin = $user['admin']?$user['admin']:0;
         $this->date = date("Y-m-dH:i");
-        $this->password = base64_encode($this->date.''.$user['password']);
+        $this->password = base64_encode($user['password']);
     }
 
     public function register($dataBase) {
