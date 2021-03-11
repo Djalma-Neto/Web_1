@@ -100,12 +100,22 @@ function new_cliente() {
     getAllCliente();
 }
 
+function getAllLinha() {
+    $dataBase = connect();
+    try {
+        $linhas = $dataBase->prepare("SELECT * FROM linha");
+        $linhas->execute();
+        $linhas = $linhas->fetchAll(PDO::FETCH_CLASS);
+        $_SESSION["linhas"] = $linhas;
+    } catch (PDOException $e) {
+        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
+    }
+}
+
 function getAllCliente(){
     $dataBase = connect();
     try {
-        $clientes = $dataBase->prepare("SELECT c.ID, c.NOME, c.CPF, c.CNPJ, c.EMAIL,
-        c.ENDERECO, e.OBSERVACAO, e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO
-        FROM cliente c, endereco e WHERE e.id = c.endereco");
+        $clientes = $dataBase->prepare("SELECT * FROM esquadritec.cliente c, esquadritec.endereco e");
         $clientes->execute();
         $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["clientes"] = $clientes;
