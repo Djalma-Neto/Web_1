@@ -23,7 +23,7 @@ class NewUser{
             header("Location: https://esquadritec.herokuapp.com/view/home.php");
         }catch (PDOException $e) {
             $_SESSION["error"] = $e->getMessage();
-            header("Location: https://esquadritec.herokuapp.com/view/new_user.php");
+            header("Location: https://esquadritec.herokuapp.com/view/usuario/new_user.php");
         }
     }
 }
