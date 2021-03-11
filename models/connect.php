@@ -68,7 +68,7 @@ function new_user() {
 
     if ($_POST["senha"] !== $_POST["confirm"]){
         $_SESSION["error"] = "Senhas não batem";
-        header("Location: http://localhost/Web_1/models/view/new_user.php");
+        header("Location: https://esquadritec.herokuapp.com/view/new_user.php");
     }
     $user  = array(
         "nome" => $_POST["nome"],
@@ -140,7 +140,7 @@ function update_cliente(){
 
     getAllCliente();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 function del_cliente(){
@@ -151,7 +151,7 @@ function del_cliente(){
     $delete->execute();
     getAllCliente();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 // MATERIAL
@@ -190,7 +190,7 @@ function update_material(){
     $update->execute();
     getAllMaterial();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 function del_material(){
@@ -201,7 +201,7 @@ function del_material(){
     $delete->execute();
     getAllMaterial();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 // LINHA
@@ -236,7 +236,7 @@ function update_linha(){
     $update->execute();
     getAllLinha();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 function del_linha(){
@@ -247,7 +247,7 @@ function del_linha(){
     $delete->execute();
     getAllLinha();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 // MODELO
@@ -282,7 +282,7 @@ function update_modelo(){
     $update->execute();
     getAllModelo();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 
 function del_modelo(){
@@ -293,6 +293,6 @@ function del_modelo(){
     $delete->execute();
     getAllModelo();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: http://localhost/Web_1/view/home.php");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
 }
 ?>
