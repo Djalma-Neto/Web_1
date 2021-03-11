@@ -32,15 +32,15 @@ if(!$_SESSION['user']){
                     for($x=0; $x < count($linhas); $x++){
                         echo
                         "<tr>
-                            <th class='nome'>".$linhas[$x]->LINHA."</th>
+                            <th class='nome'>".$linhas[$x]->linha."</th>
                             <th class='acao'>
                                 <form class='list-component' action='./update_linha.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$linhas[$x]->ID.">
-                                    <input type='hidden' name='linha' value=".$linhas[$x]->LINHA.">
+                                    <input type='hidden' name='id' value=".$linhas[$x]->id.">
+                                    <input type='hidden' name='linha' value=".$linhas[$x]->linha.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
                                 <form class='list-component' action='../../models/linha/del_linha.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$linhas[$x]->ID.">
+                                    <input type='hidden' name='id' value=".$linhas[$x]->id.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
                             </th>

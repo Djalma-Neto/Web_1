@@ -39,34 +39,34 @@ if(!$_SESSION['user']){
                     for($x=0; $x < count($clientes); $x++){
                         echo
                         "<tr>
-                            <th class='nome'>".$clientes[$x]->NOME."</th>
-                            <th class='cpf'>".$clientes[$x]->CPF."</th>
-                            <th class='cnpj'>".$clientes[$x]->CNPJ."</th>
-                            <th class='email'>".$clientes[$x]->EMAIL."</th>
+                            <th class='nome'>".$clientes[$x]->nome."</th>
+                            <th class='cpf'>".$clientes[$x]->cpf."</th>
+                            <th class='cnpj'>".$clientes[$x]->cnpj."</th>
+                            <th class='email'>".$clientes[$x]->email."</th>
 
-                            <th class='cidade'>".$clientes[$x]->CIDADE."</th>
-                            <th class='rua'>".$clientes[$x]->RUA."</th>
-                            <th class='bairro'>".$clientes[$x]->BAIRRO."</th>
-                            <th class='observacao'>".$clientes[$x]->OBSERVACAO."</th>
+                            <th class='cidade'>".$clientes[$x]->cidade."</th>
+                            <th class='rua'>".$clientes[$x]->rua."</th>
+                            <th class='bairro'>".$clientes[$x]->bairro."</th>
+                            <th class='observacao'>".$clientes[$x]->observacao."</th>
 
                             <th class='acao'>
                                 <form class='list-component' action='./update_cliente.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$clientes[$x]->ID.">
-                                    <input type='hidden' name='nome' value=".$clientes[$x]->NOME.">
-                                    <input type='hidden' name='endereco' value=".$clientes[$x]->ENDERECO.">
-                                    <input type='hidden' name='cpf' value=".$clientes[$x]->CPF.">
-                                    <input type='hidden' name='cnpj' value=".$clientes[$x]->CNPJ.">
-                                    <input type='hidden' name='email' value=".$clientes[$x]->EMAIL.">
+                                    <input type='hidden' name='id' value=".$clientes[$x]->id.">
+                                    <input type='hidden' name='nome' value=".$clientes[$x]->nome.">
+                                    <input type='hidden' name='endereco' value=".$clientes[$x]->endereco.">
+                                    <input type='hidden' name='cpf' value=".$clientes[$x]->cpf.">
+                                    <input type='hidden' name='cnpj' value=".$clientes[$x]->cnpj.">
+                                    <input type='hidden' name='email' value=".$clientes[$x]->email.">
 
-                                    <input type='hidden' name='cidade' value=".$clientes[$x]->CIDADE.">
-                                    <input type='hidden' name='rua' value=".$clientes[$x]->RUA.">
-                                    <input type='hidden' name='bairro' value=".$clientes[$x]->BAIRRO.">
-                                    <input type='hidden' name='numero' value=".$clientes[$x]->NUMERO.">
-                                    <input type='hidden' name='observacao' value=".$clientes[$x]->OBSERVACAO.">
+                                    <input type='hidden' name='cidade' value=".$clientes[$x]->cidade.">
+                                    <input type='hidden' name='rua' value=".$clientes[$x]->rua.">
+                                    <input type='hidden' name='bairro' value=".$clientes[$x]->bairro.">
+                                    <input type='hidden' name='numero' value=".$clientes[$x]->numero.">
+                                    <input type='hidden' name='observacao' value=".$clientes[$x]->observacao.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
                                 <form class='list-component' action='../../models/cliente/del_cliente.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$clientes[$x]->ID.">
+                                    <input type='hidden' name='id' value=".$clientes[$x]->id.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
                             </th>

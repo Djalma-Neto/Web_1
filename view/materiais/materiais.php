@@ -33,17 +33,17 @@ if(!$_SESSION['user']){
                     for($x=0; $x < count($materiais); $x++){
                         echo
                         "<tr>
-                            <th class='nome'>".$materiais[$x]->NOME."</th>
-                            <th class='valor'>R$ ".$materiais[$x]->VALOR."</th>
+                            <th class='nome'>".$materiais[$x]->nome."</th>
+                            <th class='valor'>R$ ".$materiais[$x]->valor."</th>
                             <th class='acao'>
                                 <form class='list-component' action='./update_material.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$materiais[$x]->ID.">
-                                    <input type='hidden' name='nome' value=".$materiais[$x]->NOME.">
-                                    <input type='hidden' name='valor' value=".$materiais[$x]->VALOR.">
+                                    <input type='hidden' name='id' value=".$materiais[$x]->id.">
+                                    <input type='hidden' name='nome' value=".$materiais[$x]->nome.">
+                                    <input type='hidden' name='valor' value=".$materiais[$x]->valor.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
                                 <form class='list-component' action='../../models/material/del_material.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$materiais[$x]->ID.">
+                                    <input type='hidden' name='id' value=".$materiais[$x]->id.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
                             </th>
