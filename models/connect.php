@@ -16,7 +16,7 @@ function connect() {
 function getAllUser() {
     $dataBase = connect();
     try {
-        $usuarios = $dataBase->prepare("SELECT * FROM usuario");
+        $usuarios = $dataBase->prepare("SELECT * FROM esquadritec.usuario");
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["usuarios"] = $usuarios;
@@ -31,7 +31,7 @@ function login() {
 
     $dataBase = connect();
     try {
-        $usuarios = $dataBase->prepare("SELECT * FROM usuario u WHERE u.email = '$user'");
+        $usuarios = $dataBase->prepare("SELECT * FROM esquadritec.usuario u WHERE u.email = '$user'");
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
@@ -169,7 +169,7 @@ function new_material(){
 function getAllMaterial() {
     $dataBase = connect();
     try {
-        $materiais = $dataBase->prepare("SELECT * FROM materiais");
+        $materiais = $dataBase->prepare("SELECT * FROM esquadritec.materiais");
         $materiais->execute();
         $materiais = $materiais->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["materiais"] = $materiais;
@@ -262,7 +262,7 @@ function new_modelo(){
 function getAllModelo() {
     $dataBase = connect();
     try {
-        $modelos = $dataBase->prepare("SELECT * FROM modelo");
+        $modelos = $dataBase->prepare("SELECT * FROM esquadritec.modelo");
         $modelos->execute();
         $modelos = $modelos->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["modelos"] = $modelos;
