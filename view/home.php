@@ -45,11 +45,11 @@ if(!$_SESSION['user']){
                     <div style="padding-botton: 5px;">MATERIAL</div>
                 </a>
 
-                <a href="https://esquadritec.herokuapp.com/view/view/linha/new_linha.php" class="menu_Button">
+                <a href="https://esquadritec.herokuapp.com/view/linha/new_linha.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">LINHA</div>
                 </a>
-                <a href="https://esquadritec.herokuapp.com/view/view/modelo/new_modelo.php" class="menu_Button">
+                <a href="https://esquadritec.herokuapp.com/view/modelo/new_modelo.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>
                 </a>
