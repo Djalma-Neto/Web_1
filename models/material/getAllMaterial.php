@@ -4,7 +4,7 @@ try {
     getAllMaterial();
     header("Location: ../../view/materiais/materiais.php");
 } catch (PDOException $e){
-    header("Location: ../../view");
+    header("Location: https://esquadritec.herokuapp.com/view/home.php");
     die();
 }
 ?>

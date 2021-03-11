@@ -129,11 +129,11 @@ function update_cliente(){
     $endereco = $_POST['endereco'];
 
     $dataBase = connect();
-    $query = "UPDATE cliente SET nome = '$nome', cpf = '$cpf', cnpj = '$cnpj', email = '$email' WHERE id = '$id'";
+    $query = "UPDATE esquadritec.cliente SET nome = '$nome', cpf = '$cpf', cnpj = '$cnpj', email = '$email' WHERE id = '$id'";
     $update = $dataBase->prepare($query);
     $update->execute();
 
-    $query = "UPDATE endereco SET cidade = '$cidade', rua = '$rua', bairro = '$bairro', numero = '$numero',
+    $query = "UPDATE esquadritec.endereco SET cidade = '$cidade', rua = '$rua', bairro = '$bairro', numero = '$numero',
     observacao = '$observacao' WHERE id = '$endereco'";
     $update = $dataBase->prepare($query);
     $update->execute();
@@ -146,7 +146,7 @@ function update_cliente(){
 function del_cliente(){
     $id = $_POST["id"];
     $dataBase = connect();
-    $query = "DELETE FROM cliente where id = '$id'";
+    $query = "DELETE FROM esquadritec.cliente where id = '$id'";
     $delete = $dataBase->prepare($query);
     $delete->execute();
     getAllCliente();
@@ -185,7 +185,7 @@ function update_material(){
     $valor = $_POST["valor"];
 
     $dataBase = connect();
-    $query = "UPDATE materiais SET nome='$nome', valor='$valor' WHERE id='$id'";
+    $query = "UPDATE esquadritec.materiais SET nome='$nome', valor='$valor' WHERE id='$id'";
     $update = $dataBase->prepare($query);
     $update->execute();
     getAllMaterial();
@@ -196,7 +196,7 @@ function update_material(){
 function del_material(){
     $id = $_POST["id"];
     $dataBase = connect();
-    $query = "DELETE FROM materiais where id = '$id'";
+    $query = "DELETE FROM esquadritec.materiais where id = '$id'";
     $delete = $dataBase->prepare($query);
     $delete->execute();
     getAllMaterial();
@@ -231,7 +231,7 @@ function update_linha(){
     $linha = $_POST["linha"];
 
     $dataBase = connect();
-    $query = "UPDATE linha SET linha='$linha' WHERE id='$id'";
+    $query = "UPDATE esquadritec.linha SET linha='$linha' WHERE id='$id'";
     $update = $dataBase->prepare($query);
     $update->execute();
     getAllLinha();
@@ -242,7 +242,7 @@ function update_linha(){
 function del_linha(){
     $id = $_POST["id"];
     $dataBase = connect();
-    $query = "DELETE FROM linha where id = '$id'";
+    $query = "DELETE FROM esquadritec.linha where id = '$id'";
     $delete = $dataBase->prepare($query);
     $delete->execute();
     getAllLinha();
@@ -277,7 +277,7 @@ function update_modelo(){
     $modelo = $_POST["modelo"];
 
     $dataBase = connect();
-    $query = "UPDATE modelo SET modelo='$modelo' WHERE id='$id'";
+    $query = "UPDATE esquadritec.modelo SET modelo='$modelo' WHERE id='$id'";
     $update = $dataBase->prepare($query);
     $update->execute();
     getAllModelo();
@@ -288,7 +288,7 @@ function update_modelo(){
 function del_modelo(){
     $id = $_POST["id"];
     $dataBase = connect();
-    $query = "DELETE FROM modelo where id = '$id'";
+    $query = "DELETE FROM esquadritec.modelo where id = '$id'";
     $delete = $dataBase->prepare($query);
     $delete->execute();
     getAllModelo();
