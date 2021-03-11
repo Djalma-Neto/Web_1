@@ -35,7 +35,8 @@ function login() {
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
-            if ($password == $usuarios[0]->SENHA){
+            var_dump($usuarios);
+            if (validatePassword($usuarios[0]->data, $password, $usuarios[0]->senha)){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();
                 header("Location: ../view/home.php");
