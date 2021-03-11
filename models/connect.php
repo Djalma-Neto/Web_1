@@ -100,18 +100,6 @@ function new_cliente() {
     getAllCliente();
 }
 
-function getAllLinha() {
-    $dataBase = connect();
-    try {
-        $linhas = $dataBase->prepare("SELECT * FROM linha");
-        $linhas->execute();
-        $linhas = $linhas->fetchAll(PDO::FETCH_CLASS);
-        $_SESSION["linhas"] = $linhas;
-    } catch (PDOException $e) {
-        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
-    }
-}
-
 function getAllCliente(){
     $dataBase = connect();
     try {
