@@ -43,10 +43,10 @@ class NewUser{
             $query = "INSERT INTO esquadritec.usuario(nome, senha, email, data, admin) values('$this->nome', '$this->password', '$this->email', '$this->date', '$this->admin')";
             $register = $dataBase->prepare($query);
             $register->execute();
-            header("Location: http://localhost/Web_1/view/home.php");
+            header("Location: https://esquadritec.herokuapp.com/view/home.php");
         }catch (PDOException $e) {
             $_SESSION["error"] = $e->getMessage();
-            header("Location: http://localhost/Web_1/view/new_user.php");
+            header("Location: https://esquadritec.herokuapp.com/view/new_user.php");
         }
     }
 }
@@ -92,10 +92,10 @@ class NewCliente{
             $register->execute();
 
             $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: http://localhost/Web_1/view/home.php");
+            header("Location: https://esquadritec.herokuapp.com/view/home.php");
         }catch (PDOException $e) {
             $_SESSION['error'] = $e->getMessage();
-            header("Location: ../view/cliente/new_cliente.php");
+            header("Location: https://esquadritec.herokuapp.com/view/cliente/new_cliente.php");
         }
     }
 }
@@ -116,10 +116,10 @@ class newMaterial{
             $register->execute();
 
             $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: http://localhost/Web_1/view/home.php");
+            header("Location: https://esquadritec.herokuapp.com/view/home.php");
         }catch (PDOException $e) {
             $_SESSION['error'] = $e->getMessage();
-            header("Location: http://localhost/Web_1/view/materiais/new_material.php");
+            header("Location: https://esquadritec.herokuapp.com/view/materiais/new_material.php");
         }
     }
 }
@@ -138,10 +138,10 @@ class newLinha{
             $register->execute();
 
             $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: http://localhost/Web_1/view/home.php");
+            header("Location: https://esquadritec.herokuapp.com/view/home.php");
         }catch (PDOException $e) {
             $_SESSION['error'] = $e->getMessage();
-            header("Location: http://localhost/Web_1/view/linha/new_linha.php");
+            header("Location: https://esquadritec.herokuapp.com/view/linha/new_linha.php");
         }
     }
 }
@@ -160,10 +160,10 @@ class newModelo{
             $register->execute();
 
             $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: http://localhost/Web_1/view/home.php");
+            header("Location: https://esquadritec.herokuapp.com/view/home.php");
         }catch (PDOException $e) {
             $_SESSION['error'] = $e->getMessage();
-            header("Location: http://localhost/Web_1/view/modelo/new_modelo.php");
+            header("Location: https://esquadritec.herokuapp.com/view/modelo/new_modelo.php");
         }
     }
 }
