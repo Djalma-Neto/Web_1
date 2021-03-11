@@ -32,7 +32,7 @@ if(!$_SESSION['user']){
                     for($x=0; $x < count($modelos); $x++){
                         echo
                         "<tr>
-                            <th class='nome'>".$modelos[$x]->MODELO."</th>
+                            <th class='nome'>".$modelos[$x]->modelo."</th>
                             <th class='acao'>
                                 <form class='list-component' action='./update_modelo.php' method='POST'>
                                     <input type='hidden' name='id' value=".$modelos[$x]->id.">

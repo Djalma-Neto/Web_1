@@ -62,7 +62,7 @@ class NewCliente{
             $get = $dataBase->prepare($query);
             $get->execute();
             $get = $get->fetchAll(PDO::FETCH_CLASS);
-            $get = $get[0]->ID;
+            $get = $get[0]->id;
 
             $query = "INSERT INTO esquadritec.cliente(nome, cpf, cnpj, email, endereco) values('$this->nome', '$this->cpf', '$this->cnpj', '$this->email', '$get')";
             $register = $dataBase->prepare($query);
