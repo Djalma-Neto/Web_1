@@ -40,7 +40,7 @@ class NewUser{
 
     public function register($dataBase) {
         try{
-            $query = "INSERT INTO usuario(nome, senha, email, data, admin) values('$this->nome', '$this->password', '$this->email', '$this->date', '$this->admin')";
+            $query = "INSERT INTO esquadritec.usuario(nome, senha, email, data, admin) values('$this->nome', '$this->password', '$this->email', '$this->date', '$this->admin')";
             $register = $dataBase->prepare($query);
             $register->execute();
             header("Location: http://localhost/Web_1/view/home.php");
@@ -77,17 +77,17 @@ class NewCliente{
 
     public function register($dataBase) {
         try{
-            $query = "INSERT INTO endereco(cidade, rua, bairro, numero, observacao) values('$this->cidade', '$this->rua', '$this->bairro', '$this->numero', '$this->observacao')";
+            $query = "INSERT INTO esquadritec.endereco(cidade, rua, bairro, numero, observacao) values('$this->cidade', '$this->rua', '$this->bairro', '$this->numero', '$this->observacao')";
             $register = $dataBase->prepare($query);
             $register->execute();
 
-            $query = "SELECT * FROM endereco e WHERE e.cidade = '$this->cidade' and e.rua = '$this->rua' and e.numero = '$this->numero'";
+            $query = "SELECT * FROM esquadritec.endereco e WHERE e.cidade = '$this->cidade' and e.rua = '$this->rua' and e.numero = '$this->numero'";
             $get = $dataBase->prepare($query);
             $get->execute();
             $get = $get->fetchAll(PDO::FETCH_CLASS);
             $get = $get[0]->ID;
 
-            $query = "INSERT INTO cliente(nome, cpf, cnpj, email, endereco) values('$this->nome', '$this->cpf', '$this->cnpj', '$this->email', '$get')";
+            $query = "INSERT INTO esquadritec.cliente(nome, cpf, cnpj, email, endereco) values('$this->nome', '$this->cpf', '$this->cnpj', '$this->email', '$get')";
             $register = $dataBase->prepare($query);
             $register->execute();
 
@@ -111,7 +111,7 @@ class newMaterial{
 
     public function register($dataBase) {
         try{
-            $query = "INSERT INTO materiais(nome, valor) values('$this->nome', '$this->valor')";
+            $query = "INSERT INTO esquadritec.materiais(nome, valor) values('$this->nome', '$this->valor')";
             $register = $dataBase->prepare($query);
             $register->execute();
 
@@ -133,7 +133,7 @@ class newLinha{
 
     public function register($dataBase) {
         try{
-            $query = "INSERT INTO linha(linha) values('$this->linha')";
+            $query = "INSERT INTO esquadritec.linha(linha) values('$this->linha')";
             $register = $dataBase->prepare($query);
             $register->execute();
 
@@ -155,7 +155,7 @@ class newModelo{
 
     public function register($dataBase) {
         try{
-            $query = "INSERT INTO modelo(modelo) values('$this->modelo')";
+            $query = "INSERT INTO esquadritec.modelo(modelo) values('$this->modelo')";
             $register = $dataBase->prepare($query);
             $register->execute();
 
