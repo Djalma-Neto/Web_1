@@ -4,10 +4,10 @@ session_start();
 
 function connect() {
     try {
-        $dsn = 'mysql:host=localhost;dbname=esquadritec';
-        $username = 'root';
-        $password = '';
-        $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec', $username, $password);
+        $dsn = 'mysql:host=ec2-54-164-22-242.compute-1.amazonaws.com;dbname=d9lqe4qcg7qfup';
+        $username = 'vxuphekmmgdsta';
+        $password = '1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73';
+        $dataBase = new PDO($dsn, $username, $password);
         return $dataBase;
     } catch (PDOException $e) {
         $_SESSION["error"] = "Error de conexão!: " . $e->getMessage();
