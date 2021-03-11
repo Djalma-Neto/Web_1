@@ -1,23 +1,25 @@
 # **DOCUMENTO PARA ACOMPANHAMENTO DE AJUSTES (DEMANDAS) DO SISTEMA ESQUADRITEC**
 
+### **Membros da equipe** 
+- Djalma Santana Malta Neto
+- Hiago Texeira Pais
+- Ismael Luduvico
+- Joedson Lopes Bomfin
+- Sâmela Camelo Brito
+
+
 - ### **DATA INICIAL - DATA FINAL** 
 
 - ### **[ ] PENDENTE** - **[X] CONCLUÍDO**
 
 ---
 
-> **DIA/MES/ANO** - **DIA/MES/ANO**
-
-- [x] **DEMANDA 1;**
-- [x] **DEMANDA 2;**
-- [x] **DEMANDA 3;**
-
----
-
-> **DIA/MES/ANO** -
-
-- [ ] **DEMANDA 1;**
-- [ ] **DEMANDA 2;**
-- [ ] **DEMANDA 3;**
+> **30/02/2021** -
+- [ ] **Desenvolver crud de usuário**
+- [ ] **Desenvolver crud de cliente**
+- [ ] **Desenvolver crud de material**
+- [ ] **Desenvolver crud de linha**
+- [ ] **Desenvolver crud de modelo**
+- [ ] **Desenvolver crud de orçamento**
 
 ---
