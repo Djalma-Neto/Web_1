@@ -31,7 +31,7 @@ function login() {
 
     $dataBase = connect();
     try {
-        $usuarios = $dataBase->prepare("SELECT * FROM usuario WHERE usuario.email = '$user'");
+        $usuarios = $dataBase->prepare("SELECT * FROM usuario u WHERE u.email = '$user'");
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
@@ -103,9 +103,9 @@ function new_cliente() {
 function getAllCliente(){
     $dataBase = connect();
     try {
-        $clientes = $dataBase->prepare("SELECT cliente.ID, cliente.NOME, cliente.CPF, cliente.CNPJ, cliente.EMAIL,
-        cliente.ENDERECO, endereco.OBSERVACAO, endereco.RUA, endereco.BAIRRO, endereco.CIDADE, endereco.NUMERO
-        FROM cliente, endereco WHERE endereco.id = cliente.endereco");
+        $clientes = $dataBase->prepare("SELECT c.ID, c.NOME, c.CPF, c.CNPJ, c.EMAIL,
+        c.ENDERECO, e.OBSERVACAO, e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO
+        FROM cliente c, endereco e WHERE e.id = c.endereco");
         $clientes->execute();
         $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["clientes"] = $clientes;
