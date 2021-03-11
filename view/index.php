@@ -7,7 +7,7 @@
     $_SESSION["modelos"] = '';
     $_SESSION['linhas'] = '';
     $_SESSION["clientes"] = '';
-    // getAllMaterial();
+    getAllMaterial();
     getAllModelo();
     getAllLinha();
     getAllCliente();
