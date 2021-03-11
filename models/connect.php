@@ -5,6 +5,7 @@ session_start();
 function connect() {
     try {
         $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
+        $dataBase->prepare("SET SCHEMA 'esquadritec'");
         return $dataBase;
     } catch (PDOException $e) {
         $_SESSION["error"] = "Error de conexão!: " . $e->getMessage();
@@ -30,7 +31,7 @@ function login() {
 
     $dataBase = connect();
     try {
-        $usuarios = $dataBase->prepare("SELECT * FROM usuario u WHERE u.email = '$user'");
+        $usuarios = $dataBase->prepare("SELECT * FROM usuario WHERE usuario.email = '$user'");
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
@@ -102,8 +103,9 @@ function new_cliente() {
 function getAllCliente(){
     $dataBase = connect();
     try {
-        $clientes = $dataBase->prepare("SELECT c.ID, c.NOME, c.CPF, c.CNPJ, c.EMAIL, c.ENDERECO, e.OBSERVACAO,
-        e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO FROM cliente c, endereco e WHERE e.id = c.endereco");
+        $clientes = $dataBase->prepare("SELECT cliente.ID, cliente.NOME, cliente.CPF, cliente.CNPJ, cliente.EMAIL,
+        cliente.ENDERECO, endereco.OBSERVACAO, endereco.RUA, endereco.BAIRRO, endereco.CIDADE, endereco.NUMERO
+        FROM cliente, endereco WHERE endereco.id = cliente.endereco");
         $clientes->execute();
         $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
         $_SESSION["clientes"] = $clientes;
