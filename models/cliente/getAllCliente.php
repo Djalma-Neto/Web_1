@@ -4,7 +4,7 @@ try {
     getAllCliente();
     header("Location: ../../view/cliente/clientes.php");
 } catch (PDOException $e){
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
     die();
 }
 ?>

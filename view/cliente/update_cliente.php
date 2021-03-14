@@ -37,18 +37,18 @@ if(!$_SESSION['user']){
                 <input class='input_1' type='hidden' name='id' value='$id'>
                 <input class='input_1' type='hidden' name='endereco' value='$endereco'>
 
-                NOME<input class='input_1' type='text' name='nome' placeholder='$nome' required>
-                CPF<input class='input_1' type='text' name='cpf' placeholder='$cpf' required>
-                CNPJ<input class='input_1' type='text' name='cnpj' placeholder='$cnpj'>
-                EMAIL<input class='input_1' type='text' name='email' placeholder='$email' required>
+                NOME<input class='input_1' type='text' name='nome' value='$nome' required>
+                CPF<input class='input_1' type='text' name='cpf' value='$cpf' required>
+                CNPJ<input class='input_1' type='text' name='cnpj' value='$cnpj'>
+                EMAIL<input class='input_1' type='text' name='email' value='$email' required>
 
                 <div class='division'>ENDEREÇO</div>
 
-                CIDADE<input class='input_1' type='text' name='cidade' placeholder='$cidade' required>
-                RUA<input class='input_1' type='text' name='rua' placeholder='$rua' required>
-                BAIRRO<input class='input_1' type='text' name='bairro' placeholder='$bairro' required>
-                NUMERO<input class='input_1' type='text' name='numero' placeholder='$numero' required>
-                OBSERVAÇÃO<input class='input_1' type='text' name='observacao' placeholder='$observacao'>";
+                CIDADE<input class='input_1' type='text' name='cidade' value='$cidade' required>
+                RUA<input class='input_1' type='text' name='rua' value='$rua' required>
+                BAIRRO<input class='input_1' type='text' name='bairro' value='$bairro' required>
+                NUMERO<input class='input_1' type='text' name='numero' value='$numero' required>
+                OBSERVAÇÃO<input class='input_1' type='text' name='observacao' value='$observacao'>";
             ?>
 
             <input type="submit" class="btn_confirm" value="CONFIRMAR">

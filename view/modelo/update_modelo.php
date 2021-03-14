@@ -25,7 +25,7 @@ if(!$_SESSION['user']){
                 $id = $_POST['id'];
                 echo "
                 <input class='input_1' type='hidden' name='id' value='$id'>
-                <input class='input_1' type='text' name='modelo' placeholder='$modelo' required>";
+                <input class='input_1' type='text' name='modelo' value='$modelo' required>";
             ?>
 
             <input type="submit" value="CONFIRMAR">

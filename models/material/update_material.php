@@ -3,7 +3,7 @@ try {
     include_once('../connect.php');
     update_material();
 } catch (PDOException $e){
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
     die();
 }
 ?>

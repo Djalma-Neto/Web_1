@@ -1,126 +1,126 @@
-DROP SCHEMA esquadritec;
-CREATE SCHEMA IF NOT EXISTS esquadritec;
+drop schema esquadritec;
+create schema if not exists esquadritec;
 
-USE esquadritec;
+use esquadritec;
 
-CREATE TABLE IF NOT EXISTS ENDERECO(
-    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    CIDADE varchar(30) NOT NULL,
-    RUA varchar(30) NOT NULL,
-    BAIRRO varchar(30) NOT NULL,
-    NUMERO varchar(30) NOT NULL,
-    OBSERVACAO varchar(30) NOT NULL    
+create table if not exists endereco(
+    id int primary key auto_increment not null,
+    cidade varchar(30) not null,
+    rua varchar(30) not null,
+    bairro varchar(30) not null,
+    numero varchar(30) not null,
+    observacao varchar(30) not null    
 );
 
-CREATE TABLE IF NOT EXISTS CLIENTE(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    NOME varchar(30) NOT NULL,
-    CPF varchar(30) NOT NULL,
-    CNPJ varchar(30) NOT NULL,
-    EMAIL varchar(30) NOT NULL,
-    ENDERECO INT,
-    FOREIGN KEY (ENDERECO) REFERENCES ENDERECO(ID) ON DELETE CASCADE
+create table if not exists cliente(
+    id int primary key auto_increment not null,
+    nome varchar(30) not null,
+    cpf varchar(30) not null,
+    cnpj varchar(30) not null,
+    email varchar(30) not null,
+    endereco int,
+    foreign key (endereco) references endereco(id) on delete cascade
 );
 
-CREATE TABLE IF NOT EXISTS TELEFONE(
-    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    TELEFONE varchar(30) NOT NULL,
-    CLIENTE INT NOT NULL,
-    FOREIGN KEY (CLIENTE) REFERENCES CLIENTE(ID) ON DELETE CASCADE
+create table if not exists telefone(
+    id int primary key auto_increment not null,
+    telefone varchar(30) not null,
+    cliente int not null,
+    foreign key (cliente) references cliente(id) on delete cascade
 );
 
-CREATE TABLE IF NOT EXISTS ORCAMENTO(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    OBSERVACAO varchar(100),
-    DESCONTO int,
-    STATUS varchar(30),
-    VALOR_T_B double NOT NULL,
-    VALOR_F double NOT NULL,
-    DATA date NOT NULL,
-    CLIENTE int NOT NULL,
-    FOREIGN KEY (CLIENTE) REFERENCES CLIENTE(ID) ON DELETE CASCADE
+create table if not exists orcamento(
+    id int primary key auto_increment not null,
+    observacao varchar(100),
+    desconto int,
+    status varchar(30),
+    valor_t_b double not null,
+    valor_f double not null,
+    data date not null,
+    cliente int not null,
+    foreign key (cliente) references cliente(id) on delete cascade
 );
 
-CREATE TABLE IF NOT EXISTS USUARIO(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    NOME varchar(30) NOT NULL,
-    SENHA varchar(30) NOT NULL,
-    EMAIL varchar(30) NOT NULL,
-    DATA varchar(30) NOT NULL,
-    ADMIN boolean NOT NULL 
+create table if not exists usuario(
+    id int primary key auto_increment not null,
+    nome varchar(30) not null,
+    senha varchar(200) not null,
+    email varchar(30) not null,
+    data varchar(30) not null,
+    admin boolean not null 
 );
 
-CREATE TABLE IF NOT EXISTS ATENDIMENTO(
-    ID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    USUARIO INT NOT NULL,
-    CLIENTE INT NOT NULL,
-    ORCAMENTO INT NOT NULL,
-    FOREIGN KEY (CLIENTE) REFERENCES CLIENTE(ID) ON DELETE CASCADE,
-    FOREIGN KEY (ORCAMENTO) REFERENCES ORCAMENTO(ID) ON DELETE CASCADE,
-    FOREIGN KEY (USUARIO) REFERENCES USUARIO(ID) ON DELETE CASCADE
+create table if not exists atendimento(
+    id int primary key auto_increment not null,
+    usuario int not null,
+    cliente int not null,
+    orcamento int not null,
+    foreign key (cliente) references cliente(id) on delete cascade,
+    foreign key (orcamento) references orcamento(id) on delete cascade,
+    foreign key (usuario) references usuario(id) on delete cascade
 );
 
-CREATE TABLE IF NOT EXISTS LINHA(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    LINHA varchar(30) NOT NULL
+create table if not exists linha(
+    id int primary key auto_increment not null,
+    linha varchar(30) not null
 );
 
-CREATE TABLE IF NOT EXISTS MODELO(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    MODELO varchar(30) NOT NULL
+create table if not exists modelo(
+    id int primary key auto_increment not null,
+    modelo varchar(30) not null
 
 );
 
-CREATE TABLE IF NOT EXISTS PRODUTO(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    NOME varchar(30) NOT NULL,
-    VALOR DOUBLE NOT NULL,
-    ORCAMENTO int NOT NULL,
-    MODELO int NOT NULL,
-    LINHA int NOT NULL,
-    FOREIGN KEY (ORCAMENTO) REFERENCES ORCAMENTO(ID) ON DELETE CASCADE,
-    FOREIGN KEY (MODELO) REFERENCES MODELO(ID) ON DELETE CASCADE,
-    FOREIGN KEY (LINHA) REFERENCES LINHA(ID) ON DELETE CASCADE
+create table if not exists produto(
+    id int primary key auto_increment not null,
+    nome varchar(30) not null,
+    valor double not null,
+    orcamento int not null,
+    modelo int not null,
+    linha int not null,
+    foreign key (orcamento) references orcamento(id) on delete cascade,
+    foreign key (modelo) references modelo(id) on delete cascade,
+    foreign key (linha) references linha(id) on delete cascade
 );
 
-CREATE TABLE IF NOT EXISTS MATERIAIS(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    NOME varchar(30) NOT NULL,
-    VALOR DOUBLE NOT NULL
+create table if not exists materiais(
+    id int primary key auto_increment not null,
+    nome varchar(30) not null,
+    valor double not null
 );
 
-CREATE TABLE IF NOT EXISTS UNIDADE_MEDIDA(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    NOME VARCHAR(20)
+create table if not exists unidade_medida(
+    id int primary key auto_increment not null,
+    nome varchar(20)
 );
 
-CREATE TABLE IF NOT EXISTS MATERIAL_PRODUTO(
-    ID int PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    VALOR DOUBLE NOT NULL,
-    QUANTIDADE DOUBLE NOT NULL,
-    UNIDADE_MEDIDA int NOT NULL,
-    PRODUTO int NOT NULL,
-    MATERIAIS int NOT NULL,
-    FOREIGN KEY (MATERIAIS) REFERENCES MATERIAIS(ID) ON DELETE CASCADE,
-    FOREIGN KEY (PRODUTO) REFERENCES PRODUTO(ID) ON DELETE CASCADE,
-    FOREIGN KEY (UNIDADE_MEDIDA) REFERENCES UNIDADE_MEDIDA(ID) ON DELETE CASCADE
+create table if not exists material_produto(
+    id int primary key auto_increment not null,
+    valor double not null,
+    quantidade double not null,
+    unidade_medida int not null,
+    produto int not null,
+    materiais int not null,
+    foreign key (materiais) references materiais(id) on delete cascade,
+    foreign key (produto) references produto(id) on delete cascade,
+    foreign key (unidade_medida) references unidade_medida(id) on delete cascade
 );
 
-INSERT INTO usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0wNSAxMTowN2FkbWlu', '2021-03-05 11:07', 1);
+insert into usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0xNDE3OjM3YWRtaW4=', '2021-03-05 11:07', 1);
 
-DELIMITER //
-CREATE TRIGGER VALOR AFTER INSERT ON MATERIAL_PRODUTO
-FOR EACH ROW BEGIN
-    UPDATE PRODUTO SET VALOR = PRODUTO.VALOR + (NEW.VALOR * NEW.QUANTIDADE) WHERE PRODUTO.ID = NEW.PRODUTO;
-END;
+delimiter //
+create trigger valor after insert on material_produto
+for each row begin
+    update produto set valor = produto.valor + (new.valor * new.quantidade) where produto.id = new.produto;
+end;
 //
 
-DELIMITER //
-CREATE TRIGGER VALOR_ORCAMENTO AFTER UPDATE ON PRODUTO
-FOR EACH ROW BEGIN
-	DECLARE VALOR INTEGER;
-    SELECT SUM(P.VALOR) INTO VALOR FROM PRODUTO P WHERE P.ORCAMENTO = NEW.ORCAMENTO;
-	UPDATE ORCAMENTO SET VALOR_T_B = VALOR WHERE ORCAMENTO.ID = NEW.ORCAMENTO;
-    UPDATE ORCAMENTO SET VALOR_F = (VALOR - (VALOR * (ORCAMENTO.DESCONTO / 100))) WHERE ORCAMENTO.ID = NEW.ORCAMENTO;
-END;
+delimiter //
+create trigger valor_orcamento after update on produto
+for each row begin
+	declare valor integer;
+    select sum(p.valor) into valor from produto p where p.orcamento = new.orcamento;
+	update orcamento set valor_t_b = valor where orcamento.id = new.orcamento;
+    update orcamento set valor_f = (valor - (valor * (orcamento.desconto / 100))) where orcamento.id = new.orcamento;
+end;
 //

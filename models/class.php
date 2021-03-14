@@ -16,15 +16,9 @@ class NewUser{
     }
 
     public function register($dataBase) {
-        try{
-            $query = "INSERT INTO esquadritec.usuario(nome, senha, email, data, admin) values('$this->nome', '$this->password', '$this->email', '$this->date', '$this->admin')";
-            $register = $dataBase->prepare($query);
-            $register->execute();
-            header("Location: https://esquadritec.herokuapp.com/view/home.php");
-        }catch (PDOException $e) {
-            $_SESSION["error"] = $e->getMessage();
-            header("Location: https://esquadritec.herokuapp.com/view/usuario/new_user.php");
-        }
+        $query = "INSERT INTO esquadritec.usuario(nome, senha, email, data, admin) values('$this->nome', '$this->password', '$this->email', '$this->date', '$this->admin')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
     }
 }
 
@@ -53,27 +47,19 @@ class NewCliente{
     }
 
     public function register($dataBase) {
-        try{
-            $query = "INSERT INTO esquadritec.endereco(cidade, rua, bairro, numero, observacao) values('$this->cidade', '$this->rua', '$this->bairro', '$this->numero', '$this->observacao')";
-            $register = $dataBase->prepare($query);
-            $register->execute();
+        $query = "INSERT INTO esquadritec.endereco(cidade, rua, bairro, numero, observacao) values('$this->cidade', '$this->rua', '$this->bairro', '$this->numero', '$this->observacao')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
 
-            $query = "SELECT * FROM esquadritec.endereco e WHERE e.cidade = '$this->cidade' and e.rua = '$this->rua' and e.numero = '$this->numero'";
-            $get = $dataBase->prepare($query);
-            $get->execute();
-            $get = $get->fetchAll(PDO::FETCH_CLASS);
-            $get = $get[0]->id;
+        $query = "SELECT * FROM esquadritec.endereco e WHERE e.cidade = '$this->cidade' and e.rua = '$this->rua' and e.numero = '$this->numero'";
+        $get = $dataBase->prepare($query);
+        $get->execute();
+        $get = $get->fetchAll(PDO::FETCH_CLASS);
+        $get = $get[0]->id;
 
-            $query = "INSERT INTO esquadritec.cliente(nome, cpf, cnpj, email, endereco) values('$this->nome', '$this->cpf', '$this->cnpj', '$this->email', '$get')";
-            $register = $dataBase->prepare($query);
-            $register->execute();
-
-            $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: https://esquadritec.herokuapp.com/view/home.php");
-        }catch (PDOException $e) {
-            $_SESSION['error'] = $e->getMessage();
-            header("Location: https://esquadritec.herokuapp.com/view/cliente/new_cliente.php");
-        }
+        $query = "INSERT INTO esquadritec.cliente(nome, cpf, cnpj, email, endereco) values('$this->nome', '$this->cpf', '$this->cnpj', '$this->email', '$get')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
     }
 }
 
@@ -87,17 +73,12 @@ class newMaterial{
     }
 
     public function register($dataBase) {
-        try{
-            $query = "INSERT INTO esquadritec.materiais(nome, valor) values('$this->nome', '$this->valor')";
-            $register = $dataBase->prepare($query);
-            $register->execute();
+        $query = "INSERT INTO esquadritec.materiais(nome, valor) values('$this->nome', '$this->valor')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
 
-            $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: https://esquadritec.herokuapp.com/view/home.php");
-        }catch (PDOException $e) {
-            $_SESSION['error'] = $e->getMessage();
-            header("Location: https://esquadritec.herokuapp.com/view/materiais/new_material.php");
-        }
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../view/home.php");
     }
 }
 
@@ -109,17 +90,12 @@ class newLinha{
     }
 
     public function register($dataBase) {
-        try{
-            $query = "INSERT INTO esquadritec.linha(linha) values('$this->linha')";
-            $register = $dataBase->prepare($query);
-            $register->execute();
+        $query = "INSERT INTO esquadritec.linha(linha) values('$this->linha')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
 
-            $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: https://esquadritec.herokuapp.com/view/home.php");
-        }catch (PDOException $e) {
-            $_SESSION['error'] = $e->getMessage();
-            header("Location: https://esquadritec.herokuapp.com/view/linha/new_linha.php");
-        }
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../view/home.php");
     }
 }
 
@@ -131,17 +107,12 @@ class newModelo{
     }
 
     public function register($dataBase) {
-        try{
-            $query = "INSERT INTO esquadritec.modelo(modelo) values('$this->modelo')";
-            $register = $dataBase->prepare($query);
-            $register->execute();
+        $query = "INSERT INTO esquadritec.modelo(modelo) values('$this->modelo')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
 
-            $_SESSION['sucess'] = 'Cadastrado!';
-            header("Location: https://esquadritec.herokuapp.com/view/home.php");
-        }catch (PDOException $e) {
-            $_SESSION['error'] = $e->getMessage();
-            header("Location: https://esquadritec.herokuapp.com/view/modelo/new_modelo.php");
-        }
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../view/home.php");
     }
 }
 ?>

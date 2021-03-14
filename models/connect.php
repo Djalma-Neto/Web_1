@@ -5,6 +5,7 @@ session_start();
 function connect() {
     try {
         $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
+        // $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
         $dataBase->prepare("SET SCHEMA 'esquadritec'");
         return $dataBase;
     } catch (PDOException $e) {
@@ -35,8 +36,9 @@ function login() {
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
-            var_dump($usuarios);
-            if (validatePassword($usuarios[0]->data, $password, $usuarios[0]->senha)){
+            $hash = base64_encode($usuarios[0]->data."".$password);
+            error_log($usuarios);
+            if ($hash == $usuarios[0]->senha){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();
                 header("Location: ../view/home.php");
@@ -53,22 +55,12 @@ function login() {
     }
 }
 
-function validatePassword($date, $password, $password_hash) {
-    $value = $date.''.$password;
-    $value_2 = base64_decode($password_hash);
-    if ($value == $value_2){
-        return true;
-    }else{
-        return false;
-    }
-}
-
 function new_user() {
     $dataBase = connect();
 
     if ($_POST["senha"] !== $_POST["confirm"]){
         $_SESSION["error"] = "Senhas não batem";
-        header("Location: https://esquadritec.herokuapp.com/view/new_user.php");
+        header("Location: ../view/new_user.php");
     }
     $user  = array(
         "nome" => $_POST["nome"],
@@ -76,36 +68,51 @@ function new_user() {
         "password" => $_POST["senha"],
         "admin" => $_POST["admin"]
     );
-    $user = new NewUser($user);
-    $user->register($dataBase);
+    try{
+        $user = new NewUser($user);
+        $user->register($dataBase);
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION["error"] = $e->getMessage();
+        header("Location: ../view/usuario/new_user.php");
+    }
+    
 }
 
 // CLIENTE
 
 function new_cliente() {
-    $dataBase = connect();
-    $cliente = array(
-        "nome" => $_POST["nome"],
-        "cpf" => $_POST["cpf"],
-        "cnpj" => $_POST["cnpj"],
-        "email" => $_POST["email"],
+    try {
+        $dataBase = connect();
+        $cliente = array(
+            "nome" => $_POST["nome"],
+            "cpf" => $_POST["cpf"],
+            "cnpj" => $_POST["cnpj"],
+            "email" => $_POST["email"],
 
-        "cidade" => $_POST["cidade"],
-        "rua" => $_POST["rua"],
-        "bairro" => $_POST["bairro"],
-        "numero" => $_POST["numero"],
-        "observacao" => $_POST["observacao"]
-    );
-    $cliente = new NewCliente($cliente);
-    $cliente->register($dataBase);
-    getAllCliente();
+            "cidade" => $_POST["cidade"],
+            "rua" => $_POST["rua"],
+            "bairro" => $_POST["bairro"],
+            "numero" => $_POST["numero"],
+            "observacao" => $_POST["observacao"]
+        );
+        $cliente = new NewCliente($cliente);
+        $cliente->register($dataBase);
+        getAllCliente();
+
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    } catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../view/cliente/new_cliente.php");
+    }
 }
 
 function getAllCliente(){
     $dataBase = connect();
     try {
-        $clientes = $dataBase->prepare("SELECT c.ID, c.NOME, c.CPF, c.CNPJ, c.EMAIL,
-        c.ENDERECO, e.OBSERVACAO, e.RUA, e.BAIRRO, e.CIDADE, e.NUMERO
+        $clientes = $dataBase->prepare("SELECT c.id, c.nome, c.cpf, c.cnpj, c.email,
+        c.endereco, e.observacao, e.rua, e.bairro, e.cidade, e.numero
         FROM esquadritec.cliente c, esquadritec.endereco e WHERE e.id = c.endereco");
         $clientes->execute();
         $clientes = $clientes->fetchAll(PDO::FETCH_CLASS);
@@ -140,7 +147,7 @@ function update_cliente(){
 
     getAllCliente();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 function del_cliente(){
@@ -151,20 +158,28 @@ function del_cliente(){
     $delete->execute();
     getAllCliente();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 // MATERIAL
 
 function new_material(){
-    $dataBase = connect();
-    $material = array(
-        "nome" => $_POST["nome"],
-        "valor" => $_POST["valor"]
-    );
-    $registro = new newMaterial($material);
-    $registro->register($dataBase);
-    getAllMaterial();
+    try{
+        $dataBase = connect();
+        $material = array(
+            "nome" => $_POST["nome"],
+            "valor" => $_POST["valor"]
+        );
+        $registro = new newMaterial($material);
+        $registro->register($dataBase);
+        getAllMaterial();
+
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../view/materiais/new_material.php");
+    }
 }
 
 function getAllMaterial() {
@@ -190,7 +205,7 @@ function update_material(){
     $update->execute();
     getAllMaterial();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 function del_material(){
@@ -201,17 +216,25 @@ function del_material(){
     $delete->execute();
     getAllMaterial();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 // LINHA
 
 function new_linha(){
-    $dataBase = connect();
-    $linha = $_POST["linha"];
-    $registro = new newLinha($linha);
-    $registro->register($dataBase);
-    getAllLinha();
+    try{
+        $dataBase = connect();
+        $linha = $_POST["linha"];
+        $registro = new newLinha($linha);
+        $registro->register($dataBase);
+        getAllLinha();
+
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../view/linha/new_linha.php");
+    }
 }
 
 function getAllLinha() {
@@ -236,7 +259,7 @@ function update_linha(){
     $update->execute();
     getAllLinha();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 function del_linha(){
@@ -247,17 +270,25 @@ function del_linha(){
     $delete->execute();
     getAllLinha();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 // MODELO
 
 function new_modelo(){
-    $dataBase = connect();
-    $modelo = $_POST["modelo"];
-    $registro = new newModelo($modelo);
-    $registro->register($dataBase);
-    getAllModelo();
+    try{
+        $dataBase = connect();
+        $modelo = $_POST["modelo"];
+        $registro = new newModelo($modelo);
+        $registro->register($dataBase);
+        getAllModelo();
+
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../view/modelo/new_modelo.php");
+    }
 }
 
 function getAllModelo() {
@@ -282,7 +313,7 @@ function update_modelo(){
     $update->execute();
     getAllModelo();
     $_SESSION['sucess'] = 'Atualizado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 
 function del_modelo(){
@@ -293,6 +324,6 @@ function del_modelo(){
     $delete->execute();
     getAllModelo();
     $_SESSION['sucess'] = 'Deletado!';
-    header("Location: https://esquadritec.herokuapp.com/view/home.php");
+    header("Location: ../../view/home.php");
 }
 ?>

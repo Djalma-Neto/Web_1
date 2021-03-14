@@ -25,31 +25,31 @@ if(!$_SESSION['user']){
         </div>
         <div class="colunm-2">
             <div class="menu_options">
-                <a href="https://esquadritec.herokuapp.com/view/usuario/new_user.php" class="menu_Button">
+                <a href="../view/usuario/new_user.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
                 </a>
 
-                <a href="https://esquadritec.herokuapp.com/view/cliente/new_cliente.php" class="menu_Button">
+                <a href="../view/cliente/new_cliente.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar cliente">
                     <div style="padding-botton: 5px;">CLIENTE</div>
                 </a>
 
-                <a href="https://esquadritec.herokuapp.com/view/usuario/new_user.php" class="menu_Button">
+                <a href="../view/usuario/new_user.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar orçamentos">
                     <div style="padding-botton: 5px;">ORÇAMENTO</div>
                 </a>
 
-                <a href="https://esquadritec.herokuapp.com/view/materiais/new_material.php" class="menu_Button">
+                <a href="../view/materiais/new_material.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar material">
                     <div style="padding-botton: 5px;">MATERIAL</div>
                 </a>
 
-                <a href="https://esquadritec.herokuapp.com/view/linha/new_linha.php" class="menu_Button">
+                <a href="../view/linha/new_linha.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">LINHA</div>
                 </a>
-                <a href="https://esquadritec.herokuapp.com/view/modelo/new_modelo.php" class="menu_Button">
+                <a href="../view/modelo/new_modelo.php" class="menu_Button">
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>
                 </a>
@@ -90,25 +90,25 @@ if(!$_SESSION['user']){
             <div class="card">
                 <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['clientes']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="CLIENTES cadastrados"> </h1>
-                <a href="https://esquadritec.herokuapp.com/models/cliente/getAllCliente.php"
+                <a href="../models/cliente/getAllCliente.php"
                 class="verTodos" onclick="GetAllCliente()">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MATERIAIS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="materiais cadastrados"> </h1>
-                <a href="https://esquadritec.herokuapp.com/models/material/getAllMaterial.php"
+                <a href="../models/material/getAllMaterial.php"
                 class="verTodos" onclick="GetAllMaterial()">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MODELOS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['modelos']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
-                <a href="https://esquadritec.herokuapp.com/models/modelo/getAllModelo.php"
+                <a href="../models/modelo/getAllModelo.php"
                 class="verTodos" onclick="GetAllModelos()">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">LINHAS CADASTRADAS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['linhas']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
-                <a href="https://esquadritec.herokuapp.com/models/linha/getAllLinha.php"
+                <a href="../models/linha/getAllLinha.php"
                 class="verTodos" onclick="GetAllLinha()">VER TODOS</a>
             </div>
         </div>
