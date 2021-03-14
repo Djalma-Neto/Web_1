@@ -37,7 +37,6 @@ function login() {
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
             $hash = base64_encode($usuarios[0]->data."".$password);
-            error_log($usuarios);
             if ($hash == $usuarios[0]->senha){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();

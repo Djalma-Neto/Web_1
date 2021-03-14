@@ -3,7 +3,7 @@ try {
     include_once('./connect.php');
     login();
 } catch (PDOException $e){
-    header("Location: ../view/login.php");
+    header("Location: ../view");
     die();
 }
 ?>
