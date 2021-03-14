@@ -36,8 +36,8 @@ function login() {
         $usuarios->execute();
         $usuarios = $usuarios->fetchAll(PDO::FETCH_CLASS);
         if(count($usuarios)) {
-            $hash = base64_encode($usuarios[0]->data."".$password);
-            if ($hash == $usuarios[0]->senha){
+            $hash = $usuarios[0]->data."".$password;
+            if ($hash == base64_decode($usuarios[0]->senha)){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();
                 header("Location: ../view/home.php");
