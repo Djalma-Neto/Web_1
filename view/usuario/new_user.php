@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(!$_SESSION['user']){
-    header("Location: ../../view/login.php");
-}
+// if(!$_SESSION['user']){
+//     header("Location: ../../view/login.php");
+// }
 ?>
 
 <!DOCTYPE html>
