@@ -136,7 +136,7 @@ class newOrcamento{
 
     public function register($dataBase) {
         date_default_timezone_set('America/Bahia');
-        $date = date("Y-m-dH:i");
+        $date = date("Y-m-d");
         $query = "INSERT INTO esquadritec.orcamento(observacao, cliente, desconto, data, status)
         values('$this->observacao', '$this->cliente', '$this->desconto', '$date', 'PENDENTE')";
 
