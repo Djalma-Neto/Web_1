@@ -1,6 +1,6 @@
 <?php
 include_once('../../models/connect.php');
-if(!$_SESSION['user']){
+if (!$_SESSION['user']) {
     header("Location: ../../view/login.php");
 }
 ?>
@@ -15,63 +15,147 @@ if(!$_SESSION['user']){
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../css/materiais.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../css/home.css">
 </head>
 
 <body>
-    <div class="cards">
-        <div class="card">
-            <ul>
-            <table>
-                <tr>
-                    <th class='nome'>NOME</th>
-                    <th class='acao'>AÇÕES</th>
-                </tr>
+    <div id="menu_content" class="menu_content">
+        <div class="icon_menu">
+            <h3 class="full-width">
+                ESQUADRITEC
+            </h3>
+        </div>
+        <div class="colunm-2">
+            <div class="menu_options">
+                <a href="../../view/usuario/new_user.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
+                </a>
 
-                <?php 
+                <a href="../../view/cliente/new_cliente.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar cliente">
+                    <div style="padding-botton: 5px;">CLIENTE</div>
+                </a>
+
+                <a href="../../view/usuario/new_user.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar orçamentos">
+                    <div style="padding-botton: 5px;">ORÇAMENTO</div>
+                </a>
+
+                <a href="../../view/materiais/new_material.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar material">
+                    <div style="padding-botton: 5px;">MATERIAL</div>
+                </a>
+
+                <a href="../../view/linha/new_linha.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">LINHA</div>
+                </a>
+                <a href="../../view/modelo/new_modelo.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">MODELO</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="navBody">
+            <button id="menu_navbar" class="menu" onclick="openMenu()">
+                <img style="width:50px;" src="../../css/img/menu.svg" alt="">
+            </button>
+
+            <h3>
+                ESQUADRITEC
+            </h3>
+            <div class="divBusca">
+                <input type="text" class="txtBuscar" placeholder="Buscar..." />
+                <img src="../../css/img/search.svg" class="imgBusca" alt="Buscar" />
+            </div>
+            <div class="user">
+                <div class="c-c">
+                    <img src="../../css/img/account.svg" class="img_user" alt="Usuário logado">
+                    <?php
+                    echo "<div>" . strtoupper($_SESSION['user']->nome[0]) . "</div>";
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card1">
+            <ul>
+                <table>
+                    <tr>
+                        <th class='nome'>NOME</th>
+                        <th class='acao'>AÇÕES</th>
+                    </tr>
+
+                    <?php
                     $modelos = $_SESSION['modelos'];
-                    for($x=0; $x < count($modelos); $x++){
+                    for ($x = 0; $x < count($modelos); $x++) {
                         echo
                         "<tr>
-                            <th class='nome'>".$modelos[$x]->modelo."</th>
-                            <th class='acao'>
-                                <form class='list-component' action='./update_modelo.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$modelos[$x]->id.">
-                                    <input type='hidden' name='modelo' value=".$modelos[$x]->modelo.">
+                            <td class='nome'>" . $modelos[$x]->modelo . "</td>
+                            <td class='acao'>
+                                <form class='list-component' action='./update_modelo.php' metdod='POST'>
+                                    <input type='hidden' name='id' value=" . $modelos[$x]->id . ">
+                                    <input type='hidden' name='modelo' value=" . $modelos[$x]->modelo . ">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
-                                <form class='list-component' action='../../models/modelo/del_modelo.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$modelos[$x]->id.">
+                                <form class='list-component' action='../../models/modelo/del_modelo.php' metdod='POST'>
+                                    <input type='hidden' name='id' value=" . $modelos[$x]->id . ">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
-                            </th>
+                            </td>
                         </tr>";
                     }
-                ?>
-            </table>
+                    ?>
+                </table>
             </ul>
         </div>
     </div>
-    
-    
+
+
 
     <div class="full-width card_menssage">
         <?php
-            if($_SESSION['sucess']){
-                echo "
+        if ($_SESSION['sucess']) {
+            echo "
                 <div class=''>
-                    <div class='sucess c-c'>".$_SESSION['sucess']."</div>
+                    <div class='sucess c-c'>" . $_SESSION['sucess'] . "</div>
                 </div>";
-                $_SESSION['sucess'] = '';
-            }
-            if($_SESSION["error"]){
-                echo "
+            $_SESSION['sucess'] = '';
+        }
+        if ($_SESSION["error"]) {
+            echo "
                 <div class='full-width'>
-                    <div class='error c-c'>".$_SESSION['error']."</div>
+                    <div class='error c-c'>" . $_SESSION['error'] . "</div>
                 </div>";
-                $_SESSION['error'] = '';
-            }
+            $_SESSION['error'] = '';
+        }
         ?>
     </div>
 </body>
+<script>
+    window.addEventListener('click', function(e) {
+        if (document.getElementById('menu_content').contains(e.target)) {
+            // Clicked in box
+        } else {
+            if (document.getElementById('menu_navbar').contains(e.target)) {
+                // Clicked in box
+            } else {
+                var elemento = document.getElementById("menu_content");
+                elemento.style.display = "none";
+            }
+        }
+    });
+
+    function openMenu() {
+        var elemento = document.getElementById("menu_content");
+        elemento.style.display = "block";
+    }
+</script>
 
 </html>
