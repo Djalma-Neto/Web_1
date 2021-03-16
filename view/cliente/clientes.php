@@ -28,32 +28,32 @@ if (!$_SESSION['user']) {
         </div>
         <div class="colunm-2">
             <div class="menu_options">
-                <a href="../view/usuario/new_user.php" class="menu_Button">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                <a href="../../view/usuario/new_user.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
                 </a>
 
-                <a href="../view/cliente/new_cliente.php" class="menu_Button">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar cliente">
+                <a href="../../view/cliente/new_cliente.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar cliente">
                     <div style="padding-botton: 5px;">CLIENTE</div>
                 </a>
 
-                <a href="../view/usuario/new_user.php" class="menu_Button">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar orçamentos">
+                <a href="../../view/usuario/new_user.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar orçamentos">
                     <div style="padding-botton: 5px;">ORÇAMENTO</div>
                 </a>
 
-                <a href="../view/materiais/new_material.php" class="menu_Button">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar material">
+                <a href="../../view/materiais/new_material.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar material">
                     <div style="padding-botton: 5px;">MATERIAL</div>
                 </a>
 
-                <a href="../view/linha/new_linha.php" class="menu_Button">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                <a href="../../view/linha/new_linha.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">LINHA</div>
                 </a>
-                <a href="../view/modelo/new_modelo.php" class="menu_Button">
-                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                <a href="../../view/modelo/new_modelo.php" class="menu_Button">
+                    <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>
                 </a>
             </div>
