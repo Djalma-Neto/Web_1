@@ -84,7 +84,7 @@ if (!$_SESSION['user']) {
         </div>
     </div>
     <div class="cards">
-        <div class="card">
+        <div class="card1">
             <ul>
                 <table>
                     <tr>
@@ -164,5 +164,24 @@ if (!$_SESSION['user']) {
         ?>
     </div>
 </body>
+<script>
+    window.addEventListener('click', function(e) {
+        if (document.getElementById('menu_content').contains(e.target)) {
+            // Clicked in box
+        } else {
+            if (document.getElementById('menu_navbar').contains(e.target)) {
+                // Clicked in box
+            } else {
+                var elemento = document.getElementById("menu_content");
+                elemento.style.display = "none";
+            }
+        }
+    });
+
+    function openMenu() {
+        var elemento = document.getElementById("menu_content");
+        elemento.style.display = "block";
+    }
+</script>
 
 </html>
