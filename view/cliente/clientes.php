@@ -63,7 +63,7 @@ if (!$_SESSION['user']) {
     <div class="navbar">
         <div class="navBody">
             <button id="menu_navbar" class="menu" onclick="openMenu()">
-                <img style="width:50px;" src="../css/img/menu.svg" alt="">
+                <img style="width:50px;" src="../../css/img/menu.svg" alt="">
             </button>
 
             <h3>
@@ -71,11 +71,11 @@ if (!$_SESSION['user']) {
             </h3>
             <div class="divBusca">
                 <input type="text" class="txtBuscar" placeholder="Buscar..." />
-                <img src="../css/img/search.svg" class="imgBusca" alt="Buscar" />
+                <img src="../../css/img/search.svg" class="imgBusca" alt="Buscar" />
             </div>
             <div class="user">
                 <div class="c-c">
-                    <img src="../css/img/account.svg" class="img_user" alt="Usuário logado">
+                    <img src="../../css/img/account.svg" class="img_user" alt="Usuário logado">
                     <?php
                     echo "<div>" . strtoupper($_SESSION['user']->nome[0]) . "</div>";
                     ?>
