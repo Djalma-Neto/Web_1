@@ -76,9 +76,6 @@ class newMaterial{
         $query = "INSERT INTO esquadritec.materiais(nome, valor) values('$this->nome', '$this->valor')";
         $register = $dataBase->prepare($query);
         $register->execute();
-
-        $_SESSION['sucess'] = 'Cadastrado!';
-        header("Location: ../view/home.php");
     }
 }
 
@@ -93,9 +90,6 @@ class newLinha{
         $query = "INSERT INTO esquadritec.linha(linha) values('$this->linha')";
         $register = $dataBase->prepare($query);
         $register->execute();
-
-        $_SESSION['sucess'] = 'Cadastrado!';
-        header("Location: ../view/home.php");
     }
 }
 
@@ -110,9 +104,84 @@ class newModelo{
         $query = "INSERT INTO esquadritec.modelo(modelo) values('$this->modelo')";
         $register = $dataBase->prepare($query);
         $register->execute();
+    }
+}
 
-        $_SESSION['sucess'] = 'Cadastrado!';
-        header("Location: ../view/home.php");
+class newUnidade{
+    private $unidade;
+
+    function __construct($nome){
+        $this->unidade = $nome;
+    }
+
+    public function register($dataBase) {
+        $query = "INSERT INTO esquadritec.unidade_medida(nome) values('$this->unidade')";
+        $register = $dataBase->prepare($query);
+        $register->execute();
+    }
+}
+
+class newOrcamento{
+    private $produtos;
+    private $cliente;
+    private $desconto;
+    private $observacao;
+
+    function __construct($orcamento){
+        $this->produtos = $orcamento['produtos'];
+        $this->cliente = $orcamento['cliente'];
+        $this->desconto = $orcamento['desconto'];
+        $this->observacao = $orcamento['observacao'];
+    }
+
+    public function register($dataBase) {
+        date_default_timezone_set('America/Bahia');
+        $date = date("Y-m-dH:i");
+        $query = "INSERT INTO esquadritec.orcamento(observacao, cliente, desconto, data, status)
+        values('$this->observacao', '$this->cliente', '$this->desconto', '$date', 'PENDENTE')";
+
+        $registro = $dataBase->prepare($query);
+        $registro->execute();
+        
+        $query = "SELECT o.id FROM esquadritec.orcamento o where o.cliente = '$this->cliente'
+        and o.desconto = '$this->desconto' and o.observacao = '$this->observacao' and data = '$date'";
+
+        $getOrcamento = $dataBase->prepare($query);
+        $getOrcamento->execute();
+        $getOrcamento = $getOrcamento->fetchAll(PDO::FETCH_CLASS);
+        $getOrcamento = $getOrcamento[0];
+
+        foreach($this->produtos as $produto){
+            $nome = $produto['produto'];
+            $modelo = $produto['modelo']->id;
+            $linha = $produto['linha']->id;
+            $query = "INSERT INTO esquadritec.produto(nome, orcamento, modelo, linha)
+            values('$nome', '$getOrcamento->id', '$modelo', '$linha')";
+            $setProduto = $dataBase->prepare($query);
+            $setProduto->execute();
+
+            $query = "SELECT p.id FROM esquadritec.produto p where p.nome = '$nome'
+            and p.orcamento = '$getOrcamento->id' and p.modelo = '$modelo'
+            and p.linha = '$linha'";
+
+            $getProduto = $dataBase->prepare($query);
+            $getProduto->execute();
+            $getProduto = $getProduto->fetchAll(PDO::FETCH_CLASS);
+            $getProduto = $getProduto[0]->id;
+
+            foreach($produto['materiais'] as $material){
+                $quantidade = $material['quantidade'];
+                $unidade_medida = $material['unidade_medida'];
+                $material_id = $material['material']->id;
+                echo '<script>console.log('.$material_id.')</script>';
+
+                $query = "INSERT INTO esquadritec.material_produto(quantidade, unidade_medida, produto, materiais)
+                values('$quantidade', '$unidade_medida', '$getProduto', '$material_id')";
+
+                $setMaterial = $dataBase->prepare($query);
+                $setMaterial->execute();
+            }
+        }
     }
 }
 ?>

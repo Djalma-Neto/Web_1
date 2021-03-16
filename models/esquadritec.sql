@@ -109,9 +109,11 @@ create table if not exists material_produto(
 insert into usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0xNDE3OjM3YWRtaW4=', '2021-03-05 11:07', 1);
 
 delimiter //
-create trigger valor after insert on material_produto
+create trigger valor_insert before insert on material_produto
 for each row begin
-    update produto set valor = produto.valor + (new.valor * new.quantidade) where produto.id = new.produto;
+    declare valor float;
+    select m.valor into valor from materiais m where m.id = new.materiais;
+    update produto set valor = produto.valor + (valor * new.quantidade) where produto.id = new.produto;
 end;
 //
 

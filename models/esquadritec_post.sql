@@ -112,15 +112,16 @@ create or replace function valor_update()
  returns trigger
  language plpgsql
 as $function$
+declare valor float;
     begin
-            update produto set valor = produto.valor + (new.valor * new.quantidade) where produto.id = new.produto;
+            select m.valor into valor from materiais m where m.id = new.materiais;
+            update produto set valor = produto.valor + (valor * new.quantidade) where produto.id = new.produto;
             return new;
     end;
     $function$
 ;
 create trigger valor after insert or update on material_produto
     for each row execute procedure valor_update();
-
 
 
 create or replace function orcamento_update()

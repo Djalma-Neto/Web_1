@@ -1,14 +1,18 @@
 <?php
     include_once("../models/connect.php");
-    $_SESSION['error'] = '';
-    $_SESSION['user'] = '';
-    $_SESSION['sucess'] = '';
-    $_SESSION['materiais'] = '';
-    $_SESSION["modelos"] = '';
-    $_SESSION['linhas'] = '';
-    $_SESSION["clientes"] = '';
+    $_SESSION['error'] = array();
+    $_SESSION['user'] = array();
+    $_SESSION['sucess'] = array();
+    $_SESSION['materiais'] = array();
+    $_SESSION['material_produto'] = array();
+    $_SESSION["modelos"] = array();
+    $_SESSION['linhas'] = array();
+    $_SESSION["clientes"] = array();
+    $_SESSION["unidades"] = array();
+    $_SESSION['produtos'] = array();
     getAllMaterial();
     getAllModelo();
+    getAllUnidade();
     getAllLinha();
     getAllCliente();
 

@@ -4,8 +4,8 @@ session_start();
 
 function connect() {
     try {
-        $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
-        // $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
+        // $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
+        $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
         $dataBase->prepare("SET SCHEMA 'esquadritec'");
         return $dataBase;
     } catch (PDOException $e) {
@@ -324,5 +324,194 @@ function del_modelo(){
     getAllModelo();
     $_SESSION['sucess'] = 'Deletado!';
     header("Location: ../../view/home.php");
+}
+
+// UNIDADE
+
+function new_unidade(){
+    try{
+        $dataBase = connect();
+        $unidade = $_POST["unidade"];
+        $registro = new newUnidade($unidade);
+        $registro->register($dataBase);
+        getAllUnidade();
+
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../view/modelo/new_modelo.php");
+    }
+}
+
+function getAllUnidade() {
+    $dataBase = connect();
+    try {
+        $unidades = $dataBase->prepare("SELECT * FROM esquadritec.unidade_medida");
+        $unidades->execute();
+        $unidades = $unidades->fetchAll(PDO::FETCH_CLASS);
+        $_SESSION["unidades"] = $unidades;
+    } catch (PDOException $e) {
+        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
+    }
+}
+
+function update_unidade(){
+    $id = $_POST["id"];
+    $nome = $_POST["nome"];
+
+    $dataBase = connect();
+    $query = "UPDATE esquadritec.unidade_medida SET nome='$nome' WHERE id='$id'";
+    $update = $dataBase->prepare($query);
+    $update->execute();
+    getAllUnidade();
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: ../../view/home.php");
+}
+
+function del_unidade(){
+    $id = $_POST["id"];
+    $dataBase = connect();
+    $query = "DELETE FROM esquadritec.unidade_medida where id = '$id'";
+    $delete = $dataBase->prepare($query);
+    $delete->execute();
+    getAllUnidade();
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: ../../view/home.php");
+}
+
+// PRODUTO
+
+function new_produto(){
+    try{
+        if(count($_SESSION['material_produto']) == 0){
+            $_SESSION['error'] = 'Adicione os Materiais!';
+            header("Location: ../../view/produto/new_produto.php");
+            return 0;
+        }
+        $produto = array(
+            "produto" => $_POST['produto'],
+            "modelo" => $_POST['modelo'],
+            "linha" => $_POST['linha'],
+            "materiais" => $_SESSION['material_produto']
+        );
+        foreach($_SESSION['modelos'] as $modelo){
+            if($modelo->id == $produto['modelo']){
+                $produto['modelo'] = $modelo;
+            }
+        }
+        foreach($_SESSION['linhas'] as $linha){
+            if($linha->id == $produto['linha']){
+                $produto['linha'] = $linha;
+            }
+        }
+        array_push($_SESSION['produtos'], $produto);
+        $_SESSION['material_produto'] = array();
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/orcamento/new_orcamento.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../../view/produto/new_produto.php");
+    }
+}
+
+function new_material_produto(){
+    try{
+        foreach($_SESSION['materiais'] as $value){
+            if($value->id == $_POST['material']){
+                $material = array(
+                    "material" => $value,
+                    "quantidade" => $_POST['quantidade'],
+                    "unidade_medida" => $_POST['unidades']
+                );
+            }
+        }
+        array_push($_SESSION['material_produto'], $material);
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/produto/new_produto.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../../view/produto/material_produto.php");
+    }
+}
+
+function update_material_produto(){
+    $id = $_POST["id"];
+    $quantidade = $_POST["quantidade"];
+    $material_id = $_POST["material"];
+
+    foreach($_SESSION['materiais'] as $value){
+        if($value->id == $material_id){
+            $_SESSION['material_produto'][$id]['material'] = $value;
+        }
+    }
+
+    $_SESSION['material_produto'][$id]['quantidade'] = $quantidade;
+
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: ../../view/produto/new_produto.php");
+}
+
+function del_material_produto(){
+    $id = $_POST["id"];
+    unset($_SESSION['material_produto'][$id]);
+
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: ../../view/produto/new_produto.php");
+}
+
+function update_produto(){
+    $id = $_POST["id"];
+    $nome = $_POST["nome"];
+    $modelo_id = $_POST["modelo"];
+    $linha_id = $_POST["linha"];
+
+    $_SESSION['produtos'][$id]['produto'] = $nome;
+
+    foreach($_SESSION['modelos'] as $modelo){
+        if($modelo->id == $modelo_id){
+            $_SESSION['produtos'][$id]['modelo'] = $modelo;
+        }
+    }
+    foreach($_SESSION['linhas'] as $linha){
+        if($linha->id == $produto['linha']){
+            $_SESSION['produtos'][$id]['linha'] = $linha;
+        }
+    }
+
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: ../../view/orcamento/new_orcamento.php");
+}
+
+function del_produto(){
+    $id = $_POST["id"];
+    unset($_SESSION['produtos'][$id]);
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: ../../view/orcamento/new_orcamento.php");
+}
+
+// ORCAMENTO
+
+function new_orcamento(){
+    try{
+        $dataBase = connect();
+        $orcamento = array(
+            "produtos" => $_SESSION['produtos'],
+            "cliente" => $_POST['cliente'],
+            "desconto" => $_POST['desconto'],
+            "observacao" => $_POST['observacao']
+        );
+
+        $registro = new newOrcamento($orcamento);
+        $registro->register($dataBase);
+
+        $_SESSION['material_produto'] = array();
+        $_SESSION['produtos'] = array();
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../../view/produto/new_produto.php");
+    }
 }
 ?>

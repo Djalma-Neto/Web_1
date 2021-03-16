@@ -18,9 +18,9 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
-    <form action="../../models/new_linha.php" method="POST">
+    <form action="../../models/unidade_medida/new_unidade.php" method="POST">
         <div class="c-c card formulario">
-            <input class="input_1" type="text" name="linha" placeholder="Linha" required>
+            <input class="input_1" type="text" name="unidade" placeholder="Unidade(Kg, m, cm)" required>
 
             <input type="submit" value="CONFIRMAR">
 
