@@ -33,8 +33,8 @@ create table if not exists orcamento(
     observacao varchar(100),
     desconto int,
     status varchar(30),
-    valor_t_b float not null,
-    valor_f float not null,
+    valor_t_b float,
+    valor_f float,
     data date not null,
     cliente int not null,
     foreign key (cliente) references cliente(id) on delete cascade
@@ -73,7 +73,7 @@ create table if not exists modelo(
 create table if not exists produto(
     id serial primary key not null,
     nome varchar(30) not null,
-    valor float not null,
+    valor float,
     orcamento int not null,
     modelo int not null,
     linha int not null,
@@ -95,7 +95,7 @@ create table if not exists unidade_medida(
 
 create table if not exists material_produto(
     id serial primary key not null,
-    valor float not null,
+    valor float,
     quantidade float not null,
     unidade_medida int not null,
     produto int not null,
