@@ -38,19 +38,21 @@ table {
      border-bottom-style: solid 2px;
      border: 0;
      row-gap: 5px;
-
+     margin-top: 5px;
+     gap: 5em;
  }
  th{
      border:0;
-    box-shadow: none;
-    column-rule-style: none;
-    border-bottom: #006174 1px solid;
-    background-color: #ebebeb;
-    color: #006174;
+     box-shadow: none;
+     column-rule-style: none;
+     border-bottom: #006174 1px solid;
+     background-color: #ebebeb;
+     color: #006174;
  }
 tr:nth-child(odd){
     background-color: #006174;
     color:white;
+    border: none;
 }
 tr:nth-child(even){
     border: #006174 1px solid;
