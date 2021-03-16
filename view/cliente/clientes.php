@@ -40,17 +40,17 @@ if(!$_SESSION['user']){
                     for($x=0; $x < count($clientes); $x++){
                         echo
                         "<tr>
-                            <th class='nome'>".$clientes[$x]->nome."</th>
-                            <th class='cpf'>".$clientes[$x]->cpf."</th>
-                            <th class='cnpj'>".$clientes[$x]->cnpj."</th>
-                            <th class='email'>".$clientes[$x]->email."</th>
+                            <td class='nome'>".$clientes[$x]->nome."</td>
+                            <td class='cpf'>".$clientes[$x]->cpf."</td>
+                            <td class='cnpj'>".$clientes[$x]->cnpj."</td>
+                            <td class='email'>".$clientes[$x]->email."</td>
 
-                            <th class='cidade'>".$clientes[$x]->cidade."</th>
-                            <th class='rua'>".$clientes[$x]->rua."</th>
-                            <th class='bairro'>".$clientes[$x]->bairro."</th>
-                            <th class='observacao'>".$clientes[$x]->observacao."</th>
+                            <td class='cidade'>".$clientes[$x]->cidade."</td>
+                            <td class='rua'>".$clientes[$x]->rua."</td>
+                            <td class='bairro'>".$clientes[$x]->bairro."</td>
+                            <td class='observacao'>".$clientes[$x]->observacao."</td>
 
-                            <th class='acao'>
+                            <td class='acao'>
                                 <form class='list-component' action='./update_cliente.php' method='POST'>
                                     <input type='hidden' name='id' value=".$clientes[$x]->id.">
                                     <input type='hidden' name='nome' value=".$clientes[$x]->nome.">
@@ -70,7 +70,7 @@ if(!$_SESSION['user']){
                                     <input type='hidden' name='id' value=".$clientes[$x]->id.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
-                            </th>
+                            </td>
                         </tr>";
                     }
                 ?>
