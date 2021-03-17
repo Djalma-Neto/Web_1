@@ -10,11 +10,13 @@
     $_SESSION["clientes"] = array();
     $_SESSION["unidades"] = array();
     $_SESSION['produtos'] = array();
+    $_SESSION["orcamentos"] = array();
     getAllMaterial();
     getAllModelo();
     getAllUnidade();
     getAllLinha();
     getAllCliente();
+    getAllOrcamento();
 
     header("Location: ./login.php");
 ?>

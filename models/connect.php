@@ -4,8 +4,8 @@ session_start();
 
 function connect() {
     try {
-        $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
-        // $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
+        // $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
+        $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
         $dataBase->prepare("SET SCHEMA 'esquadritec'");
         return $dataBase;
     } catch (PDOException $e) {
@@ -16,6 +16,7 @@ function connect() {
 
 function getAllUser() {
     $dataBase = connect();
+    $_SESSION["usuarios"] = array();
     try {
         $usuarios = $dataBase->prepare("SELECT * FROM esquadritec.usuario");
         $usuarios->execute();
@@ -109,6 +110,7 @@ function new_cliente() {
 
 function getAllCliente(){
     $dataBase = connect();
+    $_SESSION["clientes"] = array();
     try {
         $clientes = $dataBase->prepare("SELECT c.id, c.nome, c.cpf, c.cnpj, c.email,
         c.endereco, e.observacao, e.rua, e.bairro, e.cidade, e.numero
@@ -183,6 +185,7 @@ function new_material(){
 
 function getAllMaterial() {
     $dataBase = connect();
+    $_SESSION["materiais"] = array();
     try {
         $materiais = $dataBase->prepare("SELECT * FROM esquadritec.materiais");
         $materiais->execute();
@@ -238,6 +241,7 @@ function new_linha(){
 
 function getAllLinha() {
     $dataBase = connect();
+    $_SESSION["linhas"] = array();
     try {
         $linhas = $dataBase->prepare("SELECT * FROM esquadritec.linha");
         $linhas->execute();
@@ -292,6 +296,7 @@ function new_modelo(){
 
 function getAllModelo() {
     $dataBase = connect();
+    $_SESSION["modelos"] = array();
     try {
         $modelos = $dataBase->prepare("SELECT * FROM esquadritec.modelo");
         $modelos->execute();
@@ -346,6 +351,7 @@ function new_unidade(){
 
 function getAllUnidade() {
     $dataBase = connect();
+    $_SESSION["unidades"] = array();
     try {
         $unidades = $dataBase->prepare("SELECT * FROM esquadritec.unidade_medida");
         $unidades->execute();
@@ -512,6 +518,93 @@ function new_orcamento(){
     }catch (PDOException $e) {
         $_SESSION['error'] = $e->getMessage();
         header("Location: ../../view/produto/new_produto.php");
+    }
+}
+
+function getAllOrcamento(){
+    $_SESSION["orcamentos"] =  array();
+    $dataBase = connect();
+    try {
+        $orcamentos = $dataBase->prepare("SELECT * FROM esquadritec.orcamento");
+        $orcamentos->execute();
+        $orcamentos = $orcamentos->fetchAll(PDO::FETCH_CLASS);
+
+        foreach ($orcamentos as $x) {
+            $var_orcamento = array(
+                'id' => 0,
+                'observacao' => '',
+                'desconto' => 0,
+                'status' => '',
+                'valor_t_b' => 0,
+                'valor_f' => 0,
+                'data' => '',
+                'cliente' => 0,
+                'produtos' => array(),
+            );
+            $var_produtos = array(
+                'id' => 0,
+                'nome' => '',
+                'valor' => 0,
+                'orcamento' => 0,
+                'modelo' => 0,
+                'linha' => 0,
+                'materiais' => array()
+            );
+            $produtos = $dataBase->prepare("SELECT * FROM esquadritec.produto p where p.orcamento = $x->id");
+            $produtos->execute();
+            $produtos = $produtos->fetchAll(PDO::FETCH_CLASS);
+
+            $var_orcamento['id'] = $x->id;
+            $var_orcamento['observacao'] = $x->observacao;
+            $var_orcamento['desconto'] = $x->desconto;
+            $var_orcamento['status'] = $x->status;
+            $var_orcamento['valor_t_b'] = $x->valor_t_b;
+            $var_orcamento['valor_f'] = $x->valor_f;
+            $var_orcamento['valor_f'] = $x->valor_f;
+            $var_orcamento['valor_f'] = $x->valor_f;
+            $var_orcamento['data'] = $x->data;
+
+            $cliente = $dataBase->prepare("SELECT * FROM esquadritec.cliente c where c.id = $x->cliente");
+            $cliente->execute();
+            $cliente = $cliente->fetchAll(PDO::FETCH_CLASS);
+            $var_orcamento['cliente'] = $cliente[0];
+
+            foreach($produtos as $p){
+                $m_produtos = $dataBase->prepare("SELECT * FROM esquadritec.material_produto mp
+                where mp.produto = $p->id");
+                $m_produtos->execute();
+                $m_produtos = $m_produtos->fetchAll(PDO::FETCH_CLASS);
+
+                $var_produtos['id'] = $p->id;
+                $var_produtos['nome'] = $p->nome;
+                $var_produtos['valor'] = $p->valor;
+                $var_produtos['orcamento'] = $p->orcamento;
+
+                foreach($_SESSION["modelos"] as $modelo){
+                    if($modelo->id == $p->modelo){
+                        $var_produtos['modelo'] = $modelo;
+                    }
+                }
+
+                foreach($_SESSION["linhas"] as $linha){
+                    if($linha->id == $p->linha){
+                        $var_produtos['linha'] = $linha;
+                    }
+                }
+
+                foreach($m_produtos as $mp){
+                    $materiais = $dataBase->prepare("SELECT * FROM esquadritec.materiais m
+                    where m.id = $mp->id");
+                    $materiais->execute();
+                    $materiais = $materiais->fetchAll(PDO::FETCH_CLASS);
+                    array_push($var_produtos['materiais'], $materiais);
+                }
+                array_push($var_orcamento['produtos'], $var_produtos);
+            }
+            array_push($_SESSION["orcamentos"], $var_orcamento);
+        }
+    } catch (PDOException $e) {
+        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
     }
 }
 ?>

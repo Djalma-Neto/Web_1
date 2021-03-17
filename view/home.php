@@ -89,8 +89,8 @@ if(!$_SESSION['user']){
         <div class="cards">
             <div class="card">
                 <h4 class="cardTitle">ORÇAMENTOS CADASTRADOS</h4>
-                <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="ORÇAMENTOS cadastrados"> </h1>
-                <a href="" class="verTodos">VER TODOS</a>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['orcamentos']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="ORÇAMENTOS cadastrados"> </h1>
+                <a href="../models/orcamento/getAllOrcamento.php" class="verTodos">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
