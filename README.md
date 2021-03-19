@@ -1,8 +1,8 @@
 # ESQUADRITEC
 
 **Sistema para gerenciamento de orçamentos para a matéria de web 1 do curso de Análise e Desenvolvimento de Sistemas**
-![alt text](tela_home.png)
-![alt text](BD.png)
+<img alt="PrintScreen" src="tela_home.png"/>
+<!-- ![alt text](BD.png) -->
 
 > O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas
 >  - Modelagem
