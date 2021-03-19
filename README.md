@@ -4,12 +4,12 @@
 <img style="border-radius:50%" alt="PrintScreen" src="tela_home.png"/>
 <!-- ![alt text](BD.png) -->
 
-> O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas
->  - Modelagem
+>  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas
+>  - **Modelagem**
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
-> - Banco de Dados
+> - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
-> - IDE's
+> - **IDE's**
 > - -  <img src="https://img.icons8.com/fluent/20/000000/sublime-text.png"/>  Sublime Text
 > - - <img src="https://img.icons8.com/fluent/20/000000/visual-studio-code-2019.png"/> Visual Studio Code
 
