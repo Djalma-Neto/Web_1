@@ -1,10 +1,10 @@
 # ESQUADRITEC
 
 **Sistema para gerenciamento de orçamentos para a matéria de web 1 do curso de Análise e Desenvolvimento de Sistemas**
-<img style="border-radius:50%" alt="PrintScreen" src="tela_home.png"/>
+<img style="border-radius:15px" alt="PrintScreen" src="tela_home.png"/>
 <!-- ![alt text](BD.png) -->
 
->  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas
+>  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
 > - **Banco de Dados**
@@ -12,7 +12,13 @@
 > - **IDE's**
 > - -  <img src="https://img.icons8.com/fluent/20/000000/sublime-text.png"/>  Sublime Text
 > - - <img src="https://img.icons8.com/fluent/20/000000/visual-studio-code-2019.png"/> Visual Studio Code
+>  - **Hospedagem**
+>  - - <img src="https://img.icons8.com/color/20/000000/heroku.png"/> Heroku
 
+>  ### Linguagens Utilizadas:
+> - <img src="https://img.icons8.com/ios-filled/20/4a90e2/php-logo.png"/> PHP
+> - <img src="https://img.icons8.com/metro/20/000000/sql.png"/> SQL
+> - <img src="https://img.icons8.com/color/20/000000/javascript.png"/> Javascript
 
 ### **Membros da equipe** 
 - Djalma Santana Malta Neto
