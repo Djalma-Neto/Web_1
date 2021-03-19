@@ -4,7 +4,7 @@
 <img style="border-radius:15px" alt="PrintScreen" src="tela_home.png"/>
 <!-- ![alt text](BD.png) -->
 
->  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
+ ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
 > - **Banco de Dados**
@@ -15,7 +15,7 @@
 >  - **Hospedagem**
 >  - - <img src="https://img.icons8.com/color/20/000000/heroku.png"/> Heroku
 
->  ### Linguagens Utilizadas:
+ ### Linguagens Utilizadas:
 > - <img src="https://img.icons8.com/ios-filled/20/4a90e2/php-logo.png"/> PHP
 > - <img src="https://img.icons8.com/metro/20/000000/sql.png"/> SQL
 > - <img src="https://img.icons8.com/color/20/000000/javascript.png"/> Javascript
