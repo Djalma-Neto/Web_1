@@ -22,9 +22,6 @@
 > - <img src="https://img.icons8.com/color/20/000000/javascript.png"/> Javascript
 
 ### **Membros da equipe** 
-
-https://allcontributors.org/docs/en/bot/overview
-
 - Djalma Santana Malta Neto
 - Hiago Texeira Pais
 - Ismael Luduvico
