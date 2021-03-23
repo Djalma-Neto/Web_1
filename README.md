@@ -2,8 +2,7 @@
 
 ### **Sistema para gerenciamento de orçamentos para a matéria de web 1 do curso de Análise e Desenvolvimento de Sistemas**
 
-<img 
-="border-radius:15px"  alt="PrintScreen" src="/imagens/tela_home.png"/>
+<img style="border-radius:15px"  alt="PrintScreen" src="/imagens/tela_home.png"/>
 <!-- ![alt text](BD.png) -->
 
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
@@ -40,7 +39,7 @@
 	                <br/>
 	                <b>Guilherme Xavier</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="14.5%"/> Front End</br>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="15%"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/HiagoPais">
@@ -57,7 +56,7 @@
 	                <br/>
 	                <b>Ismael Luduvico</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="14.5%"/> Front End</br>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="15%"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/Joedson-Bomfim">
