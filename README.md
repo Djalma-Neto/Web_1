@@ -40,7 +40,7 @@
 	                <br/>
 	                <b>Guilherme Xavier</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="50%"/> Front End</br>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="14.5%"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/HiagoPais">
@@ -48,7 +48,7 @@
 	                <br/>
 	                <b>Hiago Pais</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/data-configuration.png" width="50%"/> DBA</br>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/data-configuration.png" width="14.5%"/> DBA</br>
 	        </td>
 	    </tr>
 	    <td align="center">
@@ -57,7 +57,7 @@
 	                <br/>
 	                <b>Ismael Luduvico</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="50%"/> Front End</br>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="14.5%"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/Joedson-Bomfim">
@@ -65,13 +65,13 @@
 	                <br/>
 	                <b>Joedson Bomfim</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="50%"/> Back End</br>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="14.5%"/> Back End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/samelabrito">
 	                <img width="100" src="https://avatars.githubusercontent.com/u/69491431?s=460&u=384f3b68461c6128771908463eded48e1265735e&v=4" style="border-radius: 50%" alt="Perfil do git da Sâmela">
 	                <br/>
-	                <br><img src="https://img.icons8.com/ios-glyphs/40/000000/manager--v2.png" width="50%"/> Gerente</br>
+	                <br><img src="https://img.icons8.com/ios-glyphs/40/000000/manager--v2.png" width="14.5%"/> Gerente</br>
 	            </a>
 	            <br>Gerente</b>
 	        </td>
