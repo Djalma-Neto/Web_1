@@ -16,6 +16,7 @@ function connect() {
 
 function getAllUser() {
     $dataBase = connect();
+    $_SESSION["usuarios"] = array();
     try {
         $usuarios = $dataBase->prepare("SELECT * FROM esquadritec.usuario");
         $usuarios->execute();
@@ -109,6 +110,7 @@ function new_cliente() {
 
 function getAllCliente(){
     $dataBase = connect();
+    $_SESSION["clientes"] = array();
     try {
         $clientes = $dataBase->prepare("SELECT c.id, c.nome, c.cpf, c.cnpj, c.email,
         c.endereco, e.observacao, e.rua, e.bairro, e.cidade, e.numero
@@ -183,6 +185,7 @@ function new_material(){
 
 function getAllMaterial() {
     $dataBase = connect();
+    $_SESSION["materiais"] = array();
     try {
         $materiais = $dataBase->prepare("SELECT * FROM esquadritec.materiais");
         $materiais->execute();
@@ -238,6 +241,7 @@ function new_linha(){
 
 function getAllLinha() {
     $dataBase = connect();
+    $_SESSION["linhas"] = array();
     try {
         $linhas = $dataBase->prepare("SELECT * FROM esquadritec.linha");
         $linhas->execute();
@@ -292,6 +296,7 @@ function new_modelo(){
 
 function getAllModelo() {
     $dataBase = connect();
+    $_SESSION["modelos"] = array();
     try {
         $modelos = $dataBase->prepare("SELECT * FROM esquadritec.modelo");
         $modelos->execute();
@@ -324,5 +329,282 @@ function del_modelo(){
     getAllModelo();
     $_SESSION['sucess'] = 'Deletado!';
     header("Location: ../../view/home.php");
+}
+
+// UNIDADE
+
+function new_unidade(){
+    try{
+        $dataBase = connect();
+        $unidade = $_POST["unidade"];
+        $registro = new newUnidade($unidade);
+        $registro->register($dataBase);
+        getAllUnidade();
+
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../view/modelo/new_modelo.php");
+    }
+}
+
+function getAllUnidade() {
+    $dataBase = connect();
+    $_SESSION["unidades"] = array();
+    try {
+        $unidades = $dataBase->prepare("SELECT * FROM esquadritec.unidade_medida");
+        $unidades->execute();
+        $unidades = $unidades->fetchAll(PDO::FETCH_CLASS);
+        $_SESSION["unidades"] = $unidades;
+    } catch (PDOException $e) {
+        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
+    }
+}
+
+function update_unidade(){
+    $id = $_POST["id"];
+    $nome = $_POST["nome"];
+
+    $dataBase = connect();
+    $query = "UPDATE esquadritec.unidade_medida SET nome='$nome' WHERE id='$id'";
+    $update = $dataBase->prepare($query);
+    $update->execute();
+    getAllUnidade();
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: ../../view/home.php");
+}
+
+function del_unidade(){
+    $id = $_POST["id"];
+    $dataBase = connect();
+    $query = "DELETE FROM esquadritec.unidade_medida where id = '$id'";
+    $delete = $dataBase->prepare($query);
+    $delete->execute();
+    getAllUnidade();
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: ../../view/home.php");
+}
+
+// PRODUTO
+
+function new_produto(){
+    try{
+        if(count($_SESSION['material_produto']) == 0){
+            $_SESSION['error'] = 'Adicione os Materiais!';
+            header("Location: ../../view/produto/new_produto.php");
+            return 0;
+        }
+        $produto = array(
+            "produto" => $_POST['produto'],
+            "modelo" => $_POST['modelo'],
+            "linha" => $_POST['linha'],
+            "materiais" => $_SESSION['material_produto']
+        );
+        foreach($_SESSION['modelos'] as $modelo){
+            if($modelo->id == $produto['modelo']){
+                $produto['modelo'] = $modelo;
+            }
+        }
+        foreach($_SESSION['linhas'] as $linha){
+            if($linha->id == $produto['linha']){
+                $produto['linha'] = $linha;
+            }
+        }
+        array_push($_SESSION['produtos'], $produto);
+        $_SESSION['material_produto'] = array();
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/orcamento/new_orcamento.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../../view/produto/new_produto.php");
+    }
+}
+
+function new_material_produto(){
+    try{
+        foreach($_SESSION['materiais'] as $value){
+            if($value->id == $_POST['material']){
+                $material = array(
+                    "material" => $value,
+                    "quantidade" => $_POST['quantidade'],
+                    "unidade_medida" => $_POST['unidades']
+                );
+            }
+        }
+        array_push($_SESSION['material_produto'], $material);
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/produto/new_produto.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../../view/produto/material_produto.php");
+    }
+}
+
+function update_material_produto(){
+    $id = $_POST["id"];
+    $quantidade = $_POST["quantidade"];
+    $material_id = $_POST["material"];
+
+    foreach($_SESSION['materiais'] as $value){
+        if($value->id == $material_id){
+            $_SESSION['material_produto'][$id]['material'] = $value;
+        }
+    }
+
+    $_SESSION['material_produto'][$id]['quantidade'] = $quantidade;
+
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: ../../view/produto/new_produto.php");
+}
+
+function del_material_produto(){
+    $id = $_POST["id"];
+    unset($_SESSION['material_produto'][$id]);
+
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: ../../view/produto/new_produto.php");
+}
+
+function update_produto(){
+    $id = $_POST["id"];
+    $nome = $_POST["nome"];
+    $modelo_id = $_POST["modelo"];
+    $linha_id = $_POST["linha"];
+
+    $_SESSION['produtos'][$id]['produto'] = $nome;
+
+    foreach($_SESSION['modelos'] as $modelo){
+        if($modelo->id == $modelo_id){
+            $_SESSION['produtos'][$id]['modelo'] = $modelo;
+        }
+    }
+    foreach($_SESSION['linhas'] as $linha){
+        if($linha->id == $produto['linha']){
+            $_SESSION['produtos'][$id]['linha'] = $linha;
+        }
+    }
+
+    $_SESSION['sucess'] = 'Atualizado!';
+    header("Location: ../../view/orcamento/new_orcamento.php");
+}
+
+function del_produto(){
+    $id = $_POST["id"];
+    unset($_SESSION['produtos'][$id]);
+    $_SESSION['sucess'] = 'Deletado!';
+    header("Location: ../../view/orcamento/new_orcamento.php");
+}
+
+// ORCAMENTO
+
+function new_orcamento(){
+    try{
+        $dataBase = connect();
+        $orcamento = array(
+            "produtos" => $_SESSION['produtos'],
+            "cliente" => $_POST['cliente'],
+            "desconto" => $_POST['desconto'],
+            "observacao" => $_POST['observacao']
+        );
+
+        $registro = new newOrcamento($orcamento);
+        $registro->register($dataBase);
+
+        $_SESSION['material_produto'] = array();
+        $_SESSION['produtos'] = array();
+        $_SESSION['sucess'] = 'Cadastrado!';
+        header("Location: ../../view/home.php");
+    }catch (PDOException $e) {
+        $_SESSION['error'] = $e->getMessage();
+        header("Location: ../../view/produto/new_produto.php");
+    }
+}
+
+function getAllOrcamento(){
+    $_SESSION["orcamentos"] =  array();
+    $dataBase = connect();
+    try {
+        $orcamentos = $dataBase->prepare("SELECT * FROM esquadritec.orcamento");
+        $orcamentos->execute();
+        $orcamentos = $orcamentos->fetchAll(PDO::FETCH_CLASS);
+
+        foreach ($orcamentos as $x) {
+            $var_orcamento = array(
+                'id' => 0,
+                'observacao' => '',
+                'desconto' => 0,
+                'status' => '',
+                'valor_t_b' => 0,
+                'valor_f' => 0,
+                'data' => '',
+                'cliente' => 0,
+                'produtos' => array(),
+            );
+            $var_produtos = array(
+                'id' => 0,
+                'nome' => '',
+                'valor' => 0,
+                'orcamento' => 0,
+                'modelo' => 0,
+                'linha' => 0,
+                'materiais' => array()
+            );
+            $produtos = $dataBase->prepare("SELECT * FROM esquadritec.produto p where p.orcamento = $x->id");
+            $produtos->execute();
+            $produtos = $produtos->fetchAll(PDO::FETCH_CLASS);
+
+            $var_orcamento['id'] = $x->id;
+            $var_orcamento['observacao'] = $x->observacao;
+            $var_orcamento['desconto'] = $x->desconto;
+            $var_orcamento['status'] = $x->status;
+            $var_orcamento['valor_t_b'] = $x->valor_t_b;
+            $var_orcamento['valor_f'] = $x->valor_f;
+            $var_orcamento['valor_f'] = $x->valor_f;
+            $var_orcamento['valor_f'] = $x->valor_f;
+            $var_orcamento['data'] = $x->data;
+
+            $cliente = $dataBase->prepare("SELECT * FROM esquadritec.cliente c where c.id = $x->cliente");
+            $cliente->execute();
+            $cliente = $cliente->fetchAll(PDO::FETCH_CLASS);
+            $var_orcamento['cliente'] = $cliente[0];
+
+            foreach($produtos as $p){
+                $m_produtos = $dataBase->prepare("SELECT * FROM esquadritec.material_produto mp
+                where mp.produto = $p->id");
+                $m_produtos->execute();
+                $m_produtos = $m_produtos->fetchAll(PDO::FETCH_CLASS);
+
+                $var_produtos['id'] = $p->id;
+                $var_produtos['nome'] = $p->nome;
+                $var_produtos['valor'] = $p->valor;
+                $var_produtos['orcamento'] = $p->orcamento;
+
+                foreach($_SESSION["modelos"] as $modelo){
+                    if($modelo->id == $p->modelo){
+                        $var_produtos['modelo'] = $modelo;
+                    }
+                }
+
+                foreach($_SESSION["linhas"] as $linha){
+                    if($linha->id == $p->linha){
+                        $var_produtos['linha'] = $linha;
+                    }
+                }
+
+                foreach($m_produtos as $mp){
+                    $materiais = $dataBase->prepare("SELECT * FROM esquadritec.materiais m
+                    where m.id = $mp->id");
+                    $materiais->execute();
+                    $materiais = $materiais->fetchAll(PDO::FETCH_CLASS);
+                    array_push($var_produtos['materiais'], $materiais);
+                }
+                array_push($var_orcamento['produtos'], $var_produtos);
+            }
+            array_push($_SESSION["orcamentos"], $var_orcamento);
+        }
+    } catch (PDOException $e) {
+        $_SESSION["error"] = "Error!: " . $e->getMessage() . "<br/>";
+    }
 }
 ?>

@@ -33,8 +33,8 @@ create table if not exists orcamento(
     observacao varchar(100),
     desconto int,
     status varchar(30),
-    valor_t_b float not null,
-    valor_f float not null,
+    valor_t_b float,
+    valor_f float,
     data date not null,
     cliente int not null,
     foreign key (cliente) references cliente(id) on delete cascade
@@ -73,7 +73,7 @@ create table if not exists modelo(
 create table if not exists produto(
     id serial primary key not null,
     nome varchar(30) not null,
-    valor float not null,
+    valor float,
     orcamento int not null,
     modelo int not null,
     linha int not null,
@@ -95,7 +95,7 @@ create table if not exists unidade_medida(
 
 create table if not exists material_produto(
     id serial primary key not null,
-    valor float not null,
+    valor float,
     quantidade float not null,
     unidade_medida int not null,
     produto int not null,
@@ -105,36 +105,39 @@ create table if not exists material_produto(
     foreign key (unidade_medida) references unidade_medida(id) on delete cascade
 );
 
-insert into usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0xNDE3OjM3YWRtaW4=', '2021-03-05 11:07', true);
+insert into usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0xNjE3OjAwYWRtaW4=', '2021-03-05 11:07', true);
 
 
 create or replace function valor_update()
  returns trigger
  language plpgsql
-as $function$
+as $$
+declare valor_p float;
     begin
-            update produto set valor = produto.valor + (new.valor * new.quantidade) where produto.id = new.produto;
+            set schema 'esquadritec';
+            select m.valor into valor_p from materiais m where m.id = new.materiais;
+            update produto set valor = produto.valor + (valor_p * new.quantidade) where produto.id = new.produto;
             return new;
     end;
-    $function$
+    $$
 ;
-create trigger valor after insert or update on material_produto
-    for each row execute procedure valor_update();
-
-
 
 create or replace function orcamento_update()
  returns trigger
  language plpgsql
-as $function$
+as $$
 declare valor integer;
     begin
+            set schema 'esquadritec';
 			select sum(produto.valor) into valor from produto where produto.orcamento = new.orcamento;
 			update orcamento set valor_t_b = valor where orcamento.id = new.orcamento;
 			update orcamento set valor_f = (valor - (valor * (orcamento.desconto / 100))) where orcamento.id = new.orcamento;
             return new;
     end;
-    $function$
+    $$
 ;
-create trigger valor_orcamento after insert or update on produto
-    for each row execute procedure orcamento_update();
+
+create trigger valor after insert on material_produto
+    for each row execute function valor_update();
+create trigger valor_orcamento after update on produto
+    for each row execute function orcamento_update();

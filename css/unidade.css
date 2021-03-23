@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Poppins&display=swap');
+@keyframes menssagem {
+  from {opacity: 60%;}
+  to {opacity: 0%;}
+}
+
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+body{
+    background-color: #ebebeb;
+}
+.option{
+  background-color: transparent;
+}
+.cards{
+    display: inline-grid;
+    justify-content: space-around;
+    align-content: center;
+    width: 100%;
+    column-gap: 6%;
+    margin: 4rem auto;
+}
+.nome{
+  margin: 0;
+  width: 100px;
+  padding: 3px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.acao{
+  width: 100px;
+  padding: 3px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.valor{
+  width: 30px;
+  padding: 3px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+.card{
+    padding: 10px;
+    min-height: 100px;
+    min-width: 200px;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+.cpf{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.cnpj{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.email{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.cidade{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.rua{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.bairro{
+  min-height: 20px;
+  max-height: 30px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.observacao{
+  min-height: 20px;
+  max-height: 50px;
+  border-top: solid 1px black;
+  border-bottom:  solid 1px black;
+}
+.division{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  background-color: #a8a6a6;
+}
+
+.btn_confirm{
+  background-color: #04b41c;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+.btn_confirm:hover{
+  background-color: #04b41c;
+  opacity: 1;
+}
+
+.input_1{
+  width: 100%;
+}
+
+.list{
+  margin-left: 20px;
+}
+
+.list-component{
+  padding-left: 20px;
+  display: inline-block;
+}
+.card_menssage{
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+.formulario{
+  display: block;
+  padding: 20px;
+  min-width: 250px;
+  max-width: 300px;
+}
+.sucess {
+  opacity: 0;
+  animation-name: menssagem;
+  animation-duration: 5s;
+  right: 0.2em;
+  font-size: 20px;
+  bottom: 20px;
+  color: #fff;
+  min-height: 30px;
+  min-width: 100px;
+  max-width: 180px;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: #22f13e;
+}
+.error {
+  opacity: 0;
+  animation-name: menssagem;
+  animation-duration: 5s;
+  right: 0.2em;
+  text-align: center;
+  font-size: 20px;
+  bottom: 20px;
+  color: #fff;
+  min-height: 30px;
+  min-width: 100px;
+  max-width: 180px;
+  padding: 2px;
+  border-radius: 10px;
+  background-color: #f12222;
+}
+
+.c-c{
+    text-align: center;
+    margin: auto;
+    width: 100%;
+  }
+
+.users{
+    padding-top: 25px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+.users td{
+    padding-left: 20px;
+}
+
+.logOn{
+    position: relative;
+}
+.verTodos{
+    float: right;
+    margin-right: 15px;
+    margin-top: -7%;
+    height: 2.2em;
+    width: 10em;
+    padding: 0.5em auto;
+    border-radius:13px;
+    border: solid 1px black;
+    color: #006174;
+    font-size: 12px;
+    font-family: 'Poppins';
+    font-weight: bolder;
+}
+.cardTitle{
+    margin-top:1em;
+    font-family: 'Be Vietnam';
+    margin-left: 1em;
+    font-size: 14px;
+    color: #fff;
+    font-weight: lighter;
+    margin-bottom: 0;
+}
+.counter{
+  color:#fff;
+  margin-top:-25px;
+  font-weight: lighter;
+  margin-left: 25px;
+  text-align: left;
+  font-size: 100px;
+  margin-right: 0;
+  font-family: 'Be Vietnam';
+}
+.imgDesc{
+    width: 0.5em;
+    margin-left: -23px;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.b {
+  border-radius: 0.5em;
+}
+
+.p-a-s{
+  padding: 6px;
+}
+.p-a-m{
+  padding: 12px;
+}
+.p-a-l{
+  padding: 20px;
+}
+
+/* padding Top */
+.p-t-s{
+  padding-top: 6px;
+}
+.p-t-m{
+  padding-top: 12px;
+}
+.p-t-l{
+  padding-top: 20px;
+}
+
+/* padding Bottom */
+.p-b-s{
+  padding-bottom: 6px;
+}
+.p-b-m{
+  padding-bottom: 12px;
+}
+.p-b-l{
+  padding-bottom: 20px;
+}
+
+/* padding Left */
+.p-l-s{
+  padding-left: 6px;
+}
+.p-l-m{
+  padding-left: 12px;
+}
+.p-l-l{
+  padding-left: 20px;
+}
+
+/* padding Right */
+.p-r-s{
+  padding-right: 6px;
+}
+.p-r-m{
+  padding-right: 12px;
+}
+.p-r-l{
+  padding-right: 20px;
+}
+
+/* padding X */
+.p-x-s{
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.p-x-m{
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.p-x-l{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* padding Y */
+.p-y-s{
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.p-y-m{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.p-y-l{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* margin All */
+.m-a-s{
+  margin: 6px;
+}
+
+.m-a-m{
+  margin: 12px;
+}
+.m-a-l{
+  margin: 20px;
+}
+
+/* margin Top */
+.m-t-s{
+  margin-top: 6px;
+}
+.m-t-m{
+  margin-top: 12px;
+}
+.m-t-l{
+  margin-top: 20px;
+}
+
+/* margin Bottom */
+.m-b-s{
+  margin-bottom: 6px;
+}
+.m-b-m{
+  margin-bottom: 12px;
+}
+.m-b-l{
+  margin-bottom: 20px;
+}
+
+/* margin Left */
+.m-l-s{
+  margin-left: 6px;
+}
+.m-l-m{
+  margin-left: 12px;
+}
+.m-l-l{
+  margin-left: 20px;
+}
+
+/* margin Right */
+.m-r-s{
+  margin-right: 6px;
+}
+.m-r-m{
+  margin-right: 12px;
+}
+.m-r-l{
+  margin-right: 20px;
+}
+
+/* sizing */
+
+.s-s{
+  width: 250px;
+}
+
+/* Text identation */
+
+/* Component identation */
+.c-l{
+  text-align: left;
+}
+.c-r{
+  text-align: right;
+}
+.c-c{
+  text-align: center;
+  margin: auto;
+}
+.full-height{
+  height: 100%;
+}
+.error{
+  color: red;
+}

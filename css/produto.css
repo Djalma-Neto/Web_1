@@ -27,22 +27,22 @@ body{
   border-bottom: solid 1px black;
 }
 
-.modelo{
-  width: 100px;
+.valor{
+  width: 30px;
   padding: 3px;
   border-top: solid 1px black;
   border-bottom: solid 1px black;
 }
 
 .acao{
-  width: 100px;
+  width: 30px;
   padding: 3px;
   border-top: solid 1px black;
   border-bottom: solid 1px black;
 }
 
-.linha{
-  width: 30px;
+.quantidade{
+  width: 100px;
   padding: 3px;
   border-top: solid 1px black;
   border-bottom: solid 1px black;

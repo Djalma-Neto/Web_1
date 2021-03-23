@@ -53,6 +53,11 @@ if(!$_SESSION['user']){
                     <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
                     <div style="padding-botton: 5px;">MODELO</div>
                 </a>
+
+                <a href="../view/unidade_medida/new_unidade.php" class="menu_Button">
+                    <img style="width:20px;" src="../css/img/add.svg" alt="cadastrar funcionario">
+                    <div style="padding-botton: 5px;">UNIDADE DE MEDIDA</div>
+                </a>
             </div>
         </div>
     </div>
@@ -84,32 +89,33 @@ if(!$_SESSION['user']){
         <div class="cards">
             <div class="card">
                 <h4 class="cardTitle">ORÇAMENTOS CADASTRADOS</h4>
-                <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="ORÇAMENTOS cadastrados"> </h1>
-                <a href="" class="verTodos">VER TODOS</a>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['orcamentos']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="ORÇAMENTOS cadastrados"> </h1>
+                <a href="../models/orcamento/getAllOrcamento.php" class="verTodos">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">CLIENTES CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['clientes']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="CLIENTES cadastrados"> </h1>
-                <a href="../models/cliente/getAllCliente.php"
-                class="verTodos" onclick="GetAllCliente()">VER TODOS</a>
+                <a href="../models/cliente/getAllCliente.php" class="verTodos">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MATERIAIS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['materiais']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="materiais cadastrados"> </h1>
-                <a href="../models/material/getAllMaterial.php"
-                class="verTodos" onclick="GetAllMaterial()">VER TODOS</a>
+                <a href="../models/material/getAllMaterial.php" class="verTodos">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">MODELOS CADASTRADOS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['modelos']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
-                <a href="../models/modelo/getAllModelo.php"
-                class="verTodos" onclick="GetAllModelos()">VER TODOS</a>
+                <a href="../models/modelo/getAllModelo.php" class="verTodos">VER TODOS</a>
             </div>
             <div class="card">
                 <h4 class="cardTitle">LINHAS CADASTRADAS</h4>
                 <h1 class="counter countermateriais"><?php echo count($_SESSION['linhas']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="modelos cadastrados"> </h1>
-                <a href="../models/linha/getAllLinha.php"
-                class="verTodos" onclick="GetAllLinha()">VER TODOS</a>
+                <a href="../models/linha/getAllLinha.php" class="verTodos">VER TODOS</a>
+            </div>
+            <div class="card">
+                <h4 class="cardTitle">UNIDADES DE MEDIDA CADASTRADAS</h4>
+                <h1 class="counter countermateriais"><?php echo count($_SESSION['unidades']) ?> <img class="imgDesc" src="../css/img/description.svg" alt="unidades de medida cadastradas"> </h1>
+                <a href="../models/unidade_medida/getAllUnidade.php" class="verTodos">VER TODOS</a>
             </div>
         </div>
     </div>
