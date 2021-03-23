@@ -8,7 +8,7 @@
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
-> -  - <img src="https://img.icons8.com/emoji/50/000000/circled-m-emoji.png" width="1.3%"/> moqups
+> -  - <img src="https://img.icons8.com/emoji/50/000000/circled-m-emoji.png" width="2%"/> moqups
 > - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
 > - **IDE's**
@@ -31,7 +31,7 @@
 	                <br/>
 	                <b>Djalma Neto</b>
 	            </a>
-	            <br>Back End</b>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png"/> Back End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/guilherme-x">
@@ -39,7 +39,7 @@
 	                <br/>
 	                <b>Guilherme Xavier</b>
 	            </a>
-	            <br>Front End</b>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/HiagoPais">
@@ -47,7 +47,7 @@
 	                <br/>
 	                <b>Hiago Pais</b>
 	            </a>
-	            <br>DBA</b>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/data-configuration.png"/> DBA</br>
 	        </td>
 	    </tr>
 	    <td align="center">
@@ -56,7 +56,7 @@
 	                <br/>
 	                <b>Ismael Luduvico</b>
 	            </a>
-	            <br>Front End</b>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/Joedson-Bomfim">
@@ -64,13 +64,13 @@
 	                <br/>
 	                <b>Joedson Bomfim</b>
 	            </a>
-	            <br>Back End</b>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png"/> Back End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/samelabrito">
 	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/69491431?s=460&u=384f3b68461c6128771908463eded48e1265735e&v=4" alt="Perfil do git da Sâmela">
 	                <br/>
-	                <b>Sâmela Camelo</b>
+	                <br><img src="https://img.icons8.com/ios-glyphs/40/000000/manager--v2.png"/> Gerente</br>
 	            </a>
 	            <br>Gerente</b>
 	        </td>
