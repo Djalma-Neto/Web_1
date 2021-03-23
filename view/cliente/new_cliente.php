@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION['user']){
+if (!$_SESSION['user']) {
     header("Location: ../../view/login.php");
 }
 ?>
@@ -18,6 +18,7 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
+    <h1 class="title"> CADASTRAR FUNCIONÁRIO </h1>
     <form action="../../models/cliente/new_cliente.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="nome" placeholder="Nome" required>
@@ -37,14 +38,14 @@ if(!$_SESSION['user']){
 
             <div class="p-t-m error">
                 <?php
-                    if($_SESSION['sucess']){
-                        echo "<div class='sucess'>".$_SESSION['sucess']."</div>";
-                        $_SESSION['sucess'] = '';
-                    }
-                    if($_SESSION['error']){
-                        echo "<div class='error'>".$_SESSION['error']."</div>";
-                        $_SESSION['error'] = '';
-                    }
+                if ($_SESSION['sucess']) {
+                    echo "<div class='sucess'>" . $_SESSION['sucess'] . "</div>";
+                    $_SESSION['sucess'] = '';
+                }
+                if ($_SESSION['error']) {
+                    echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+                    $_SESSION['error'] = '';
+                }
                 ?>
             </div>
         </div>
