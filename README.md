@@ -8,7 +8,7 @@
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
-> -  - <img src="https://img.icons8.com/emoji/50/000000/circled-m-emoji.png"/ width="1.3%"> moqups
+> -  - <img src="https://img.icons8.com/emoji/50/000000/circled-m-emoji.png" width="1.3%"/> moqups
 > - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
 > - **IDE's**
