@@ -8,6 +8,7 @@
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
+> -  - <img src="https://img.icons8.com/emoji/50/000000/circled-m-emoji.png"/ width="1.3%"> moqups
 > - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
 > - **IDE's**
@@ -22,14 +23,62 @@
 > - <img src="https://img.icons8.com/color/20/000000/javascript.png"/> Javascript
 
 ### **Membros da equipe** 
-- Djalma Santana Malta Neto
-- Hiago Texeira Pais
-- Ismael Luduvico
-- Joedson Lopes Bomfin
-- Sâmela Camelo Brito
+<table align="center">
+	    <tr>
+	        <td align="center">
+	            <a href="https://github.com/Djalma-Neto">
+	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/64264886?s=460&u=ca26b98ae91465e9101d272a62809832d7f60ff3&v=4" alt="Perfil do git do Djalma">
+	                <br/>
+	                <b>Djalma Neto</b>
+	            </a>
+	            <br>Back End</b>
+	        </td>
+	        <td align="center">
+	            <a href="https://github.com/guilherme-x">
+	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/47876482?s=460&u=1cccc401d10908fe532f521705908bf0c0dd87f7&v=4" alt="Perfil do git do Guilherme">
+	                <br/>
+	                <b>Guilherme Xavier</b>
+	            </a>
+	            <br>Front End</b>
+	        </td>
+	        <td align="center">
+	            <a href="https://github.com/HiagoPais">
+	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/43286216?s=460&v=4" alt="Perfil do git do Hiago">
+	                <br/>
+	                <b>Hiago Pais</b>
+	            </a>
+	            <br>DBA</b>
+	        </td>
+	    </tr>
+	    <td align="center">
+	            <a href="https://github.com/Ismaelluduvico">
+	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/60985494?s=400&v=4" alt="Perfil do git do Ismael">
+	                <br/>
+	                <b>Ismael Luduvico</b>
+	            </a>
+	            <br>Front End</b>
+	        </td>
+	        <td align="center">
+	            <a href="https://github.com/Joedson-Bomfim">
+	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/60985442?s=460&u=927c910cb65c33d61d844872645eee90e163c257&v=4" alt="Perfil do git do Joedson">
+	                <br/>
+	                <b>Joedson Bomfim</b>
+	            </a>
+	            <br>Back End</b>
+	        </td>
+	        <td align="center">
+	            <a href="https://github.com/samelabrito">
+	                <img width="100" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/69491431?s=460&u=384f3b68461c6128771908463eded48e1265735e&v=4" alt="Perfil do git da Sâmela">
+	                <br/>
+	                <b>Sâmela Camelo</b>
+	            </a>
+	            <br>Gerente</b>
+	        </td>
+	    </tr>
+</table>
 
-
-
+### Acesse o sistema por aqui
+- <a href="esquadritec.herokuapp.com/view/login.php" alt="sistema esquadritec">Sistema Esquadritec</a>
 
 
 
