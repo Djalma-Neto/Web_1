@@ -32,7 +32,7 @@
 	                <br/>
 	                <b>Djalma Neto</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="25%"/> Back End</br>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="14.5%"/> Back End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/guilherme-x">
