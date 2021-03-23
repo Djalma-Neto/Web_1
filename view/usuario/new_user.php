@@ -29,7 +29,10 @@ if (!$_SESSION['user']) {
                 <label for="admin">ADMIN</label>
                 <input type="checkbox" name="admin" value="1">
             </div>
-            <input type="submit" value="CONFIRMAR">
+            <div id="buttons">
+                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
 
             <div class="p-t-m error">
                 <?php

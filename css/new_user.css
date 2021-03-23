@@ -266,10 +266,14 @@ body{
 
 input[type="submit"] {
     height: 50px;
+    outline: none;
     width: 20%;
     border-radius: 8px;
+    border: solid;
     font-weight: bolder;
-    color: #006174;
+    background: none;
+    transition: ease-in-out 0.2s;
+    color: #ffffff;
 }
 
 input[type="checkbox"] {
@@ -285,3 +289,34 @@ h1.title {
     width: 44%;
     text-align: center;
 }
+#back{
+   outline: none;
+   height: 50px;
+   width: 20%;
+   border-radius: 8px;
+   border: solid;
+   font-weight: bolder;
+   margin-right: 28px;
+   background: none;
+   transition: ease-in-out 0.2s;
+   color: #ff7474;
+}
+#back:hover{
+   height: 50px;
+   width: 20%;
+   border-radius: 8px;
+   border: solid;
+   font-weight: bolder;
+   background: #ff7272;
+   transition: ease-in-out 0.2s;
+   color: #ffffff;
+}
+input[type="submit"]:hover {
+    background: #ffffff;
+    color: #006174;
+    border: 2px solid;
+}
+
+input[type="submit"] {}
+
+button#back {}
