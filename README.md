@@ -31,7 +31,7 @@
 	                <br/>
 	                <b>Djalma Neto</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="14.5%"/> Back End</br>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="12%"/> Back End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/guilherme-x">
@@ -39,7 +39,7 @@
 	                <br/>
 	                <b>Guilherme Xavier</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="15%"/> Front End</br>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="12%"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/HiagoPais">
@@ -47,7 +47,7 @@
 	                <br/>
 	                <b>Hiago Pais</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/data-configuration.png" width="14.5%"/> DBA</br>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/data-configuration.png" width="12%"/> DBA</br>
 	        </td>
 	    </tr>
 	    <td align="center">
@@ -56,7 +56,7 @@
 	                <br/>
 	                <b>Ismael Luduvico</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="15%"/> Front End</br>
+	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="12%"/> Front End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/Joedson-Bomfim">
@@ -64,7 +64,7 @@
 	                <br/>
 	                <b>Joedson Bomfim</b>
 	            </a>
-	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="14.5%"/> Back End</br>
+	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="12%"/> Back End</br>
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/samelabrito">
@@ -78,7 +78,7 @@
 </table>
 
 ### Acesse o sistema por aqui
-- <a href="esquadritec.herokuapp.com/view/login.php" alt="sistema esquadritec">Sistema Esquadritec</a>
+- <a alt="sistema esquadritec" href="esquadritec.herokuapp.com/view/login.php">Sistema Esquadritec</a>
 
 
 
