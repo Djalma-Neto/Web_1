@@ -42,8 +42,8 @@
 	            <br><img src="https://img.icons8.com/nolan/40/laptop.png" width="12%"/> Front End</br>
 	        </td>
 	        <td align="center">
-	            <a href="https://github.com/HiagoPais">
-	                <img alt="Perfil do git do Hiago" style="border-radius:50%" width="100" src="https://avatars.githubusercontent.com/u/43286216?s=460&v=4"/>
+	            <a href="https://github.com/HiagoTPais">
+	                <img alt="Perfil do git do Hiago" style="border-radius:50%" width="100" src="https://avatars.githubusercontent.com/u/46090906?s=460&v=4"/>
 	                <br/>
 	                <b>Hiago Pais</b>
 	            </a>
