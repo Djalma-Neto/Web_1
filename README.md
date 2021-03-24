@@ -19,7 +19,7 @@
 
  ### Linguagens Utilizadas:
 > - <img src="https://img.icons8.com/ios-filled/20/4a90e2/php-logo.png"/> PHP
-> - <img src="https://img.icons8.com/metro/20/000000/sql.png" width="1.8%"/> SQL
+> - <img src="https://img.icons8.com/metro/20/000000/sql.png" width="2%"/> SQL
 > - <img src="https://img.icons8.com/color/20/000000/javascript.png"/> Javascript
 
 ### **Membros da equipe** 
@@ -67,7 +67,8 @@
 	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="12%"/> Back End</br>
 	        </td>
 	        <td align="center">
-	            <a href="https://github.com/samelabrito"t="Perfil do git da Sâmela" width="100" src="https://avatars.githubusercontent.com/u/69491431?s=460&u=384f3b68461c6128771908463eded48e1265735e&v=4">
+	            <a href="https://github.com/samelabrito"> 
+			    <img alt="Perfil do git da Sâmela" width="100" src="https://avatars.githubusercontent.com/u/69491431?s=400&u=384f3b68461c6128771908463eded48e1265735e&v=4">
 	                <br/>
 			<b>Sâmela Camelo</b>
 	            </a>
