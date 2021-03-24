@@ -18,7 +18,7 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
-    <h1 id="title">NOVA LINHA</h1>
+    <h1 class="title">NOVA LINHA</h1>
     <form action="../../models/linha/new_linha.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="linha" placeholder="Linha" required>

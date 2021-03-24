@@ -18,7 +18,7 @@ if (!$_SESSION['user']) {
 </head>
 
 <body>
-    <h1 id="title">NOVA UNIDADE DE MEDIDA</h1>
+    <h1 class="title">NOVA UNIDADE DE MEDIDA</h1>
     <form action="../../models/unidade_medida/new_unidade.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="unidade" placeholder="Unidade(Kg, m, cm)" required>

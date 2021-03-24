@@ -18,7 +18,7 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
-<H1 id="title">NOVO PRODUTO</H1>
+<H1 class="title">NOVO PRODUTO</H1>
     <form action="../../models/produto/new_produto.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="produto" placeholder="Produto" required>

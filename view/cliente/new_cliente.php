@@ -18,6 +18,7 @@ if (!$_SESSION['user']) {
 </head>
 
 <body>
+    <H1 class="title">NOVO CLIENTE</H1>
     <form action="../../models/cliente/new_cliente.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="nome" placeholder="Nome" required>
