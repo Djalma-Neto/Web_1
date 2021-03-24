@@ -33,8 +33,10 @@ if (!$_SESSION['user']) {
             <input class="input_1" type="text" name="numero" placeholder="Nº" required>
             <input class="input_1" type="text" name="observacao" placeholder="Observação..." required>
 
-            <input type="submit" value="CONFIRMAR">
-
+            <div id="buttons">
+                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
             <div class="p-t-m error">
                 <?php
                 if ($_SESSION['sucess']) {

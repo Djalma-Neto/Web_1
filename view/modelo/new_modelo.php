@@ -22,8 +22,10 @@ if(!$_SESSION['user']){
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="modelo" placeholder="Modelo" required>
 
-            <input type="submit" value="CONFIRMAR">
-
+            <div id="buttons">
+                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
             <div class="p-t-m error">
                 <?php
                     if($_SESSION['sucess']){

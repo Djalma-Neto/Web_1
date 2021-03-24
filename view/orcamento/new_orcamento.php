@@ -37,7 +37,10 @@ getAllCliente();
 
             <a href="../produto/new_produto.php">ADD Produto</a>
 
-            <input type="submit" value="CONFIRMAR">
+            <div id="buttons">
+                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
         </div>
     </form>
 
