@@ -29,8 +29,9 @@ if (!$_SESSION['user']) {
                 <label for="admin">ADMIN</label>
                 <input type="checkbox" name="admin" value="1">
             </div>
+            
             <div id="buttons">
-                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
 

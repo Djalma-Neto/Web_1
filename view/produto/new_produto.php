@@ -43,8 +43,9 @@ if(!$_SESSION['user']){
 
             <a href="./material_produto.php">ADD Material</a>
 
+            
             <div id="buttons">
-                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
             <div class="p-t-m error">

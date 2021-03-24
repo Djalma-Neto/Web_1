@@ -23,8 +23,9 @@ if(!$_SESSION['user']){
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="modelo" placeholder="Modelo" required>
 
+            
             <div id="buttons">
-                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
             <div class="p-t-m error">

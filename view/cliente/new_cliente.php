@@ -34,8 +34,9 @@ if (!$_SESSION['user']) {
             <input class="input_1" type="text" name="numero" placeholder="Nº" required>
             <input class="input_1" type="text" name="observacao" placeholder="Observação..." required>
 
+            
             <div id="buttons">
-                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
             <div class="p-t-m error">

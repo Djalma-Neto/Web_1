@@ -28,8 +28,9 @@ if (!$_SESSION['user']) {
                 <input class='input_1' type='text' name='linha' value='$linha' required>";
             ?>
 
+
             <div id="buttons">
-                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
 

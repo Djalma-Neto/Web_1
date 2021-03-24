@@ -24,8 +24,9 @@ if(!$_SESSION['user']){
             <input class="input_1" type="text" name="nome" placeholder="Nome" required>
             <input class="input_1" type="number" name="valor" placeholder="valor" required>
 
+           
             <div id="buttons">
-                <button id="back" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
 
