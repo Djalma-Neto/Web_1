@@ -7,7 +7,7 @@
 
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
-> -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png"/> Mysql Workbench 
+> -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png" width="3.5%"/> Mysql Workbench 
 > -  - <img src="https://img.icons8.com/emoji/50/000000/circled-m-emoji.png" width="2.5%"/> moqups
 > - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
@@ -19,7 +19,7 @@
 
  ### Linguagens Utilizadas:
 > - <img src="https://img.icons8.com/ios-filled/20/4a90e2/php-logo.png"/> PHP
-> - <img src="https://img.icons8.com/metro/20/000000/sql.png"/> SQL
+> - <img src="https://img.icons8.com/metro/20/000000/sql.png" width="1.8%"/> SQL
 > - <img src="https://img.icons8.com/color/20/000000/javascript.png"/> Javascript
 
 ### **Membros da equipe** 
@@ -27,7 +27,7 @@
 	    <tr>
 	        <td align="center">
 	            <a href="https://github.com/Djalma-Neto">
-	                <img alt="Perfil do git do Djalma" style="border-radius:50%" width="100" src="https://avatars.githubusercontent.com/u/64264886?s=460&u=ca26b98ae91465e9101d272a62809832d7f60ff3&v=4"/>
+	                <img alt="Perfil do git do Djalma" width="100" src="https://avatars.githubusercontent.com/u/64264886?s=460&u=ca26b98ae91465e9101d272a62809832d7f60ff3&v=4"/>
 	                <br/>
 	                <b>Djalma Neto</b>
 	            </a>
@@ -35,7 +35,7 @@
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/guilherme-x">
-	                <img alt="Perfil do git do Guilherme" style="border-radius:50%" width="100" src="https://avatars.githubusercontent.com/u/47876482?s=460&u=1cccc401d10908fe532f521705908bf0c0dd87f7&v=4"/>
+	                <img alt="Perfil do git do Guilherme" width="100" src="https://avatars.githubusercontent.com/u/47876482?s=460&u=1cccc401d10908fe532f521705908bf0c0dd87f7&v=4"/>
 	                <br/>
 	                <b>Guilherme Xavier</b>
 	            </a>
@@ -43,7 +43,7 @@
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/HiagoTPais">
-	                <img alt="Perfil do git do Hiago" style="border-radius:50%" width="100" src="https://avatars.githubusercontent.com/u/46090906?s=460&v=4"/>
+	                <img alt="Perfil do git do Hiago" width="100" src="https://avatars.githubusercontent.com/u/46090906?s=460&v=4"/>
 	                <br/>
 	                <b>Hiago Pais</b>
 	            </a>
@@ -52,7 +52,7 @@
 	    </tr>
 	    <td align="center">
 	            <a href="https://github.com/Ismaelluduvico">
-	                <img alt="Perfil do git do Ismael" style="border-radius:50%" width="100" src="https://avatars.githubusercontent.com/u/60985494?s=400&v=4"/>
+	                <img alt="Perfil do git do Ismael" width="100" src="https://avatars.githubusercontent.com/u/60985494?s=400&v=4"/>
 	                <br/>
 	                <b>Ismael Luduvico</b>
 	            </a>
@@ -60,15 +60,14 @@
 	        </td>
 	        <td align="center">
 	            <a href="https://github.com/Joedson-Bomfim">
-	                <img alt="Perfil do git do Joedson" width="100" style="border-radius:50%" src="https://avatars.githubusercontent.com/u/60985442?s=460&u=927c910cb65c33d61d844872645eee90e163c257&v=4"/>
+	                <img alt="Perfil do git do Joedson" width="100" src="https://avatars.githubusercontent.com/u/60985442?s=460&u=927c910cb65c33d61d844872645eee90e163c257&v=4"/>
 	                <br/>
 	                <b>Joedson Bomfim</b>
 	            </a>
 	            <br><img src="https://img.icons8.com/ultraviolet/40/000000/elephant.png" width="12%"/> Back End</br>
 	        </td>
 	        <td align="center">
-	            <a href="https://github.com/samelabrito" style="border-radius:50%">
-	                <img alt="Perfil do git da Sâmela" width="100" src="https://avatars.githubusercontent.com/u/69491431?s=460&u=384f3b68461c6128771908463eded48e1265735e&v=4">
+	            <a href="https://github.com/samelabrito"t="Perfil do git da Sâmela" width="100" src="https://avatars.githubusercontent.com/u/69491431?s=460&u=384f3b68461c6128771908463eded48e1265735e&v=4">
 	                <br/>
 			<b>Sâmela Camelo</b>
 	            </a>
