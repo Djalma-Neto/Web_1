@@ -19,6 +19,7 @@ getAllCliente();
 </head>
 
 <body>
+<H1 id="title">NOVO ORÇAMENTO</H1>
     <form action="../../models/orcamento/new_orcamento.php" method="POST">
         <div class="c-c card formulario">
             <label for="clientes">Cliente:</label>

@@ -18,6 +18,7 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
+<H1 id="title">NOVO MODELO</H1>
     <form action="../../models/modelo/new_modelo.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="modelo" placeholder="Modelo" required>
