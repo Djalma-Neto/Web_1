@@ -95,7 +95,7 @@ if (!$_SESSION['user']) {
                     <?php
                     $linhas = $_SESSION['linhas'];
                     for ($x = 0; $x < count($linhas); $x++) {
-                        $linha = $linhas[$x]->linha.'';
+                        $linha = 'value ="'.$linhas[$x]->linha.'"';
                         echo
                         "<tr>
                             <td class='nome'>{$linhas[$x]->linha}</td>
