@@ -4,9 +4,7 @@
 
 <!-- <img style="border-radius:15px"  alt="PrintScreen" src="imagens/tela_home.png"/> -->
 
-<video controls="true" width="450" autoplay loop height="250">
-  <source type="video/mp4" src="documentos/esquadritec_vid.mp4"></source>
-</video>
+![esquadritec](documentos/esquadritec.gif)
 
 <!-- ![alt text](BD.png) -->
 
