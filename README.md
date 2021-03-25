@@ -4,9 +4,11 @@
 
 <!-- <img style="border-radius:15px"  alt="PrintScreen" src="imagens/tela_home.png"/> -->
 
-<video controls="true" width="400" height="300" poster="imagens/tela_home.png">
+<!-- <video controls="controls" width="400" height="300" poster="imagens/tela_home.png">
   <source type="video/mp4" src="documentos/esquadritec_vid.mp4"></source>
-</video>
+</video> -->
+
+[![](imagens/tela_home.png)](documentos/esquadritec_vid.mp4)
 
 <!-- ![alt text](BD.png) -->
 
