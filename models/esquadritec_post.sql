@@ -108,36 +108,34 @@ create table if not exists material_produto(
 insert into usuario(nome, email, senha, data, admin) values('admin',  'admin', 'MjAyMS0wMy0xNjE3OjAwYWRtaW4=', '2021-03-05 11:07', true);
 
 
-create or replace function valor_update()
- returns trigger
- language plpgsql
-as $$
-declare valor_p float;
+create or replace function esquadritec.valor_update()
+returns trigger as $body$
+declare valor_p numeric(11,2);
     begin
-            set schema 'esquadritec';
-            select m.valor into valor_p from materiais m where m.id = new.materiais;
-            update produto set valor = produto.valor + (valor_p * new.quantidade) where produto.id = new.produto;
-            return new;
+        select m.valor into valor_p from esquadritec.materiais m where m.id = new.materiais;
+        update esquadritec.produto p set valor = valor + (valor_p * new.quantidade) where p.id = new.produto;
+        return new;
     end;
-    $$
+    $body$
+    language plpgsql
 ;
 
-create or replace function orcamento_update()
- returns trigger
- language plpgsql
-as $$
-declare valor integer;
+create or replace function esquadritec.orcamento_update()
+returns trigger
+as $body$
+declare valor numeric(11,2);
     begin
-            set schema 'esquadritec';
-			select sum(produto.valor) into valor from produto where produto.orcamento = new.orcamento;
-			update orcamento set valor_t_b = valor where orcamento.id = new.orcamento;
-			update orcamento set valor_f = (valor - (valor * (orcamento.desconto / 100))) where orcamento.id = new.orcamento;
-            return new;
+        select sum(p.valor) into valor from esquadritec.produto p where p.orcamento = new.orcamento;
+        update esquadritec.orcamento o set valor_t_b = valor where o.id = new.orcamento;
+        update esquadritec.orcamento o set valor_f = (valor - (valor * (o.desconto / 100))) where o.id = new.orcamento;
+        return new;
     end;
-    $$
+    $body$
+    language plpgsql
 ;
 
-create trigger valor after insert on material_produto
-    for each row execute function valor_update();
-create trigger valor_orcamento after update on produto
-    for each row execute function orcamento_update();
+create trigger valor before insert on material_produto
+    for each row execute procedure valor_update();
+
+create trigger valor_orcamento before update on produto
+    for each row execute procedure orcamento_update();

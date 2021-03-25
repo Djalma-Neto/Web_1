@@ -514,6 +514,7 @@ function new_orcamento(){
         $_SESSION['material_produto'] = array();
         $_SESSION['produtos'] = array();
         $_SESSION['sucess'] = 'Cadastrado!';
+        getAllOrcamento();
         header("Location: ../../view/home.php");
     }catch (PDOException $e) {
         $_SESSION['error'] = $e->getMessage();

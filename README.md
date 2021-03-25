@@ -7,6 +7,6 @@
 ### **Membros da equipe** 
 - Djalma Santana Malta Neto
 - Hiago Texeira Pais
-- Ismael Luduvico
+- Ismael Amorin Luduvico
 - Joedson Lopes Bomfin
 - Sâmela Camelo Brito
