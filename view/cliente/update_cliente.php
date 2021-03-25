@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION['user']){
+if (!$_SESSION['user']) {
     header("Location: ../../view/login.php");
 }
 ?>
@@ -14,26 +14,26 @@ if(!$_SESSION['user']){
     <title>ESQUADRITEC</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../css/materiais.css">
+    <link rel="stylesheet" href="../../css/new_user.css">
 </head>
 
 <body>
     <form action="../../models/cliente/update_cliente.php" method="POST">
         <div class="c-c card formulario">
             <?php
-                $nome = $_POST["nome"];
-                $cpf = $_POST["cpf"];
-                $cnpj = $_POST["cnpj"]? $_POST["cnpj"]: '';
-                $email = $_POST["email"];
-                $cidade = $_POST["cidade"];
-                $rua = $_POST["rua"];
-                $bairro = $_POST["bairro"];
-                $numero = $_POST["numero"];
-                $observacao = $_POST["observacao"];
-                $id = $_POST['id'];
-                $endereco = $_POST['endereco'];
+            $nome = $_POST["nome"];
+            $cpf = $_POST["cpf"];
+            $cnpj = $_POST["cnpj"] ? $_POST["cnpj"] : '';
+            $email = $_POST["email"];
+            $cidade = $_POST["cidade"];
+            $rua = $_POST["rua"];
+            $bairro = $_POST["bairro"];
+            $numero = $_POST["numero"];
+            $observacao = $_POST["observacao"];
+            $id = $_POST['id'];
+            $endereco = $_POST['endereco'];
 
-                echo "
+            echo "
                 <input class='input_1' type='hidden' name='id' value='$id'>
                 <input class='input_1' type='hidden' name='endereco' value='$endereco'>
 
@@ -51,7 +51,11 @@ if(!$_SESSION['user']){
                 OBSERVAÇÃO<input class='input_1' type='text' name='observacao' value='$observacao'>";
             ?>
 
-            <input type="submit" class="btn_confirm" value="CONFIRMAR">
+
+            <div id="buttons">
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
         </div>
     </form>
 </body>

@@ -15,10 +15,11 @@ getAllCliente();
     <title>ESQUADRITEC</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../css/new_orcamento.css">
+    <link rel="stylesheet" href="../../css/new_user.css">
 </head>
 
 <body>
+<H1 class="title">NOVO ORÇAMENTO</H1>
     <form action="../../models/orcamento/new_orcamento.php" method="POST">
         <div class="c-c card formulario">
             <label for="clientes">Cliente:</label>
@@ -37,7 +38,10 @@ getAllCliente();
 
             <a href="../produto/new_produto.php">ADD Produto</a>
 
-            <input type="submit" value="CONFIRMAR">
+            <div id="buttons">
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
         </div>
     </form>
 

@@ -18,6 +18,7 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
+<H1 class="title">NOVO PRODUTO</H1>
     <form action="../../models/produto/new_produto.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="produto" placeholder="Produto" required>
@@ -42,8 +43,11 @@ if(!$_SESSION['user']){
 
             <a href="./material_produto.php">ADD Material</a>
 
-            <input type="submit" value="CONFIRMAR">
-
+            
+            <div id="buttons">
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
             <div class="p-t-m error">
                 <?php
                     if($_SESSION['sucess']){

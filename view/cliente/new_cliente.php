@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!$_SESSION['user']){
+if (!$_SESSION['user']) {
     header("Location: ../../view/login.php");
 }
 ?>
@@ -18,6 +18,7 @@ if(!$_SESSION['user']){
 </head>
 
 <body>
+    <H1 class="title">NOVO CLIENTE</H1>
     <form action="../../models/cliente/new_cliente.php" method="POST">
         <div class="c-c card formulario">
             <input class="input_1" type="text" name="nome" placeholder="Nome" required>
@@ -33,18 +34,21 @@ if(!$_SESSION['user']){
             <input class="input_1" type="text" name="numero" placeholder="Nº" required>
             <input class="input_1" type="text" name="observacao" placeholder="Observação..." required>
 
-            <input type="submit" value="CONFIRMAR">
-
+            
+            <div id="buttons">
+                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
             <div class="p-t-m error">
                 <?php
-                    if($_SESSION['sucess']){
-                        echo "<div class='sucess'>".$_SESSION['sucess']."</div>";
-                        $_SESSION['sucess'] = '';
-                    }
-                    if($_SESSION['error']){
-                        echo "<div class='error'>".$_SESSION['error']."</div>";
-                        $_SESSION['error'] = '';
-                    }
+                if ($_SESSION['sucess']) {
+                    echo "<div class='sucess'>" . $_SESSION['sucess'] . "</div>";
+                    $_SESSION['sucess'] = '';
+                }
+                if ($_SESSION['error']) {
+                    echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+                    $_SESSION['error'] = '';
+                }
                 ?>
             </div>
         </div>

@@ -1,22 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&family=Poppins&display=swap');
 *{
-    margin:0;
     padding:0;
     border:0;
 }
 body{
     background-color: #ebebeb;
+    width: 100%;
 }
 .formulario{
   display: block;
   padding: 20px;
   min-width: 250px;
-  max-width: 300px;
+  max-width: 55%;
+  background: #006174;
+  height: 60%;
+  border-radius: 8px;
 }
 
 .input_1{
   width: 100%;
+  margin: 10px 0;
+  height: 30px;
+  padding: 5px;
+  border-radius: 8px;
 }
 
 .users{
@@ -57,7 +64,7 @@ body{
     margin-bottom: 0;
 }
 .card{
-  border: solid black 1px;
+  border: solid #006174 2px;
 }
 .counter{
   color:#fff;
@@ -111,7 +118,13 @@ body{
     padding-bottom: 12px;
   }
   .p-b-l{
+    color: white;
+    width: 30%;
     padding-bottom: 20px;
+    font-family: system-ui;
+    display: flex;
+    position: relative;
+    font-weight: bolder;
   }
   
   /* padding Left */
@@ -239,6 +252,7 @@ body{
     text-align: center;
     margin: auto;
     width: 100%;
+    margin-top: 2%;
   }
   .full-height{
     height: 100%;
@@ -246,3 +260,63 @@ body{
   .error{
     color: red;
   }
+  .input_1.p-b-l {}
+
+.input_1.p-b-l {}
+
+input[type="submit"] {
+    height: 50px;
+    outline: none;
+    width: 20%;
+    border-radius: 8px;
+    border: solid;
+    font-weight: bolder;
+    background: none;
+    transition: ease-in-out 0.2s;
+    color: #ffffff;
+}
+
+input[type="checkbox"] {
+    color: #006174;
+    height: 24px;
+    width: 40px;
+}
+
+h1.title {
+    font-family: 'Aldrich';
+    margin: 1em auto 0 auto;
+    color: #006174;
+    width: 44%;
+    text-align: center;
+}
+#back{
+   outline: none;
+   height: 50px;
+   width: 20%;
+   border-radius: 8px;
+   border: solid;
+   font-weight: bolder;
+   margin-right: 28px;
+   background: none;
+   transition: ease-in-out 0.2s;
+   color: #ff7474;
+}
+#back:hover{
+   height: 50px;
+   width: 20%;
+   border-radius: 8px;
+   border: solid;
+   font-weight: bolder;
+   background: #ff7272;
+   transition: ease-in-out 0.2s;
+   color: #ffffff;
+}
+input[type="submit"]:hover {
+    background: #ffffff;
+    color: #006174;
+    border: 2px solid;
+}
+
+input[type="submit"] {}
+
+button#back {}
