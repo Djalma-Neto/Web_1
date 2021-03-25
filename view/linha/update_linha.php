@@ -21,8 +21,8 @@ if (!$_SESSION['user']) {
     <form action="../../models/linha/update_linha.php" method="POST">
         <div class="c-c card formulario">
             <?php
-            $linha = $_POST['linha'];
-            $id = $_POST['id'];
+            $linha = $_GET['linha'];
+            $id = $_GET['id'];
             echo "<script>console.log($linha)</script>";
             echo "
                 <input class='input_1' type='hidden' name='id' value='$id'>
