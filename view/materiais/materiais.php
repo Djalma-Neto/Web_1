@@ -29,31 +29,31 @@ if (!$_SESSION['user']) {
             <div class="menu_options">
                 <a href="../../view/usuario/new_user.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">FUNCIONÁRIO</div>
+                    <div style="padding-bottom: 5px;">FUNCIONÁRIO</div>
                 </a>
 
                 <a href="../../view/cliente/new_cliente.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar cliente">
-                    <div style="padding-botton: 5px;">CLIENTE</div>
+                    <div style="padding-bottom: 5px;">CLIENTE</div>
                 </a>
 
-                <a href="../../view/usuario/new_user.php" class="menu_Button">
+                <a href="../../view/orcamento/new_orcamento.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar orçamentos">
-                    <div style="padding-botton: 5px;">ORÇAMENTO</div>
+                    <div style="padding-bottom: 5px;">ORÇAMENTO</div>
                 </a>
 
                 <a href="../../view/materiais/new_material.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar material">
-                    <div style="padding-botton: 5px;">MATERIAL</div>
+                    <div style="padding-bottom: 5px;">MATERIAL</div>
                 </a>
 
                 <a href="../../view/linha/new_linha.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">LINHA</div>
+                    <div style="padding-bottom: 5px;">LINHA</div>
                 </a>
                 <a href="../../view/modelo/new_modelo.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar funcionario">
-                    <div style="padding-botton: 5px;">MODELO</div>
+                    <div style="padding-bottom: 5px;">MODELO</div>
                 </a>
             </div>
         </div>

@@ -38,7 +38,7 @@ if (!$_SESSION['user']) {
                     <div style="padding-botton: 5px;">CLIENTE</div>
                 </a>
 
-                <a href="../../view/usuario/new_user.php" class="menu_Button">
+                <a href="../../view/orcamento/new_orcamento.php" class="menu_Button">
                     <img style="width:20px;" src="../../css/img/add.svg" alt="cadastrar orçamentos">
                     <div style="padding-botton: 5px;">ORÇAMENTO</div>
                 </a>
