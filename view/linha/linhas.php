@@ -95,10 +95,10 @@ if (!$_SESSION['user']) {
                     <?php
                     $linhas = $_SESSION['linhas'];
                     for ($x = 0; $x < count($linhas); $x++) {
-                        $linha = str_replace(" ", "%20", $linhas[$x]->linha);
+                        $linha = urlencode($linhas[$x]->linha);
                         echo
                         "<tr>
-                            <td class='nome'>{$linha}</td>
+                            <td class='nome'>{$linhas[$x]->linha}</td>
                             <td class='acao'>
                                 <form class='list-component' action='./update_linha.php' method='GET'>
                                     <input type='hidden' name='id' value={$linhas[$x]->id}>
