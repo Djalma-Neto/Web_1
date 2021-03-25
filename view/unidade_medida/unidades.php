@@ -1,7 +1,7 @@
 <?php
 include_once('../../models/connect.php');
 if(!$_SESSION['user']){
-    header("Location: ../../view/login.php");
+    header("Location: ../../view/");
 }
 getAllUnidade();
 ?>

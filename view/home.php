@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!$_SESSION['user']){
-    header("Location: ../view/login.php");
+    header("Location: ../view/");
 }
 ?>
 <!DOCTYPE html>
