@@ -100,13 +100,13 @@ if (!$_SESSION['user']) {
                             <td class='nome'>".$materiais[$x]->nome."</td>
                             <td class='valor'>R$ ".$materiais[$x]->valor."</td>
                             <td class='acao'>
-                                <form class='list-component' action='./update_material.php' metdod='POST'>
+                                <form class='list-component' action='./update_material.php' method='POST'>
                                     <input type='hidden' name='id' value=".$materiais[$x]->id.">
                                     <input type='hidden' name='nome' value=".$materiais[$x]->nome.">
                                     <input type='hidden' name='valor' value=".$materiais[$x]->valor.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
-                                <form class='list-component' action='../../models/material/del_material.php' metdod='POST'>
+                                <form class='list-component' action='../../models/material/del_material.php' method='POST'>
                                     <input type='hidden' name='id' value=".$materiais[$x]->id.">
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>

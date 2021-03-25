@@ -107,7 +107,7 @@ if (!$_SESSION['user']) {
                                 <td class='nome'>".$orcamento[$x]['desconto']."%</td>
                                 <td class='nome'>R$ ".$orcamento[$x]['valor_f']."</td>
                                 <td class='nome'>
-                                    <form class='list-component' action='' metdod='POST'>
+                                    <form class='list-component' action='' method='POST'>
                                         <input type='hidden' name='id' value=''>
                                         <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                     </form>
