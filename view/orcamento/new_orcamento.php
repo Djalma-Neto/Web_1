@@ -39,7 +39,7 @@ getAllCliente();
             <a href="../produto/new_produto.php">ADD Produto</a>
 
             <div id="buttons">
-                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
         </div>

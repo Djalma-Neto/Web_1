@@ -40,7 +40,10 @@ if(!$_SESSION['user']){
                 echo "</select>";
             ?>
 
-            <input type="submit" value="CONFIRMAR">
+            <div id="buttons">
+                <button id="back" onclick="window.history.back()">CANCELAR</button>
+                <input type="submit" value="CONFIRMAR">
+            </div>
 
             <div class="p-t-m error">
                 <?php

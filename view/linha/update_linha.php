@@ -21,8 +21,8 @@ if (!$_SESSION['user']) {
     <form action="../../models/linha/update_linha.php" method="POST">
         <div class="c-c card formulario">
             <?php
-            $linha = $_POST['linha'];
-            $id = $_POST['id'];
+            $linha = $_GET['linha'];
+            $id = $_GET['id'];
             echo "<script>console.log($linha)</script>";
             echo "
                 <input class='input_1' type='hidden' name='id' value='$id'>
@@ -31,7 +31,7 @@ if (!$_SESSION['user']) {
 
 
             <div id="buttons">
-                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
 

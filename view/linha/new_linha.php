@@ -25,7 +25,7 @@ if(!$_SESSION['user']){
 
             
             <div id="buttons">
-                <button id="back" onclick="window.history.back()" type="submit" value="CONFIRMAR">CANCELAR</button>
+                <button id="back" onclick="window.history.back()">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
             <div class="p-t-m error">
