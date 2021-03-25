@@ -23,10 +23,9 @@ if (!$_SESSION['user']) {
             <?php
             $linha = $_POST['linha'];
             $id = $_POST['id'];
-            echo "<script>console.log($linha)</script>";
             echo "
-                <input class='input_1' type='hidden' name='id' value=$id>
-                <input class='input_1' type='text' name='linha' value=$linha required>";
+                <input class='input_1' type='hidden' name='id' value={$id}>
+                <input class='input_1' type='text' name='linha' value={$linha} required>";
             ?>
 
 
