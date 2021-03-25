@@ -4,11 +4,9 @@
 
 <!-- <img style="border-radius:15px"  alt="PrintScreen" src="imagens/tela_home.png"/> -->
 
-<!-- <video controls="controls" width="400" height="300" poster="imagens/tela_home.png">
+<video controls="true" width="450" autoplay loop height="250">
   <source type="video/mp4" src="documentos/esquadritec_vid.mp4"></source>
-</video> -->
-
-[![](imagens/tela_home.png)](documentos/esquadritec_vid.mp4)
+</video>
 
 <!-- ![alt text](BD.png) -->
 
@@ -104,3 +102,17 @@ Preencher o campo do README
   Tutorial básico de como instalar
 Não sei se esse último é obrigatório, qualquer coisa a gente discuti sobre
 -->
+
+<script>
+var md = require('markdown-it')({
+    html: true,
+    linkify: true,
+    typography: true
+  }).use(require('markdown-it-video'), // <-- this use(package_name) is required 
+  {
+    youtube: { width: 640, height: 390 },
+    vimeo: { width: 500, height: 281 },
+    vine: { width: 600, height: 600, embed: 'simple' },
+    prezi: { width: 550, height: 400 }
+  })
+</script>
