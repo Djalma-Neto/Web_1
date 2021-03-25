@@ -119,10 +119,10 @@ if(!$_SESSION['user']){
             </div>
         </div>
     </div>
-
+<!-- 
     <div class="fab">
         <span class="btn_dropdown">+</span>
-    </div>
+    </div> -->
 
     <div class="graph">
         <div class="users">USUÁRIOS</div>
