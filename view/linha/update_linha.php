@@ -31,7 +31,6 @@ if (!$_SESSION['user']) {
 
 
             <div id="buttons">
-                <button id="back" onclick="window.history.back()">CANCELAR</button>
                 <input type="submit" value="CONFIRMAR">
             </div>
 
@@ -49,6 +48,7 @@ if (!$_SESSION['user']) {
             </div>
         </div>
     </form>
+    <button id="back" onclick="window.history.back()">CANCELAR</button>
 </body>
 
 </html>
