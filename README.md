@@ -3,6 +3,7 @@
 ### **Sistema para gerenciamento de orçamentos para a matéria de web 1 do curso de Análise e Desenvolvimento de Sistemas**
 
 <!-- <img style="border-radius:15px"  alt="PrintScreen" src="imagens/tela_home.png"/> -->
+<img style="border-radius:15px"  alt="Imagem da tela inicial" src="imagens/tela_home.png"/>
 
 ![esquadritec](documentos/esquadritec.gif)
 
@@ -100,17 +101,3 @@ Preencher o campo do README
   Tutorial básico de como instalar
 Não sei se esse último é obrigatório, qualquer coisa a gente discuti sobre
 -->
-
-<script>
-var md = require('markdown-it')({
-    html: true,
-    linkify: true,
-    typography: true
-  }).use(require('markdown-it-video'), // <-- this use(package_name) is required 
-  {
-    youtube: { width: 640, height: 390 },
-    vimeo: { width: 500, height: 281 },
-    vine: { width: 600, height: 600, embed: 'simple' },
-    prezi: { width: 550, height: 400 }
-  })
-</script>
