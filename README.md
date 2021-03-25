@@ -3,6 +3,19 @@
 ### **Sistema para gerenciamento de orçamentos para a matéria de web 1 do curso de Análise e Desenvolvimento de Sistemas**
 
 <img style="border-radius:15px"  alt="PrintScreen" src="/imagens/tela_home.png"/>
+
+<!-- <figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="imagens/tela_home.png">
+	<source type="video/mp4" src="documentos/esquadritec.mp4"></source>
+  </video>
+</figure> -->
+
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true">
+	<source type="video/mp4" src="documentos/esquadritec.mp4"></source>
+  </video>
+</figure>
+
 <!-- ![alt text](BD.png) -->
 
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:

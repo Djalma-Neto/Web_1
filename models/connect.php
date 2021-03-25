@@ -4,8 +4,8 @@ session_start();
 
 function connect() {
     try {
-        $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
-        // $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
+        // $dataBase = new PDO('pgsql:host=ec2-54-164-22-242.compute-1.amazonaws.com;port=5432;dbname=d9lqe4qcg7qfup;user=vxuphekmmgdsta;password=1342dd32652d25c462a87ac762550b34d56e961234a285ced3e0b2a04c3e5b73');
+        $dataBase = new PDO('mysql:host=localhost;dbname=esquadritec;user=root;password=');
         $dataBase->prepare("SET SCHEMA 'esquadritec'");
         return $dataBase;
     } catch (PDOException $e) {
