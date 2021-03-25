@@ -116,22 +116,22 @@ if (!$_SESSION['user']) {
 
                             <td class='acao'>
                                 <form class='list-component' action='./update_cliente.php' method='POST'>
-                                    <input type='hidden' name='id' value=" . $clientes[$x]->id . ">
-                                    <input type='hidden' name='nome' value=" . $clientes[$x]->nome . ">
-                                    <input type='hidden' name='endereco' value=" . $clientes[$x]->endereco . ">
-                                    <input type='hidden' name='cpf' value=" . $clientes[$x]->cpf . ">
-                                    <input type='hidden' name='cnpj' value=" . $clientes[$x]->cnpj . ">
-                                    <input type='hidden' name='email' value=" . $clientes[$x]->email . ">
+                                    <input type='hidden' name='id' value='{$clientes[$x]->id}'>
+                                    <input type='hidden' name='nome' value='{$clientes[$x]->nome}'>
+                                    <input type='hidden' name='endereco' value='{$clientes[$x]->endereco}'>
+                                    <input type='hidden' name='cpf' value='{$clientes[$x]->cpf}'>
+                                    <input type='hidden' name='cnpj' value='{$clientes[$x]->cnpj}'>
+                                    <input type='hidden' name='email' value='{$clientes[$x]->email}'>
 
-                                    <input type='hidden' name='cidade' value=" . $clientes[$x]->cidade . ">
-                                    <input type='hidden' name='rua' value=" . $clientes[$x]->rua . ">
-                                    <input type='hidden' name='bairro' value=" . $clientes[$x]->bairro . ">
-                                    <input type='hidden' name='numero' value=" . $clientes[$x]->numero . ">
-                                    <input type='hidden' name='observacao' value=" . $clientes[$x]->observacao . ">
+                                    <input type='hidden' name='cidade' value='{$clientes[$x]->cidade}'>
+                                    <input type='hidden' name='rua' value='{$clientes[$x]->rua}'>
+                                    <input type='hidden' name='bairro' value='{$clientes[$x]->bairro}'>
+                                    <input type='hidden' name='numero' value='{$clientes[$x]->numero}'>
+                                    <input type='hidden' name='observacao' value='{$clientes[$x]->observacao}'>
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
                                 <form class='list-component' action='../../models/cliente/del_cliente.php' method='POST'>
-                                    <input type='hidden' name='id' value=" . $clientes[$x]->id . ">
+                                    <input type='hidden' name='id' value='{$clientes[$x]->id}'>
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
                             </td>

@@ -97,15 +97,15 @@ if (!$_SESSION['user']) {
                     for ($x = 0; $x < count($modelos); $x++) {
                         echo
                         "<tr>
-                            <td class='nome'>" . $modelos[$x]->modelo . "</td>
+                            <td class='nome'>'{$modelos[$x]->modelo}'</td>
                             <td class='acao'>
                                 <form class='list-component' action='./update_modelo.php' method='POST'>
-                                    <input type='hidden' name='id' value=" . $modelos[$x]->id . ">
-                                    <input type='hidden' name='modelo' value=" . $modelos[$x]->modelo . ">
+                                    <input type='hidden' name='id' value='{$modelos[$x]->id}'>
+                                    <input type='hidden' name='modelo' value='{$modelos[$x]->modelo}'>
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
                                 <form class='list-component' action='../../models/modelo/del_modelo.php' method='POST'>
-                                    <input type='hidden' name='id' value=" . $modelos[$x]->id . ">
+                                    <input type='hidden' name='id' value='{$modelos[$x]->id}'>
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
                             </td>

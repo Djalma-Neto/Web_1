@@ -36,12 +36,12 @@ getAllUnidade();
                             <th class='nome'>".$unidades[$x]->nome."</th>
                             <th class='acao'>
                                 <form class='list-component' action='./update_unidade.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$unidades[$x]->id.">
-                                    <input type='hidden' name='nome' value=".$unidades[$x]->nome.">
+                                    <input type='hidden' name='id' value='{$unidades[$x]->id}'>
+                                    <input type='hidden' name='nome' value='{$unidades[$x]->nome}'>
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/update.svg'></button>
                                 </form>
                                 <form class='list-component' action='../../models/unidade_medida/del_unidade.php' method='POST'>
-                                    <input type='hidden' name='id' value=".$unidades[$x]->id.">
+                                    <input type='hidden' name='id' value='{$unidades[$x]->id}'>
                                     <button type='submit' class='option'><img class='icon' src='../../css/img/close.svg'></button>
                                 </form>
                             </th>
