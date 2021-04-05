@@ -41,6 +41,7 @@ function login() {
             if ($hash == base64_decode($usuarios[0]->senha)){
                 $_SESSION['user'] = $usuarios[0];
                 getAllUser();
+                $_SESSION['sucess'] = "Login realizado";
                 header("Location: ../view/home.php");
             } else {
                 $_SESSION["error"] = "Senha invalida";

@@ -156,7 +156,7 @@ if(!$_SESSION['user']){
         ?>
     </div>
     <script>
-        window.addEventListener('click', function(e){   
+        window.addEventListener('click', function(e){
             if (document.getElementById('menu_content').contains(e.target)){
                 // Clicked in box
             }else{
