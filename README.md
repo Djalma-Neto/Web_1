@@ -82,7 +82,7 @@
 </table>
 
 ### Acesse o sistema por aqui
-- <a alt="sistema esquadritec" href="http://esquadritec.herokuapp.com/view/login.php">Sistema Esquadritec</a>
+- <a alt="sistema esquadritec" href="http://esquadritec.herokuapp.com">Sistema Esquadritec</a>
 
 
 <!--
